@@ -1,0 +1,433 @@
+#container {	
+	background: PRIMO;
+	text-align: left; 
+	margin: 0 auto; 
+	display:inline;
+}
+
+#test{
+	display:none;
+}
+#form404{
+	font-family: Verdana,Arial,sans-serif ;
+}
+
+#intro{
+	background-color: QUARTO;
+}
+
+#pageHeader{ 
+	background-color: #D98310;
+	text-align: center;
+	border-top: 0.2em solid #555;
+	color:#000;
+	z-index:5;
+	font-weight: 700;
+}
+
+#pageHeader h1{
+	display:none;
+	z-index:100;
+} 
+
+#pageHeader h2{
+	display:none;
+	z-index:50;
+} 
+
+#pageHeader p{
+	display:none;
+	z-index:25;
+} 
+	
+#supportingText{
+	background: QUARTO;
+	z-index:100;
+}
+#quickSummary{
+	z-index: 5;
+	position: relative;
+	font-size: x-small;
+	text-align: right;
+	background: QUARTO;
+}
+
+#quickSummary p span {
+	display:none;
+}
+
+#quickSummary .p1 span {
+	display: none;
+}
+
+#quickSummary .p2  span {
+	display: none;
+}
+
+#quickSummary blockquote{
+	background:  SECONDO;
+	text-align: justify;
+	color: #333;
+	font-size: 150%;
+	font-style: oblique;
+	border: 1px solid #555;
+}
+
+#footer {
+	background-color: QUARTO;
+	display:block;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: justify;
+}
+
+#economics{
+	display:block;
+	background-color: SECONDO;
+	voice-family: male;
+	text-align: justify;
+	border-right: 2px solid #999;
+	font-family: Verdana,Arial, sans-serif ;
+	
+}
+#economicsResources {
+	display:block ; 
+	background-color:  SECONDO;
+}
+ 
+#economicsResources li {
+	list-style: square;
+	text-align:left;
+}
+
+#economics h3 {
+	background: TERZO;
+	color: SECONDO;
+	font-weight: 700;
+}
+
+#numismatics{
+	display:block;
+	voice-family: male;
+	background-color: SECONDO;
+	text-align: justify;
+	font-family: Verdana,Arial,sans-serif;
+}
+
+#numismatics h3 {
+	background: TERZO;
+	color: SECONDO;
+	font-weight: 700;
+	background-repeat: no-repeat;
+}
+
+#numismaticsResources {
+	display:block;  
+	background-color:  SECONDO;
+}
+
+#numismaticsResources li {
+	list-style: square; 
+	text-align:left;
+}               
+
+#presentation {
+	display:block;
+	background-color: SECONDO;
+	voice-family: male;
+	text-align: justify;
+	border-right: 2px solid #999;
+	font-family: Verdana,Arial,sans-serif ;
+}
+
+#presentation h3 {
+	background: TERZO;
+	color: SECONDO;
+	font-weight: 700;
+}
+
+#presentationResources {
+	display: none;
+}
+
+
+#job{
+	display:block;
+	voice-family: male;
+	text-align: justify;
+	background-color: SECONDO;
+	border-right: 2px solid #999;
+	font-family: Verdana, Arial, sans-serif ;
+}
+
+#job h3 {
+	background: TERZO;
+	color: SECONDO;
+	font-weight: 700;
+}
+
+#job ul {
+	list-style-type:square;
+	left:20em;
+	padding-left: 6em;
+}
+
+#job li {
+	padding-left: 0.5em;
+}
+
+#jobResources {
+	display:block; 
+	background-color:  SECONDO;
+}
+
+#jobResources p  {
+	background: #000;
+}
+
+#jobResources li {
+	list-style: square; text-align:left;
+}               
+
+#literature{
+	display:block;
+	background-color: SECONDO;
+	voice-family: male;
+	text-align: justify;
+	border-right: 2px solid #999;
+	font-family: Verdana,Arial,sans-serif ;
+}
+
+#literature  h3 {
+	background: TERZO;color: SECONDO;
+	font-weight: 700;
+}
+
+#literatureResources    {
+	display:block;
+	background-color:  SECONDO;
+} 
+#literatureResources p  {/*display:block;*/display:inline; }
+#literatureResources li	{list-style: square; text-align:left; }               
+
+#portfolio{
+	/*display:block;*/display:block;
+	background: SECONDO;
+	/*width: 20em;*/
+	text-align: left;
+	font-family: Verdana,Arial,sans-serif ;
+}
+
+#portfolio h3{
+	color:TERZO;
+	font-weight: 700;
+	text-align:left;
+	/*width: 20em;*/
+	font-family: Verdana,Arial,sans-serif ;
+	text-indent: 2em;
+
+}
+
+#cookie {
+	display: block;
+	
+	background: SECONDO;
+
+	text-align:justify;
+	font-family: Verdana,Arial,sans-serif ;
+}
+#cookie li{
+	list-style-type:square;	
+}
+#cookie h3{
+	background: TERZO;color: SECONDO;
+	font-weight: 700;
+	text-align:left;
+	
+	font-family: Verdana,Arial,sans-serif ;
+	text-indent: 2em;
+	
+}
+#languages {
+	/*display:block;*/display:block;
+	background-color: SECONDO;
+	/*width: 20em;*/
+	bottom: 5em;
+	text-align:left;
+	font-family: Verdana,Arial,sans-serif ;
+}
+#languages li{
+	list-style-type:square;	
+}
+#languages h3{
+	border-top: 0.2em solid #555;
+	background: TERZO;color: SECONDO;
+	font-weight: 700;
+	text-align:left;
+	/*width: 20em;*/
+	font-family: Verdana,Arial,sans-serif ;
+	text-indent: 2em;
+}
+#hcard-Alessandro-Puzielli{
+	color:#000;
+	/*display:block;*/display:inline;
+	position: relative;
+	text-align: justify;
+	top: -3em; 
+	/*width: 20em;*/
+}
+#twitter{
+	display:inline;
+	float: right;
+	
+	right: 3em;	
+	
+	z-index: 100;
+}
+
+#stack{
+	border-top: 0.2em solid #555;
+	}
+
+#fra {/*display:block;*/display:inline;}
+
+#extraDiv1{display: none;}
+#extraDiv2{display: none;}
+#extraDiv3{display: none;}
+#extraDiv4{display: none;}
+#extraDiv5{display: none;}
+#extraDiv6{display: none;}
+
+#href508{display:none;} 
+#hrefAAA{display:none;}
+#hrefAnobii{display:none;}
+#hrefAnyBrowser{display:none;} 
+#hrefBlog{display:none;}
+#hrefBruno{display:none;}
+#hrefCSS{display:none;}
+#hrefCC{display:none;}
+#hrefDelicious{display:none;}
+#hrefDuca{display:none;}
+#hrefEmail{display:none;}
+#hrefGamberetta{display:none;}
+#hrefGood{display:none;}
+#hrefGoogle{display:none;}
+#hrefHTML{display:none;} 
+#hrefJava{display:none;}
+#hrefLinkedin{display:none;}
+#hrefMoneta{display:none;}
+#hrefOpenClipArt{display:none;}
+#hrefReddit{display:none;}
+#hrefSlide{display:none;}
+#hrefSupport{display:none;}
+#hrefTwitter{display:none;}
+#hrefNamyz{display:none;}
+#hrefXing{display:none;}
+#hrefUsemlab{display:none;}
+#hrefViadeo{display:none;}
+#design{
+	display: none;
+}
+
+#contact{
+	background-color: SECONDO;
+	/*display:block;*/display:block; background-color: SECONDO;
+	/*float: left;*/
+	font-size: 100%;
+	
+	/*padding-right:0em;*/
+	text-align: justify;
+	/*width: 22em;*/
+}
+#contact h3 {
+	background: TERZO;color: SECONDO;
+	font-weight: 700;
+	font-size: 150%;
+	font-style: oblique;
+	text-align: center;
+
+}
+#contact ul {
+	list-style:none;
+}
+#contact li {
+	list-style:none;
+	/*float:left;*/
+	text-align: justify;
+	/*padding-left: 0.5em;*/
+}
+
+#contact li:before {content:url(../img/minimal/Bullet.gif); }
+
+
+#validator{
+	/*display:block;*/display:block; background-color: SECONDO;
+	font-size: 100%;
+	text-align: justify;
+}
+#validator h3 {
+	text-align: center; 
+	border-top: 0.2em solid #555;
+	background: TERZO;
+	color: SECONDO;
+	font-weight: 700;
+	
+	font-size: 150%;
+	font-style: oblique;
+	background-image: url(../img/minimal/validator.png);
+	background-repeat: no-repeat;
+}
+
+#validator ul{
+	display: inline;
+	/*list-style:none;*/
+}
+#validator li {
+	font-size: 100%; 
+	display: inline;
+	
+}
+
+#validator li:before {content:url(../img/minimal/Bullet.gif); }
+
+
+/**copyright**/
+#copyright{
+	/*display:block;*/display:block; background-color: SECONDO;
+	font-size: 100%;
+
+}
+#copyright h3 {
+	background: TERZO;color: SECONDO;
+	font-weight: 700;
+	text-align: center; 
+	
+	font-size: 150%;
+	font-style: oblique;
+	background-image: url(../img/minimal/copyright.png);
+	background-repeat: no-repeat;
+}
+#copyright ul {
+	list-style-type: square;
+}
+#copyright li {
+	font-size: 100%; 
+}
+
+#msgError{
+	background: TERZO;color: SECONDO;
+	font-weight: 700;
+	/*width: 20em;	*/
+	text-align: center; 
+	color: #000;
+	font-size: 150%;
+	font-style: oblique;
+	/*margin-top:2em;*/
+
+}
+
+#img404{
+	/*display:block;*/display:inline;
+	background-color: SECONDO;
+}
+
+#imgCSS{display:none;}
