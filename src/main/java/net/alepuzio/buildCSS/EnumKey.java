@@ -1,5 +1,7 @@
 package net.alepuzio.buildCSS;
-
+/**
+ * @overview: Enumeration used into program
+ * */
 public enum EnumKey {
 	FIRST,
 	SECOND,

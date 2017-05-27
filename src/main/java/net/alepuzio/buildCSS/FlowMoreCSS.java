@@ -12,7 +12,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
-
+/**
+ * @overview: This class manages the process of building the set of CSS files 
+ * */
 public class FlowMoreCSS {
 	
 	private File configurationFile = null;
@@ -121,20 +123,22 @@ public class FlowMoreCSS {
 	}
 	
 	/**
-	 * 
+	 * @effects: Build physical CSS files
 	 * */
 	protected void createsCSSThemesFromDirectory() throws IOException {
 		File[] templates = loadAllTemplates();
 		System.out.println("createsCSSThemesFromDirectory");
 		for(File singleTemplate : templates){
 			System.out.println("loadSingleTemplate("+singleTemplate+");");
-			
 			loadSingleTemplate(singleTemplate);
 			List<RowCodeCSS> cssCode = useTemplateOverModelCSS();
 			writeSingleCSSTheme(cssCode);
 		}
 	}
-
+	
+	/**
+	 * @constructor
+	 */
 	private FlowMoreCSS(String a) {
 		this.configurationFile= new File(a);
 		this.templateCSSProperties = new  Properties();
@@ -156,7 +160,7 @@ public class FlowMoreCSS {
 	
 	/**
 	 * @param fileInput: file of the single CSS theme
-	 * @throws IOException 
+	 * @throws IOException : exception in reading the properties file
 	 * */
 	private void loadSingleTemplate(File fileInput) throws IOException {
 		templateCSSProperties().clear();
@@ -170,7 +174,6 @@ public class FlowMoreCSS {
 	 * */
 	private List<RowCodeCSS> useTemplateOverModelCSS() throws IOException {
 		System.out.println("useTemplateOverModelCSS();");
-
 		List<RowCodeCSS> row = new ArrayList<RowCodeCSS>();
     	BufferedReader templateCSSToRead = null;
     	try {
@@ -238,7 +241,5 @@ public class FlowMoreCSS {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
 	
 }

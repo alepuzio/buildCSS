@@ -2,7 +2,9 @@ package net.alepuzio.buildCSS;
 
 import java.util.Properties;
 import java.util.Set;
-
+/**
+ * @overview: This class represent a single CSS instruction or a single row into CSS files
+ * */
 public class RowCodeCSS {
 	
 	private String value;
