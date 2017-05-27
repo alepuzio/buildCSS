@@ -178,7 +178,7 @@ public class FlowMoreCSS {
 			String currentLine = null;
 			while(null != ( currentLine = templateCSSToRead.readLine())){
 				RowCodeCSS codeCSS = RowCodeCSS.instance(currentLine);
-				if(currentLine.contains(EnumKey.PRIMO.name())||currentLine.contains(EnumKey.SECONDO.name())||currentLine.contains(EnumKey.TERZO.name())||currentLine.contains(EnumKey.QUARTO.name())){
+				if(currentLine.contains(EnumKey.FIRST.name())||currentLine.contains(EnumKey.SECOND.name())||currentLine.contains(EnumKey.THIRD.name())||currentLine.contains(EnumKey.FOURTH.name())){
 					RowCodeCSS codeCSSSostituito = codeCSS.substitutes(templateCSSProperties());
 					row.add(codeCSSSostituito);
 				}else{

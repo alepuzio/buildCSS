@@ -1,5 +1,5 @@
 #container {	
-	background: PRIMO;
+	background: FIRST;
 	text-align: left; 
 	margin: 0 auto; 
 	display:inline;
@@ -13,7 +13,7 @@
 }
 
 #intro{
-	background-color: QUARTO;
+	background-color: FOURTH;
 }
 
 #pageHeader{ 
@@ -41,7 +41,7 @@
 } 
 	
 #supportingText{
-	background: QUARTO;
+	background: FOURTH;
 	z-index:100;
 }
 #quickSummary{
@@ -49,7 +49,7 @@
 	position: relative;
 	font-size: x-small;
 	text-align: right;
-	background: QUARTO;
+	background: FOURTH;
 }
 
 #quickSummary p span {
@@ -65,7 +65,7 @@
 }
 
 #quickSummary blockquote{
-	background:  SECONDO;
+	background:  SECOND;
 	text-align: justify;
 	color: #333;
 	font-size: 150%;
@@ -74,7 +74,7 @@
 }
 
 #footer {
-	background-color: QUARTO;
+	background-color: FOURTH;
 	display:block;
 	font-family: Arial, Helvetica, sans-serif;
 	text-align: justify;
@@ -82,7 +82,7 @@
 
 #economics{
 	display:block;
-	background-color: SECONDO;
+	background-color: SECOND;
 	voice-family: male;
 	text-align: justify;
 	border-right: 2px solid #999;
@@ -91,7 +91,7 @@
 }
 #economicsResources {
 	display:block ; 
-	background-color:  SECONDO;
+	background-color:  SECOND;
 }
  
 #economicsResources li {
@@ -100,29 +100,29 @@
 }
 
 #economics h3 {
-	background: TERZO;
-	color: SECONDO;
+	background: THIRD;
+	color: SECOND;
 	font-weight: 700;
 }
 
 #numismatics{
 	display:block;
 	voice-family: male;
-	background-color: SECONDO;
+	background-color: SECOND;
 	text-align: justify;
 	font-family: Verdana,Arial,sans-serif;
 }
 
 #numismatics h3 {
-	background: TERZO;
-	color: SECONDO;
+	background: THIRD;
+	color: SECOND;
 	font-weight: 700;
 	background-repeat: no-repeat;
 }
 
 #numismaticsResources {
 	display:block;  
-	background-color:  SECONDO;
+	background-color:  SECOND;
 }
 
 #numismaticsResources li {
@@ -132,7 +132,7 @@
 
 #presentation {
 	display:block;
-	background-color: SECONDO;
+	background-color: SECOND;
 	voice-family: male;
 	text-align: justify;
 	border-right: 2px solid #999;
@@ -140,8 +140,8 @@
 }
 
 #presentation h3 {
-	background: TERZO;
-	color: SECONDO;
+	background: THIRD;
+	color: SECOND;
 	font-weight: 700;
 }
 
@@ -154,14 +154,14 @@
 	display:block;
 	voice-family: male;
 	text-align: justify;
-	background-color: SECONDO;
+	background-color: SECOND;
 	border-right: 2px solid #999;
 	font-family: Verdana, Arial, sans-serif ;
 }
 
 #job h3 {
-	background: TERZO;
-	color: SECONDO;
+	background: THIRD;
+	color: SECOND;
 	font-weight: 700;
 }
 
@@ -177,7 +177,7 @@
 
 #jobResources {
 	display:block; 
-	background-color:  SECONDO;
+	background-color:  SECOND;
 }
 
 #jobResources p  {
@@ -190,7 +190,7 @@
 
 #literature{
 	display:block;
-	background-color: SECONDO;
+	background-color: SECOND;
 	voice-family: male;
 	text-align: justify;
 	border-right: 2px solid #999;
@@ -198,27 +198,27 @@
 }
 
 #literature  h3 {
-	background: TERZO;color: SECONDO;
+	background: THIRD;color: SECOND;
 	font-weight: 700;
 }
 
 #literatureResources    {
 	display:block;
-	background-color:  SECONDO;
+	background-color:  SECOND;
 } 
 #literatureResources p  {/*display:block;*/display:inline; }
 #literatureResources li	{list-style: square; text-align:left; }               
 
 #portfolio{
 	/*display:block;*/display:block;
-	background: SECONDO;
+	background: SECOND;
 	/*width: 20em;*/
 	text-align: left;
 	font-family: Verdana,Arial,sans-serif ;
 }
 
 #portfolio h3{
-	color:TERZO;
+	color:THIRD;
 	font-weight: 700;
 	text-align:left;
 	/*width: 20em;*/
@@ -230,7 +230,7 @@
 #cookie {
 	display: block;
 	
-	background: SECONDO;
+	background: SECOND;
 
 	text-align:justify;
 	font-family: Verdana,Arial,sans-serif ;
@@ -239,7 +239,7 @@
 	list-style-type:square;	
 }
 #cookie h3{
-	background: TERZO;color: SECONDO;
+	background: THIRD;color: SECOND;
 	font-weight: 700;
 	text-align:left;
 	
@@ -249,7 +249,7 @@
 }
 #languages {
 	/*display:block;*/display:block;
-	background-color: SECONDO;
+	background-color: SECOND;
 	/*width: 20em;*/
 	bottom: 5em;
 	text-align:left;
@@ -260,7 +260,7 @@
 }
 #languages h3{
 	border-top: 0.2em solid #555;
-	background: TERZO;color: SECONDO;
+	background: THIRD;color: SECOND;
 	font-weight: 700;
 	text-align:left;
 	/*width: 20em;*/
@@ -329,8 +329,8 @@
 }
 
 #contact{
-	background-color: SECONDO;
-	/*display:block;*/display:block; background-color: SECONDO;
+	background-color: SECOND;
+	/*display:block;*/display:block; background-color: SECOND;
 	/*float: left;*/
 	font-size: 100%;
 	
@@ -339,7 +339,7 @@
 	/*width: 22em;*/
 }
 #contact h3 {
-	background: TERZO;color: SECONDO;
+	background: THIRD;color: SECOND;
 	font-weight: 700;
 	font-size: 150%;
 	font-style: oblique;
@@ -360,15 +360,15 @@
 
 
 #validator{
-	/*display:block;*/display:block; background-color: SECONDO;
+	/*display:block;*/display:block; background-color: SECOND;
 	font-size: 100%;
 	text-align: justify;
 }
 #validator h3 {
 	text-align: center; 
 	border-top: 0.2em solid #555;
-	background: TERZO;
-	color: SECONDO;
+	background: THIRD;
+	color: SECOND;
 	font-weight: 700;
 	
 	font-size: 150%;
@@ -392,12 +392,12 @@
 
 /**copyright**/
 #copyright{
-	/*display:block;*/display:block; background-color: SECONDO;
+	/*display:block;*/display:block; background-color: SECOND;
 	font-size: 100%;
 
 }
 #copyright h3 {
-	background: TERZO;color: SECONDO;
+	background: THIRD;color: SECOND;
 	font-weight: 700;
 	text-align: center; 
 	
@@ -414,7 +414,7 @@
 }
 
 #msgError{
-	background: TERZO;color: SECONDO;
+	background: THIRD;color: SECOND;
 	font-weight: 700;
 	/*width: 20em;	*/
 	text-align: center; 
@@ -427,7 +427,7 @@
 
 #img404{
 	/*display:block;*/display:inline;
-	background-color: SECONDO;
+	background-color: SECOND;
 }
 
 #imgCSS{display:none;}
