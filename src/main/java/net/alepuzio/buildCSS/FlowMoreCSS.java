@@ -148,7 +148,7 @@ public class FlowMoreCSS {
 	private File[] loadAllTemplates() throws IOException {
 		File[] templates = this.directoryInput().listFiles(new FileFilter() {
 			public boolean accept(File pathname) {
-				return pathname.getName().endsWith(EnumKey.properties.name());
+				return pathname.getName().endsWith(EnumKey.PROPERTIES.name());
 			}
 		});
 		return templates ;

@@ -8,7 +8,7 @@ public enum EnumKey {
 	DIRECTORY_INPUT,
 	DIRECTORY_OUTPUT,
 	PATH_MODEL_CSS,
-	properties
+	PROPERTIES
 	;
 
 }
