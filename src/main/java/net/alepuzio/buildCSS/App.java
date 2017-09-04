@@ -1,5 +1,8 @@
 package net.alepuzio.buildCSS;
 
+import net.alepuzio.buildCSS.DevelopmentUtil;
+import net.alepuzio.buildCSS.FlowMoreCSS;
+
 public class App {
 	
 	/**
@@ -7,9 +10,9 @@ public class App {
 	 * @param args: parameters from terminal
 	 * */
     public static void main( String[] args ) throws Exception {
-    	System.out.println("Begin");
+    	DevelopmentUtil.printMsgDebug("Begin");
     	FlowMoreCSS.factory(args).createsCSSThemesFromDirectory();
-    	System.out.println("Successfull creation of themes");
+    	DevelopmentUtil.printMsgDebug("Successfull creation of themes");
     }
 
 }

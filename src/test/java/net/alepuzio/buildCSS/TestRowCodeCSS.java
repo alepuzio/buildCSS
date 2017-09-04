@@ -13,18 +13,18 @@ public class TestRowCodeCSS {
 	@Test
 	public void testGetValue() {
 		String valore = "testGetValue";
-		rowCodeCSS  = RowCodeCSS.instance(valore);
-		Assert.assertNotNull( rowCodeCSS);
-		Assert.assertNotNull( rowCodeCSS.getValue());
-		Assert.assertEquals(valore, rowCodeCSS.getValue());
+		this.rowCodeCSS  = RowCodeCSS.instance(valore);
+		Assert.assertNotNull( this.rowCodeCSS);
+		Assert.assertNotNull( this.rowCodeCSS.getValue());
+		Assert.assertEquals(valore, this.rowCodeCSS.getValue());
 	}
 
 	@Test
 	public void testInstanceEmpty() {
-		rowCodeCSS  = RowCodeCSS.instanceEmpty();
-		Assert.assertNotNull( rowCodeCSS);
-		Assert.assertNotNull( rowCodeCSS.getValue());
-		Assert.assertEquals( rowCodeCSS.getValue(), "\n");
+		this.rowCodeCSS  = RowCodeCSS.instanceEmpty();
+		Assert.assertNotNull( this.rowCodeCSS);
+		Assert.assertNotNull( this.rowCodeCSS.getValue());
+		Assert.assertEquals( this.rowCodeCSS.getValue(), "\n");
 	}
 
 	@Test
@@ -36,12 +36,12 @@ public class TestRowCodeCSS {
 		properties.put("b","2");
 		properties.put("c","3");
 		properties.put("d","4");
-		rowCodeCSS  = RowCodeCSS.instance(valore);
-		Assert.assertNotNull( rowCodeCSS);
-		Assert.assertNotNull( rowCodeCSS.getValue());
+		this.rowCodeCSS  = RowCodeCSS.instance(valore);
+		Assert.assertNotNull( this.rowCodeCSS);
+		Assert.assertNotNull( this.rowCodeCSS.getValue());
 		
-		System.out.println(rowCodeCSS.substitutes(properties).getValue());
-		Assert.assertEquals("#1#2#3#4", rowCodeCSS.substitutes(properties).getValue());
+		System.out.println(this.rowCodeCSS.substitutes(properties).getValue());
+		Assert.assertEquals("#1#2#3#4", this.rowCodeCSS.substitutes(properties).getValue());
 	}
 
 	@Test
@@ -50,9 +50,9 @@ public class TestRowCodeCSS {
 		Properties properties = new Properties();
 		
 		properties.put("FIRST","1");
-		rowCodeCSS  = RowCodeCSS.instance(valore);
-		Assert.assertNotNull( rowCodeCSS);
-		Assert.assertNotNull( rowCodeCSS.getValue());
-		Assert.assertEquals("background: #1;", rowCodeCSS.substitutes(properties).getValue());
+		this.rowCodeCSS  = RowCodeCSS.instance(valore);
+		Assert.assertNotNull( this.rowCodeCSS);
+		Assert.assertNotNull( this.rowCodeCSS.getValue());
+		Assert.assertEquals("background: #1;", this.rowCodeCSS.substitutes(properties).getValue());
 	}
 }

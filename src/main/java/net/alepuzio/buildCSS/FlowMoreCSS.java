@@ -112,13 +112,13 @@ public class FlowMoreCSS {
 			final File input = new File(propertiesEnvironment.getProperty(EnumKey.DIRECTORY_INPUT.name()));
 			final File output = new File(propertiesEnvironment.getProperty(EnumKey.DIRECTORY_OUTPUT.name()));
 			final File pathModelCSS = new File(propertiesEnvironment.getProperty(EnumKey.PATH_MODEL_CSS.name()));
+			//DevelopmentUtil.printMsgDebug("toString: " + this.toString());
 			this.directoryInput(input).directoryOutput(output).pathModelCSS(pathModelCSS);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println(this);
 		return this;
 	}
 	
@@ -127,9 +127,9 @@ public class FlowMoreCSS {
 	 * */
 	protected void createsCSSThemesFromDirectory() throws IOException {
 		File[] templates = loadAllTemplates();
-		System.out.println("createsCSSThemesFromDirectory");
+		//DevelopmentUtil.printMsgDebug("createsCSSThemesFromDirectory");
 		for(File singleTemplate : templates){
-			System.out.println("loadSingleTemplate("+singleTemplate+");");
+			//DevelopmentUtil.printMsgDebug("loadSingleTemplate("+singleTemplate+");");
 			loadSingleTemplate(singleTemplate);
 			List<RowCodeCSS> cssCode = useTemplateOverModelCSS();
 			writeSingleCSSTheme(cssCode);
@@ -152,7 +152,9 @@ public class FlowMoreCSS {
 	private File[] loadAllTemplates() throws IOException {
 		File[] templates = this.directoryInput().listFiles(new FileFilter() {
 			public boolean accept(File pathname) {
-				return pathname.getName().endsWith(EnumKey.PROPERTIES.name());
+				final String typeProperties= EnumKey.PROPERTIES.name().toLowerCase();
+				//DevelopmentUtil.printMsgDebug("accept(" + pathname.getName() + ") : " + (pathname.getName().endsWith(typeProperties)));
+				return pathname.getName().endsWith(typeProperties);
 			}
 		});
 		return templates ;
@@ -165,7 +167,7 @@ public class FlowMoreCSS {
 	private void loadSingleTemplate(File fileInput) throws IOException {
 		templateCSSProperties().clear();
 		templateCSSProperties().load(new BufferedReader(new FileReader(fileInput)));
-		int extensionProperties = fileInput.getName().indexOf(".properties");
+		int extensionProperties = fileInput.getName().indexOf("."+EnumKey.PROPERTIES.name().toLowerCase());
 		nameTemplate(fileInput.getName().substring(0, extensionProperties).toUpperCase());
 	}
 	
@@ -173,7 +175,7 @@ public class FlowMoreCSS {
 	 * @return list of CSS code modified
 	 * */
 	private List<RowCodeCSS> useTemplateOverModelCSS() throws IOException {
-		System.out.println("useTemplateOverModelCSS();");
+		//DevelopmentUtil.printMsgDebug("useTemplateOverModelCSS();");
 		List<RowCodeCSS> row = new ArrayList<RowCodeCSS>();
     	BufferedReader templateCSSToRead = null;
     	try {
@@ -181,7 +183,7 @@ public class FlowMoreCSS {
 			String currentLine = null;
 			while(null != ( currentLine = templateCSSToRead.readLine())){
 				RowCodeCSS codeCSS = RowCodeCSS.instance(currentLine);
-				if(currentLine.contains(EnumKey.FIRST.name())||currentLine.contains(EnumKey.SECOND.name())||currentLine.contains(EnumKey.THIRD.name())||currentLine.contains(EnumKey.FOURTH.name())){
+				if(currentLineHasAtLeastOneKeyword(currentLine)){
 					RowCodeCSS codeCSSSostituito = codeCSS.substitutes(templateCSSProperties());
 					row.add(codeCSSSostituito);
 				}else{
@@ -191,7 +193,7 @@ public class FlowMoreCSS {
 
 			}
 		} catch (FileNotFoundException e) {
-			throw new FileNotFoundException("Undefined model:" + e.getMessage());
+			throw new FileNotFoundException("Undefined CSS model:" + e.getMessage());
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -201,12 +203,18 @@ public class FlowMoreCSS {
 		}
 		return row;
 	}
+
+
+	private boolean currentLineHasAtLeastOneKeyword(String currentLine) {
+		return currentLine.contains(EnumKey.FIRST.name())||currentLine.contains(EnumKey.SECOND.name())||currentLine.contains(EnumKey.THIRD.name())||currentLine.contains(EnumKey.FOURTH.name());
+	}
 	
 	/**
 	 * @param rows: list of CSS code modified and to print
 	 * */
 	private void writeSingleCSSTheme(List<RowCodeCSS> rows) throws IOException {
 		StringBuilder fileThemeCSS = new StringBuilder(this.directoryOutput().getAbsolutePath()).append("\\").append(this.nameTemplate()).append( ".css");
+		//DevelopmentUtil.printMsgDebug("fileThemeCSS:" + fileThemeCSS.toString());
 		BufferedWriter newThemeCSSToWrite = null;
 		try {
     		newThemeCSSToWrite = new BufferedWriter(new FileWriter(fileThemeCSS.toString()));
