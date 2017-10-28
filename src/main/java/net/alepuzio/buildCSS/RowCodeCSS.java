@@ -18,7 +18,7 @@ public class RowCodeCSS {
 	}
 
 	public String getValue() {
-		return value;
+		return this.value;
 	}
 	
 	public RowCodeCSS substitutes(Properties newProperties) {

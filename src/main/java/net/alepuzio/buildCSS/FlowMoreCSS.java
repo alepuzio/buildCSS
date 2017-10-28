@@ -28,12 +28,12 @@ public class FlowMoreCSS {
 	
 
 	private File configurationFile() {
-		return configurationFile;
+		return this.configurationFile;
 	}
 
 
 	private File directoryOutput() {
-		return directoryOutput;
+		return this.directoryOutput;
 	}
 
 	private FlowMoreCSS directoryOutput(File directoryOutput) {
@@ -42,7 +42,7 @@ public class FlowMoreCSS {
 	}
 
 	private File pathModelCSS() {
-		return pathModelCSS;
+		return this.pathModelCSS;
 	}
 
 	private FlowMoreCSS pathModelCSS(File pathModelCSS) {
@@ -51,7 +51,7 @@ public class FlowMoreCSS {
 	}
 
 	public File directoryInput() {
-		return directoryInput;
+		return this.directoryInput;
 	}
 
 	public FlowMoreCSS directoryInput(File directory) {
@@ -60,7 +60,7 @@ public class FlowMoreCSS {
 	}
 	
 	public Properties templateCSSProperties() {
-		return templateCSSProperties;
+		return this.templateCSSProperties;
 	}
 
 	public String nameTemplate() {
