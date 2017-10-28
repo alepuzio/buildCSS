@@ -11,3 +11,6 @@ Run command    mvn -X -e clean compile package install
  * before the opened parenthesis _"("_, there's a blank espace _(" ")_;
 * The test class have to have the name beggining with __Test__
 
+#What is the configuration of package script?
+* __conf__: directory of configuration file
+* __input__: directory of template file in __properties__ format
