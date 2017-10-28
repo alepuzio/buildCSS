@@ -1,4 +1,4 @@
-package net.alepuzio.buildCSS;
+package net.alepuzio.buildCSS.enumeration;
 /**
  * @overview: Enumeration used into program
  * */

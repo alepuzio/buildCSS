@@ -2,9 +2,11 @@ package net.alepuzio.buildCSS;
 
 import java.util.Properties;
 
-import junit.framework.Assert;
-
 import org.junit.Test;
+
+import junit.framework.Assert;
+import net.alepuzio.buildCSS.enumeration.EnumSyntax;
+import net.alepuzio.buildCSS.logic.RowCodeCSS;
 
 public class TestRowCodeCSS {
 	
@@ -14,17 +16,17 @@ public class TestRowCodeCSS {
 	public void testGetValue() {
 		String valore = "testGetValue";
 		this.rowCodeCSS  = RowCodeCSS.instance(valore);
-		Assert.assertNotNull( this.rowCodeCSS);
-		Assert.assertNotNull( this.rowCodeCSS.getValue());
+		Assert.assertNotNull(this.rowCodeCSS);
+		Assert.assertNotNull(this.rowCodeCSS.getValue());
 		Assert.assertEquals(valore, this.rowCodeCSS.getValue());
 	}
 
 	@Test
 	public void testInstanceEmpty() {
 		this.rowCodeCSS  = RowCodeCSS.instanceEmpty();
-		Assert.assertNotNull( this.rowCodeCSS);
-		Assert.assertNotNull( this.rowCodeCSS.getValue());
-		Assert.assertEquals( this.rowCodeCSS.getValue(), "\n");
+		Assert.assertNotNull(this.rowCodeCSS);
+		Assert.assertNotNull(this.rowCodeCSS.getValue());
+		Assert.assertEquals(this.rowCodeCSS.getValue(), EnumSyntax.CR.getValue());
 	}
 
 	@Test
@@ -37,8 +39,8 @@ public class TestRowCodeCSS {
 		properties.put("c","3");
 		properties.put("d","4");
 		this.rowCodeCSS  = RowCodeCSS.instance(valore);
-		Assert.assertNotNull( this.rowCodeCSS);
-		Assert.assertNotNull( this.rowCodeCSS.getValue());
+		Assert.assertNotNull(this.rowCodeCSS);
+		Assert.assertNotNull(this.rowCodeCSS.getValue());
 		
 		System.out.println(this.rowCodeCSS.substitutes(properties).getValue());
 		Assert.assertEquals("#1#2#3#4", this.rowCodeCSS.substitutes(properties).getValue());
@@ -51,8 +53,8 @@ public class TestRowCodeCSS {
 		
 		properties.put("FIRST","1");
 		this.rowCodeCSS  = RowCodeCSS.instance(valore);
-		Assert.assertNotNull( this.rowCodeCSS);
-		Assert.assertNotNull( this.rowCodeCSS.getValue());
+		Assert.assertNotNull(this.rowCodeCSS);
+		Assert.assertNotNull(this.rowCodeCSS.getValue());
 		Assert.assertEquals("background: #1;", this.rowCodeCSS.substitutes(properties).getValue());
 	}
 }
