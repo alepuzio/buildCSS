@@ -2,7 +2,7 @@
 Automation of creation of CSS stylesheet for my personal site [Alepuzio] (http://www.alepuzio.net)
 
 #How to build
-Run command    mvn clean compile package install 
+Run command    mvn -X -e clean compile package install
 
 #What are the guidelines to coding the source code?
 * Add _this_ before attributes;
