@@ -31,11 +31,11 @@ public class Flow {
 	}
 
 	public Properties getProperties() {
-		return properties;
+		return this.properties;
 	}
 
 	public String getNameTemplate() {
-		return nameTemplate;
+		return this.nameTemplate;
 	}
 
 	
