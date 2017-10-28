@@ -1,4 +1,4 @@
-package net.alepuzio.buildCSS;
+package net.alepuzio.buildCSS.logic;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,6 +11,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
+import net.alepuzio.buildCSS.enumeration.EnumMessages;
+
 /**
  * @overview: old version
  * */
@@ -22,7 +24,7 @@ public class Flow {
 	
 	public Flow(String[] args) {
 		if(null == args || args.length != 1){
-    		System.err.println("Wrong arguments: it need only the name of CSS template.");
+    		System.err.println(net.alepuzio.buildCSS.enumeration.EnumMessages.WRONG_ARGUMENTS.getValue());
     		System.exit(1);
     	}else{
     		this.nameTemplate = args[0];
@@ -67,7 +69,7 @@ public class Flow {
 				row.add(RowCodeCSS.instanceEmpty());
 			}
 		} catch (FileNotFoundException e) {
-			throw new FileNotFoundException("Undefined model:" + e.getMessage());
+			throw new FileNotFoundException(EnumMessages.UNDEFINED_MODEL.getValue() + e.getMessage());
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {

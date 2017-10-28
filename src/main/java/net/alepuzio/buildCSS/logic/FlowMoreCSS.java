@@ -1,4 +1,4 @@
-package net.alepuzio.buildCSS;
+package net.alepuzio.buildCSS.logic;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -12,6 +12,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
+
+import net.alepuzio.buildCSS.enumeration.EnumKey;
+import net.alepuzio.buildCSS.enumeration.EnumMessages;
+import net.alepuzio.buildCSS.enumeration.EnumSyntax;
+
+
 /**
  * @overview: This class manages the process of building the set of CSS files 
  * */
@@ -78,7 +84,7 @@ public class FlowMoreCSS {
 	public static FlowMoreCSS factory(String[] args) {
 		FlowMoreCSS instanceCreated = null;
 		if(null == args || args.length != 1){
-    		System.err.println("Wrong arguments: it need only the path of configuration's file.");
+    		System.err.println(EnumMessages.WRONG_ARGUMENTS_PATH.getValue());
     		System.exit(1);
     	}else{
     		instanceCreated = new FlowMoreCSS(args[0]);
@@ -94,7 +100,7 @@ public class FlowMoreCSS {
 	 * */
 	public static FlowMoreCSS instance() {
 		if(null == instance){
-    		System.err.println("null instance");
+    		System.err.println(EnumMessages.NULL_INSTANCE.getValue());
     		System.exit(1);
     	}
 		return instance.init();
@@ -125,7 +131,7 @@ public class FlowMoreCSS {
 	/**
 	 * @effects: Build physical CSS files
 	 * */
-	protected void createsCSSThemesFromDirectory() throws IOException {
+	public void createsCSSThemesFromDirectory() throws IOException {
 		File[] templates = loadAllTemplates();
 		//DevelopmentUtil.printMsgDebug("createsCSSThemesFromDirectory");
 		for(File singleTemplate : templates){
@@ -193,7 +199,7 @@ public class FlowMoreCSS {
 
 			}
 		} catch (FileNotFoundException e) {
-			throw new FileNotFoundException("Undefined CSS model:" + e.getMessage());
+			throw new FileNotFoundException(EnumMessages.Undefined_CSS_model.getValue() + e.getMessage());
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -213,7 +219,7 @@ public class FlowMoreCSS {
 	 * @param rows: list of CSS code modified and to print
 	 * */
 	private void writeSingleCSSTheme(List<RowCodeCSS> rows) throws IOException {
-		StringBuilder fileThemeCSS = new StringBuilder(this.directoryOutput().getAbsolutePath()).append("\\").append(this.nameTemplate()).append( ".css");
+		StringBuilder fileThemeCSS = new StringBuilder(this.directoryOutput().getAbsolutePath()).append(EnumSyntax.SEPARATOR.getValue()).append(EnumSyntax.CSS.getValue());
 		//DevelopmentUtil.printMsgDebug("fileThemeCSS:" + fileThemeCSS.toString());
 		BufferedWriter newThemeCSSToWrite = null;
 		try {

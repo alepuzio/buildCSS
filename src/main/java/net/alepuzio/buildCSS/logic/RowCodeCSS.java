@@ -1,7 +1,10 @@
-package net.alepuzio.buildCSS;
+package net.alepuzio.buildCSS.logic;
 
 import java.util.Properties;
 import java.util.Set;
+
+import net.alepuzio.buildCSS.enumeration.EnumCSSKey;
+import net.alepuzio.buildCSS.enumeration.EnumSyntax;
 /**
  * @overview: This class represent a single CSS instruction or a single row into CSS files
  * */
@@ -14,7 +17,7 @@ public class RowCodeCSS {
 	}
 	
 	public static RowCodeCSS instanceEmpty( ) {
-		return new RowCodeCSS("\n") ;
+		return new RowCodeCSS(EnumSyntax.CR.getValue()) ;
 	}
 
 	public String getValue() {
@@ -38,7 +41,7 @@ public class RowCodeCSS {
 
 	
 	private  RowCodeCSS substitute(String valueToChange, String key, Properties currentProperties) {
-		String replacement = new StringBuilder("#").append( currentProperties.getProperty(key)).toString();
+		String replacement = new StringBuilder(EnumCSSKey.SHARP.getValue()).append( currentProperties.getProperty(key)).toString();
 		return new RowCodeCSS(valueToChange.replaceAll(key, replacement));
 	}
 }
