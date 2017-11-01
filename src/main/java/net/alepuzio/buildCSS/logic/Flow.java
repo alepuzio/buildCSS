@@ -18,7 +18,7 @@ import net.alepuzio.buildCSS.enumeration.EnumMessages;
  * */
 public class Flow {
 	
-	private String nameTemplate;
+	private String nameTemplate = null;
 	private Properties properties = null;
 	
 	
@@ -40,19 +40,23 @@ public class Flow {
 		return this.nameTemplate;
 	}
 
-	
-	public void loadProperties()
-			throws FileNotFoundException {
+	/**
+	 * 
+	 * */
+	public void loadProperties() {
 		try {
 			String pathInput = ".\\src\\main\\resources\\" + this.getNameTemplate() + ".properties";
 			getProperties().load(new BufferedReader(new FileReader(pathInput)));
 		} catch (FileNotFoundException e) {
-			throw new FileNotFoundException("Undefined [" + this.getNameTemplate() + "]");
+			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
+	/**
+	 * @return 
+	 * */
 	public List<RowCodeCSS> manipulateTemplate() throws IOException {
 		List<RowCodeCSS> row = new ArrayList<RowCodeCSS>();
     	BufferedReader br = null;
@@ -60,7 +64,7 @@ public class Flow {
     	
     	try {
 			br = new BufferedReader(new FileReader(model));
-			//sostituendo i parametri
+			//sostitue the params
 			String currentLine = null;
 			
 			while(null != ( currentLine = br.readLine())){
@@ -80,6 +84,9 @@ public class Flow {
 		return row;
 	}
 	
+	/**
+	 * @param row: list of CSS instructions
+	 * */
 	public void writeNewCSSTheme(List<RowCodeCSS> row) throws IOException {
 		BufferedWriter bw = null;
     	try {
