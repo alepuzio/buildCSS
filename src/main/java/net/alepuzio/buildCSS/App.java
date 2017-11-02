@@ -6,7 +6,7 @@ import net.alepuzio.buildCSS.logic.FlowMoreCSS;
 public class App {
 	
 	/**
-	 * @effects: it launche program
+	 * @effects: it launchs program
 	 * @param args: parameters from terminal
 	 * */
     public static void main( String[] args ) throws Exception {
