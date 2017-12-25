@@ -15,7 +15,7 @@
 			<directory>${project.basedir}/src/main/resources/input</directory>
 			<outputDirectory>/input</outputDirectory>
 		</fileSet>
-			<!-- crea cartella vuota output -->
+		<!-- crea cartella vuota output -->
 		<fileSet>
 			<outputDirectory>/output</outputDirectory>
 			<excludes>
@@ -28,10 +28,9 @@
 			<outputDirectory>/conf</outputDirectory>
 			<includes>
 				<include>*.properties</include>
-				<include>*.css</include>
 			</includes>
 		</fileSet>
-		<!-- import .sh  e.bat del batch -->
+		<!-- import .sh e.bat del batch -->
 		<fileSet>
 			<directory>${project.basedir}/src/main/resources/script</directory>
 			<outputDirectory>/</outputDirectory>
@@ -57,4 +56,16 @@
 			</includes>
 		</fileSet>
 	</fileSets>
+	<!-- package dependencies -->
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>/lib</outputDirectory>
+			<useProjectArtifact>false</useProjectArtifact>
+			<useTransitiveDependencies>true</useTransitiveDependencies>
+			<unpack>false</unpack>
+			<includes>             
+            	<include>*:args4j:*</include>
+            </includes>
+		</dependencySet>
+	</dependencySets>
 </assembly>
