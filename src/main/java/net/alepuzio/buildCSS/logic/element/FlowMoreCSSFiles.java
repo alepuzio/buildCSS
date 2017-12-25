@@ -1,4 +1,4 @@
-package net.alepuzio.buildCSS.logic;
+package net.alepuzio.buildCSS.logic.element;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,6 +14,9 @@ import java.util.List;
 import java.util.Properties;
 
 import net.alepuzio.buildCSS.DevelopmentUtil;
+import net.alepuzio.buildCSS.DevelopmentUtilActive;
+import net.alepuzio.buildCSS.DevelopmentUtilInactive;
+import net.alepuzio.buildCSS.enumeration.EnumFileSystem;
 import net.alepuzio.buildCSS.enumeration.EnumKey;
 import net.alepuzio.buildCSS.enumeration.EnumMessages;
 import net.alepuzio.buildCSS.enumeration.EnumSyntax;
@@ -22,23 +25,23 @@ import net.alepuzio.buildCSS.enumeration.EnumSyntax;
 /**
  * @overview: This class manages the process of building the set of CSS files 
  * */
-public class FlowMoreCSS {
+public class FlowMoreCSSFiles {
 	
-	private File configurationFile = null;
 	private File directoryInput = null;
 	private File directoryOutput = null;
 	private File pathModelCSS = null;
 	
 	private String nameTemplate = null;
 	private Properties templateCSSProperties = null;
-	private static FlowMoreCSS instance = null;
+	private boolean activeMessage = false;
+
 	
 
 	public File directoryInput() {
 		return this.directoryInput;
 	}
 
-	public FlowMoreCSS directoryInput(File directory) {
+	public FlowMoreCSSFiles directoryInput(File directory) {
 		this.directoryInput = directory;
 		return this;
 	}
@@ -51,56 +54,28 @@ public class FlowMoreCSS {
 		return this.nameTemplate;
 	}
 	
-	public FlowMoreCSS nameTemplate(String nameTemplate) {
+	public FlowMoreCSSFiles nameTemplate(String nameTemplate) {
 		this.nameTemplate = nameTemplate;
 		return this;
 	}
-
-	/**
-	 * factory method
-	 * */
-	public static FlowMoreCSS factory(String[] args) {
-		FlowMoreCSS instanceCreated = null;
-		if (incorrectArguments(args)) {
-    		System.err.println(EnumMessages.WRONG_ARGUMENTS_PATH.getValue());
-    		System.exit(1);
-    	} else {
-    		String nameColorScheme = args[0];
-    		System.out.println("Argument is:" + nameColorScheme);
-    		instanceCreated = new FlowMoreCSS(nameColorScheme);
-    		instance = instanceCreated.init();
-    	}
-		return instanceCreated;
-	}
-
 	
-	/**
-	 * singleton
-	 * @throws IOException 
-	 * @throws FileNotFoundException 
-	 * */
-	public static FlowMoreCSS instance() {
-		if(null == instance){
-    		System.err.println(EnumMessages.NULL_INSTANCE.getValue());
-    		System.exit(1);
-    	}
-		return instance.init();
-	}
+
 	
 	/**
 	 * @return initialized object
 	 * @throws IOException 
 	 * @throws FileNotFoundException 
-	 * */
-	protected FlowMoreCSS init() {
+	 * */	
+	public FlowMoreCSSFiles init(File abc) {
 		Properties propertiesEnvironment = new Properties();
 		try {
-			propertiesEnvironment.load(new BufferedReader(new FileReader(this.configurationFile().getAbsolutePath())));
-			final File input = new File(propertiesEnvironment.getProperty(EnumKey.DIRECTORY_INPUT.name()));
-			final File output = new File(propertiesEnvironment.getProperty(EnumKey.DIRECTORY_OUTPUT.name()));
-			final File pathModelCSS = new File(propertiesEnvironment.getProperty(EnumKey.PATH_MODEL_CSS.name()));
-			//DevelopmentUtil.printMsgDebug("toString: " + this.toString());
-			this.directoryInput(input).directoryOutput(output).pathModelCSS(pathModelCSS);
+			propertiesEnvironment.load(new BufferedReader(new FileReader(abc.getAbsolutePath())));
+			final File input = new File(propertiesEnvironment.getProperty(EnumFileSystem.DIRECTORY_INPUT.name()));
+			final File output = new File(propertiesEnvironment.getProperty(EnumFileSystem.DIRECTORY_OUTPUT.name()));
+			final File pathModelCSS = new File(propertiesEnvironment.getProperty(EnumFileSystem.PATH_MODEL_CSS.name()));
+			final boolean activeMessage = new Boolean(propertiesEnvironment.getProperty(EnumFileSystem.PATH_MODEL_CSS.name()));
+			this.directoryInput(input).directoryOutput(output).pathModelCSS(pathModelCSS).showMessages(activeMessage);
+			this.useDevelopmentUtil("toString: " + this.toString()).printMsgDebug();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -114,9 +89,9 @@ public class FlowMoreCSS {
 	 * */
 	public void createsCSSThemesFromDirectory() throws IOException {
 		File[] templates = loadAllTemplates();
-		//DevelopmentUtil.printMsgDebug("createsCSSThemesFromDirectory");
+		this.useDevelopmentUtil("createsCSSThemesFromDirectory").printMsgDebug();
 		for(File singleTemplate : templates){
-			//DevelopmentUtil.printMsgDebug("loadSingleTemplate(" + singleTemplate + ");");
+			this.useDevelopmentUtil("loadSingleTemplate(" + singleTemplate + ");").printMsgDebug();
 			loadSingleTemplate(singleTemplate);
 			List<RowCodeCSS> cssCode = useTemplateOverModelCSS();
 			writeSingleCSSTheme(cssCode);
@@ -124,56 +99,32 @@ public class FlowMoreCSS {
 	}
 	
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("FlowMoreCSS [configurationFile=");
-		builder.append(configurationFile());
-		builder.append(", directoryInput=");
-		builder.append(directoryInput());
-		builder.append(", directoryOutput=");
-		builder.append(directoryOutput());
-		builder.append(", pathModelCSS=");
-		builder.append(pathModelCSS());
-		builder.append(", templateCSSProperties=");
-		builder.append(templateCSSProperties());
-		builder.append("]");
-		return builder.toString();
-	}
 	
-
-
-	/**
-	 * @return true if args!= null and args.lenght == 1, false otherwise
-	 * @param args: input params
-	 * */
-	private static boolean incorrectArguments(String[] args) {
-		return null == args || args.length != 1;
-	}
 	
 	/**
 	 * @return list of CSS code modified
 	 * */
 	private List<RowCodeCSS> useTemplateOverModelCSS() throws IOException {
-		//DevelopmentUtil.printMsgDebug("useTemplateOverModelCSS();");
+		this.useDevelopmentUtil("useTemplateOverModelCSS();").printMsgDebug();
 		List<RowCodeCSS> row = new ArrayList<RowCodeCSS>();
     	BufferedReader templateCSSToRead = null;
     	try {
 			templateCSSToRead = new BufferedReader(new FileReader(this.pathModelCSS().getAbsoluteFile()));
 			String currentLine = null;
 			while (null != ( currentLine = templateCSSToRead.readLine())) {
-				RowCodeCSS codeCSS = RowCodeCSS.instance(currentLine);
+				FactoryRowCSS factoryRowCSS = new FactoryRowCSS(currentLine);
+				RowCodeCSS codeCSS = factoryRowCSS.instance();
 				if (currentLineHasAtLeastOneKeyword(currentLine)) {
 					RowCodeCSS codeCSSSostituito = codeCSS.substitutes(templateCSSProperties());
 					row.add(codeCSSSostituito);
 				} else {
 					row.add(codeCSS);
 				}
-				row.add(RowCodeCSS.instanceEmpty());
+				row.add(factoryRowCSS.instanceEmpty());
 
 			}
 		} catch (FileNotFoundException e) {
-			throw new FileNotFoundException(EnumMessages.Undefined_CSS_model.getValue() + e.getMessage());
+			throw new FileNotFoundException(EnumMessages.UNDEFINED_CSS_MODEL.getValue() + e.getMessage());
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -197,7 +148,7 @@ public class FlowMoreCSS {
 	 * */
 	private void writeSingleCSSTheme(List<RowCodeCSS> rows) throws IOException {
 		StringBuilder fileThemeCSSOutput = createFileCSS();
-		//DevelopmentUtil.printMsgDebug("fileThemeCSS:" + fileThemeCSSOutput.toString());
+		this.useDevelopmentUtil("fileThemeCSS:" + fileThemeCSSOutput.toString()).printMsgDebug();
 		BufferedWriter newThemeCSSToWrite = null;
 		try {
     		newThemeCSSToWrite = new BufferedWriter(new FileWriter(fileThemeCSSOutput.toString()));
@@ -226,8 +177,7 @@ public class FlowMoreCSS {
 	/**
 	 * @constructor
 	 */
-	private FlowMoreCSS(String a) {
-		this.configurationFile= new File(a);
+	protected FlowMoreCSSFiles() {
 		this.templateCSSProperties = new Properties();
 	}
 	
@@ -239,8 +189,7 @@ public class FlowMoreCSS {
 	private File[] loadAllTemplates() throws IOException {
 		File[] templates = this.directoryInput().listFiles(new FileFilter() {
 			public boolean accept(File pathname) {
-				final String typeProperties= EnumKey.PROPERTIES.name().toLowerCase();
-				//DevelopmentUtil.printMsgDebug("accept(" + pathname.getName() + ") : " + (pathname.getName().endsWith(typeProperties)));
+				final String typeProperties = EnumFileSystem.PROPERTIES.name().toLowerCase();
 				return pathname.getName().endsWith(typeProperties);
 			}
 		});
@@ -255,21 +204,17 @@ public class FlowMoreCSS {
 		templateCSSProperties().clear();
 		templateCSSProperties().load(new BufferedReader(new FileReader(fileInput)));
 		String nameOfInputFile = fileInput.getName();
-		int extensionProperties = nameOfInputFile.indexOf("." + EnumKey.PROPERTIES.name().toLowerCase());
+		int extensionProperties = nameOfInputFile.indexOf("." + EnumFileSystem.PROPERTIES.name().toLowerCase());
 		nameTemplate(nameOfInputFile.substring(0, extensionProperties).toUpperCase());
 	}
 
-
-	private File configurationFile() {
-		return this.configurationFile;
-	}
 
 
 	private File directoryOutput() {
 		return this.directoryOutput;
 	}
 
-	private FlowMoreCSS directoryOutput(File directoryOutput) {
+	private FlowMoreCSSFiles directoryOutput(File directoryOutput) {
 		this.directoryOutput = directoryOutput;
 		return this;
 	}
@@ -278,9 +223,30 @@ public class FlowMoreCSS {
 		return this.pathModelCSS;
 	}
 
-	private FlowMoreCSS pathModelCSS(File pathModelCSS) {
+	private FlowMoreCSSFiles pathModelCSS(File pathModelCSS) {
 		this.pathModelCSS = pathModelCSS;
 		return this;
 	}
+	
+	private FlowMoreCSSFiles showMessages(boolean pathModelCSS) {
+		this.activeMessage = pathModelCSS;
+		return this;
+	}
+	
+	public DevelopmentUtil useDevelopmentUtil(String message) {
+		DevelopmentUtil developmentUtil = null;
+		if(this.isActiveMessage()) {
+			 developmentUtil = new DevelopmentUtilActive(message);
+		}else {
+			 developmentUtil = new DevelopmentUtilInactive();
+		}
+		return developmentUtil;
+	}
+	
+	
+	public boolean isActiveMessage() {
+		return this.activeMessage;
+	}
+
 
 }

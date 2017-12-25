@@ -1,4 +1,4 @@
-package net.alepuzio.buildCSS.logic;
+package net.alepuzio.buildCSS.logic.element;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -22,7 +22,7 @@ public class Flow {
 	private Properties properties = null;
 	
 	
-	public Flow(String[] args) {
+	protected Flow(String[] args) {
 		if(null == args || args.length != 1){
     		System.err.println(net.alepuzio.buildCSS.enumeration.EnumMessages.WRONG_ARGUMENTS.getValue());
     		System.exit(1);
@@ -32,11 +32,11 @@ public class Flow {
     	}
 	}
 
-	public Properties getProperties() {
+	protected Properties getProperties() {
 		return this.properties;
 	}
 
-	public String getNameTemplate() {
+	protected String getNameTemplate() {
 		return this.nameTemplate;
 	}
 
@@ -64,13 +64,12 @@ public class Flow {
     	
     	try {
 			br = new BufferedReader(new FileReader(model));
-			//sostitue the params
 			String currentLine = null;
-			
 			while(null != ( currentLine = br.readLine())){
-				RowCodeCSS codeCSS = RowCodeCSS.instance(currentLine).substitutes(getProperties());
+				FactoryRowCSS factoryRow = new FactoryRowCSS(currentLine);
+				RowCodeCSS codeCSS = factoryRow.instance().substitutes(getProperties());
 				row.add(codeCSS);
-				row.add(RowCodeCSS.instanceEmpty());
+				row.add(factoryRow.instanceEmpty());
 			}
 		} catch (FileNotFoundException e) {
 			throw new FileNotFoundException(EnumMessages.UNDEFINED_MODEL.getValue() + e.getMessage());

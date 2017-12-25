@@ -1,9 +1,22 @@
 package net.alepuzio.buildCSS;
 
-public class DevelopmentUtil {
+public class DevelopmentUtilActive extends DevelopmentUtil {
 	
-	public static final void printMsgDebug(String message){
-		System.out.println(message);
+	private String message;
+	
+	public DevelopmentUtilActive( String newMessage) {
+		this.message = newMessage;
 	}
+	
+	@Override
+	public void printMsgDebug(){
+		System.out.println( this.getMessage());
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+	
+	
 
 }
