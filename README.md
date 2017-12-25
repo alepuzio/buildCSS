@@ -8,7 +8,7 @@ Automation of creation of CSS stylesheet for my personal site [Alepuzio](http://
 * Run the command __mvn -X -e clean compile package install assembly:single dependency:sources__
 * Verify the file _css_ with the same name of coloscheme
 
-###Status CI Integration in [Travis](https://travis-ci.org/)
+### Status CI Integration in [Travis](https://travis-ci.org/)
 [![Build Status](https://travis-ci.org/alepuzio/buildCSS.svg?branch=master)](https://travis-ci.org/alepuzio/buildCSS)
 
 
