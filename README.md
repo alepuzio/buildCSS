@@ -1,11 +1,16 @@
 # buildCSS
-Automation of creation of CSS stylesheet for my personal site [Alepuzio] (http://www.alepuzio.net)
-[![Build Status](https://travis-ci.org/alepuzio/buildCSS.svg?branch=master)](https://travis-ci.org/alepuzio/buildCSS)
+Automation of creation of CSS stylesheet for my personal site [Alepuzio](http://www.alepuzio.net)
+
+
 
 ## How to build
 * Put the colorscheme in the correct _properties_ file in direcotry __input__
 * Run the command __mvn -X -e clean compile package install assembly:single dependency:sources__
 * Verify the file _css_ with the same name of coloscheme
+
+###Status CI Integration in [Travis](https://travis-ci.org/)
+[![Build Status](https://travis-ci.org/alepuzio/buildCSS.svg?branch=master)](https://travis-ci.org/alepuzio/buildCSS)
+
 
 ## What are the guidelines to coding the source code?
 * Add _this_ before attributes;
