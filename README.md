@@ -1,6 +1,6 @@
 # buildCSS
 Automation of creation of CSS stylesheet for my personal site [Alepuzio] (http://www.alepuzio.net)
-https://travis-ci.org/alepuzio/buildCSS.svg?branch=master
+[![Build Status](https://travis-ci.org/alepuzio/buildCSS.svg?branch=master)](https://travis-ci.org/alepuzio/buildCSS)
 
 ## How to build
 * Put the colorscheme in the correct _properties_ file in direcotry __input__
