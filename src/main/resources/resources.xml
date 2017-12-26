@@ -28,6 +28,7 @@
 			<outputDirectory>/conf</outputDirectory>
 			<includes>
 				<include>*.properties</include>
+				<include>model.css</include>				
 			</includes>
 		</fileSet>
 		<!-- import .sh e.bat del batch -->
@@ -48,7 +49,7 @@
 			</includes>
 		</fileSet>
 		<!-- import il jar del progetto -->
-		<fileSet>
+	 	<fileSet>
 			<directory>${project.build.directory}/</directory>
 			<outputDirectory>/lib/</outputDirectory>
 			<includes>
@@ -59,7 +60,7 @@
 	<!-- package dependencies -->
 	<dependencySets>
 		<dependencySet>
-			<outputDirectory>/lib</outputDirectory>
+			<outputDirectory>/lib/</outputDirectory>
 			<useProjectArtifact>false</useProjectArtifact>
 			<useTransitiveDependencies>true</useTransitiveDependencies>
 			<unpack>false</unpack>
