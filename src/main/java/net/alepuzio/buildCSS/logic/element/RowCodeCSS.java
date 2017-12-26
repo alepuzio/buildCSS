@@ -25,14 +25,14 @@ public class RowCodeCSS {
 		return new RowCodeCSS(newValue);
 	}
 	
-	/************* PRIVATE METHODS ****************/
 	
 	protected RowCodeCSS(String newValue){
 		this.value  = newValue;
 	}
 
+	/************* PRIVATE METHODS ****************/
 	
-	protected  RowCodeCSS substitute(String valueToChange, String key, Properties currentProperties) {
+	private  RowCodeCSS substitute(String valueToChange, String key, Properties currentProperties) {
 		String replacement = new StringBuilder(EnumCSSKey.SHARP.getValue()).append( currentProperties.getProperty(key)).toString();
 		return new RowCodeCSS(valueToChange.replaceAll(key, replacement));
 	}
