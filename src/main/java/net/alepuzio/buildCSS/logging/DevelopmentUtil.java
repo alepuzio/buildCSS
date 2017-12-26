@@ -1,4 +1,4 @@
-package net.alepuzio.buildCSS;
+package net.alepuzio.buildCSS.logging;
 
 public abstract class DevelopmentUtil {
 	
