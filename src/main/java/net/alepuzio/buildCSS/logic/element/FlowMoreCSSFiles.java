@@ -13,13 +13,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
-import net.alepuzio.buildCSS.DevelopmentUtil;
-import net.alepuzio.buildCSS.DevelopmentUtilActive;
-import net.alepuzio.buildCSS.DevelopmentUtilInactive;
 import net.alepuzio.buildCSS.enumeration.EnumFileSystem;
 import net.alepuzio.buildCSS.enumeration.EnumKey;
 import net.alepuzio.buildCSS.enumeration.EnumMessages;
 import net.alepuzio.buildCSS.enumeration.EnumSyntax;
+import net.alepuzio.buildCSS.logging.DevelopmentUtil;
+import net.alepuzio.buildCSS.logging.DevelopmentUtilActive;
+import net.alepuzio.buildCSS.logging.DevelopmentUtilInactive;
 
 
 /**
@@ -244,6 +244,13 @@ public class FlowMoreCSSFiles {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return "FlowMoreCSSFiles [directoryInput=" + this.directoryInput + ", directoryOutput=" +  this.directoryOutput
+				+ ", pathModelCSS=" + this.pathModelCSS + ", nameTemplate=" +  this.nameTemplate + ", templateCSSProperties="
+				+  this.templateCSSProperties + ", activeMessage="  + this.activeMessage + "]";
+	}
+
 	public boolean isActiveMessage() {
 		return this.activeMessage;
 	}

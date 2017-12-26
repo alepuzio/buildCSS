@@ -25,8 +25,11 @@ public class FactoryFlowMoreCSS {
 	public File getAbc() {
 		return this.abc;
 	}
+	@Override
+	public String toString() {
+		return "FactoryFlowMoreCSS [abc=" + this.abc + "]";
+	}
 
-	
 
 	
 }

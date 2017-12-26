@@ -11,10 +11,6 @@ public class FactoryRowCSS {
 		this.newValue = newValue;
 	}
 	
-//	public FactoryRowCSS() {
-//		this("");
-//	}
-	
 
 	public String getNewValue() {
 		return this.newValue;
