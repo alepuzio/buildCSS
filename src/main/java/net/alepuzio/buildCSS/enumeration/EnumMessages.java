@@ -2,12 +2,11 @@ package net.alepuzio.buildCSS.enumeration;
 
 public enum EnumMessages {
 	
-	WRONG_ARGUMENTS("Wrong arguments: it need only the name of CSS template."),
+	WRONG_ARGUMENTS("Absent configuration file."),
 	UNDEFINED_MODEL("Undefined model:"),
-	WRONG_ARGUMENTS_PATH("Wrong arguments: it need only the path of configuration's file."),
-	NULL_INSTANCE("Null instance"),
+	NULL_INSTANCE("Null instance of configuration file"),
 	UNDEFINED_CSS_MODEL("Undefined CSS model:"),
-	FORBITTEN_FILE("Don't have read permission");
+	FORBITTEN_FILE("Don't have the read permission");
 	;
 	
 	private String value;
