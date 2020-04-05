@@ -1,7 +1,12 @@
 # BuildCSS
+
 Project in JAVA to create automatically variuos CSS stlesheets for my personal website [Alepuzio](http://www.alepuzio.net).
 The CSS files are build by a template file and more colour schemes.
 
+## Status CI Integration
+ 
+ I use [Travis](https://travis-ci.org/)
+ [![Build Status](https://travis-ci.org/alepuzio/buildCSS.svg?branch=master)](https://travis-ci.org/alepuzio/buildCSS)
 
 ## Getting started
 
@@ -30,8 +35,8 @@ No indications
 Please read the file [CONTRIBUTING.md](http://github.com/alepuzio/buildCSS/CONTRIBUTING.md)
 
 ## Deployment
-
- - Run _mvn package_ : Maven and Spring Batch create a runnable jar package
+ 
+ - Run the command _mvn -X -e clean compile package install assembly:single dependency:sources_: Maven and Spring Batch create a runnable jar package
  * Run the the script _.bat_ or _.sh_
 
 ### Built with:
