@@ -3,21 +3,21 @@ Project in JAVA to create automatically variuos CSS stlesheets for my personal w
 The CSS files are build by a template file and more colour schemes.
 
 
-##Getting started
+## Getting started
 
-###Prerequisites
+### Prerequisites
 
 - Java 1.7 or more
 - IDE or text editor
 - Maven 
 
-###Installing
+### Installing
 
 - Clone the project with _git-clone_ (or download directly it)
 - Have fun!
 
 
-##Running the tests
+## Running the tests
 
  - Run JUnit
 
