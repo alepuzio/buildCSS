@@ -2,6 +2,7 @@ package net.alepuzio.buildCSS.parsing;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,8 +11,12 @@ import org.kohsuke.args4j.Option;
 import org.kohsuke.args4j.ParserProperties;
 
 import net.alepuzio.buildCSS.enumeration.EnumMessages;
-import net.alepuzio.buildCSS.logic.element.FactoryFlowMoreCSS;
+import net.alepuzio.buildCSS.enumeration.Forbitten;
+import net.alepuzio.buildCSS.enumeration.Message;
+import net.alepuzio.buildCSS.enumeration.NoConfig;
+import net.alepuzio.buildCSS.enumeration.NoFile;
 import net.alepuzio.buildCSS.logic.element.FlowMoreCSSFiles;
+import net.alepuzio.physical.FactoryFlowMoreCSS;
 
 public class ArgumentsByConsole {
 
@@ -34,16 +39,16 @@ public class ArgumentsByConsole {
 	}
 
 	@SuppressWarnings("deprecation")
-	private void validate() throws CmdLineException {
+	private void validate() throws CmdLineException {//TODO decorator
 		File configurationFile = this.getConfigurationFile();
-		EnumMessages showException = null;
+		Message showException = null;
 		if (null != configurationFile) {
 			if (configurationFile.exists()) {
 				if (!configurationFile.canRead()) {
-					showException = EnumMessages.FORBITTEN_FILE;
+					showException = new Forbitten();
 				}
 			} else {
-				showException = "Absent configuration file.";
+				showException = new NoConfig();
 				File f = new File(".");
 				List<String> lista = Arrays.asList(f.list());
 				for(String tmp: lista) {
@@ -51,16 +56,16 @@ public class ArgumentsByConsole {
 				}
 			}
 		} else {
-			showException = EnumMessages.NULL_INSTANCE; //TODO use a class, not an enum
+			showException = new NoFile();
 		}
 		if (null != showException) {
 			throw new CmdLineException(buildMsg(showException, configurationFile));
 		}
 	}
 
-	private String buildMsg(EnumMessages message, File configurationFile) {
+	private String buildMsg(Message message, File configurationFile) {
 		String msg = message.getValue();
-		if(!EnumMessages.NULL_INSTANCE.equals(message)) {
+		if(message.notNull()) {
 			msg = msg + ": " + configurationFile.getName();
 		}
 		return msg;
@@ -70,12 +75,9 @@ public class ArgumentsByConsole {
 	 * 
 	 * */
 	public void createsCSSThemesFromDirectory() {
-		try {
 			FlowMoreCSSFiles css = new FactoryFlowMoreCSS(this.getConfigurationFile()).factory();
 			css.createsCSSThemesFromDirectory();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 	}
 
 	public File getConfigurationFile() {

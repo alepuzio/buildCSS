@@ -1,6 +1,6 @@
 package net.alepuzio.buildCSS.enumeration;
 /**
- * @overview: Enumeration used into program
+ * @overview: Enumeration used into program TODO move logical
  * */
 public enum EnumKey {
 	FIRST,

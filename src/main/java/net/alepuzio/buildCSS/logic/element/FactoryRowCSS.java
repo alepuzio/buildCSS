@@ -1,27 +1,22 @@
 package net.alepuzio.buildCSS.logic.element;
 
-import net.alepuzio.buildCSS.enumeration.EnumSyntax;
-
+/**
+ * @overview: this class builds a CSS row of the final files*/
 public class FactoryRowCSS {
 	
-	private String newValue = null;
+	public final String newValue;
 	
 	public FactoryRowCSS(String newValue) {
-		super();
 		this.newValue = newValue;
 	}
 	
-
-	public String getNewValue() {
-		return this.newValue;
-	}
-
 	public final RowCodeCSS instance(){
-		return new RowCodeCSS(getNewValue());
+		return new RowCodeCSS(this.newValue);
 	}
 	
+	//TODO read yegor
 	public  RowCodeCSS instanceEmpty() {
-		return new RowCodeCSS(EnumSyntax.CR.getValue()) ;
+		return new RowCodeCSS("\n") ;
 	}
 
 }
