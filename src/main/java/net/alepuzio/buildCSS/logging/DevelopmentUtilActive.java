@@ -1,22 +1,16 @@
 package net.alepuzio.buildCSS.logging;
 
-public class DevelopmentUtilActive extends DevelopmentUtil {
+public class DevelopmentUtilActive implements DevelopmentUtil {
 	
-	private String message;
+	public final String message;
 	
 	public DevelopmentUtilActive( String newMessage) {
 		this.message = newMessage;
 	}
 	
-	@Override
 	public void printMsgDebug(){
-		System.out.println( this.getMessage());
+		System.out.println( this.message);
 	}
-
-	public String getMessage() {
-		return this.message;
-	}
-	
 	
 
 }

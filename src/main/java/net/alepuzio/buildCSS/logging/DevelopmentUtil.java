@@ -1,9 +1,7 @@
 package net.alepuzio.buildCSS.logging;
 
-public abstract class DevelopmentUtil {
+public interface DevelopmentUtil {
 	
-	public void printMsgDebug(){
-		//do nothing
-	}
+	public void printMsgDebug();
 
 }

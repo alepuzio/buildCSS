@@ -1,10 +1,9 @@
 package net.alepuzio.buildCSS.logging;
 
-public class DevelopmentUtilInactive extends DevelopmentUtil {
+public class DevelopmentUtilInactive implements DevelopmentUtil {
 
-	@Override
 	public void printMsgDebug(){
-		//do notohing
+
 	}
 
 }
