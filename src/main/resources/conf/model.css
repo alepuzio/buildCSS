@@ -1,433 +1,364 @@
-#container {	
-	background: FIRST;
-	text-align: left; 
-	margin: 0 auto; 
-	display:inline;
+/**
+from https://colorpalettes.net/category/pastel-color/page/2/
+colori:
+ #1a1818; 10.2% red, 9.4% green and 9.4% blue.
+ #49290f; 28.6% red, 16.1% green and 5.9% blue.
+ #c5af62; 77.3% red, 68.6% green and 38.4% blue
+ #b18322;69.4% red, 51.4% green and 13.3% blue.
+
+ Web Safe Colors are an informal standard of 216 colors that are generally considered web safe.
+
+*/
+body {
+  color: #000;
+  background: #1a1818;/*body*/
+  text-align: justify;
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-#test{
-	display:none;
-}
-#form404{
-	font-family: Verdana,Arial,sans-serif ;
-}
-
-#intro{
-	background-color: FOURTH;
-}
-
-#pageHeader{ 
-	background-color: #D98310;
+#containerBig {
+  background-color: #49290f;/*containerBig*/
+  display: block;
+  margin: 0 auto;
 	text-align: center;
-	border-top: 0.2em solid #555;
-	color:#000;
-	z-index:5;
-	font-weight: 700;
+  width: 75%;
 }
 
-#pageHeader h1{
-	display:none;
-	z-index:100;
-} 
-
-#pageHeader h2{
-	display:none;
-	z-index:50;
-} 
-
-#pageHeader p{
-	display:none;
-	z-index:25;
-} 
-	
-#supportingText{
-	background: FOURTH;
-	z-index:100;
-}
-#quickSummary{
-	z-index: 5;
-	position: relative;
-	font-size: x-small;
-	text-align: right;
-	background: FOURTH;
+#intro { /*empty*/ }
+/*****************pageHeader**********************/
+#pageHeader {
+  background-color: #c5af62;/*header*/
+  display: block;
+  height: 21em;
+  left: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
 }
 
-#quickSummary p span {
-	display:none;
+#pageHeader h1 {
+  background-image: url(../img/titolo.png);
+  background-position: left;
+  background-repeat: no-repeat;
+  display: block;
+  height: 100%;
+/*  text-indent: -500%;*/
 }
 
-#quickSummary .p1 span {
-	display: none;
+/**************quicksummary************/
+#quickSummary {
+  display: block;
+  position: relative;
+  background-color: #49290f;
+  color: #c5af62;
 }
 
-#quickSummary .p2  span {
-	display: none;
+#navigation {
+  background-color: #b18322;/*barra di navigazione*/
+  display: block;
+  position: relative;
 }
 
-#quickSummary blockquote{
-	background:  SECOND;
-	text-align: justify;
-	color: #333;
-	font-size: 150%;
-	font-style: oblique;
-	border: 1px solid #555;
+/********************cookie**************/
+#cookie { text-align: center;}
+
+
+#cookie h3{
+  font-weight: 700;
+  text-align: center;
+  text-indent: 2em;
 }
 
-#footer {
-	background-color: FOURTH;
-	display:block;
-	font-family: Arial, Helvetica, sans-serif;
-	text-align: justify;
-}
+/******************languages*************/
 
-#economics{
-	display:block;
-	background-color: SECOND;
-	voice-family: male;
-	text-align: justify;
-	border-right: 2px solid #999;
-	font-family: Verdana,Arial, sans-serif ;
-	
-}
-#economicsResources {
-	display:block ; 
-	background-color:  SECOND;
-}
- 
-#economicsResources li {
-	list-style: square;
-	text-align:left;
-}
+#languages { display:none;}
+#portfolio { text-align: center;}
 
-#economics h3 {
-	background: THIRD;
-	color: SECOND;
-	font-weight: 700;
+#supportingText {
+	background: #c5af62;/*articolo*/
+  display: block;
+  color: #000;
+  voice-family: male;
+  text-align: justify;
 }
-
-#numismatics{
-	display:block;
-	voice-family: male;
-	background-color: SECOND;
-	text-align: justify;
-	font-family: Verdana,Arial,sans-serif;
-}
-
-#numismatics h3 {
-	background: THIRD;
-	color: SECOND;
-	font-weight: 700;
-	background-repeat: no-repeat;
-}
-
-#numismaticsResources {
-	display:block;  
-	background-color:  SECOND;
-}
-
-#numismaticsResources li {
-	list-style: square; 
-	text-align:left;
-}               
 
 #presentation {
-	display:block;
-	background-color: SECOND;
-	voice-family: male;
-	text-align: justify;
-	border-right: 2px solid #999;
-	font-family: Verdana,Arial,sans-serif ;
+  display: block;
+  position: relative;
+}
+#job {
+  display: block;
+  position: relative;
+}
+#literature{
+  display: block;
+  position: relative;
+}
+#economics {
+  display: block;
+  position: relative;
+}
+#numismatics {
+  display: block;
+  position: relative;
+}
+#photography{
+  display: block;
+  position: relative;
+}
+#footer {
+  background-color: #b18322;
+  display: block;
+  position:relative;
+  font-size: 100%;
+  text-align: center;
+	overflow: hidden;
+}
+#contact {
+  display: block;
+  position: relative;
+  float: left;
+  text-align: center;
+}
+#validator {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+#copyright{
+  display: block;
+  position: relative;
+  float: left;
+  text-align: center;
 }
 
-#presentation h3 {
-	background: THIRD;
-	color: SECOND;
+#twitter {display: inline;}
+
+#stack { border-top: .2em solid #555}
+
+
+  #design {display: none;}
+  #extraDiv1 {display: none;}
+  #extraDiv2 {display: none;}
+  #extraDiv3 {display: none;}
+  #extraDiv4 {display: none;}
+  #extraDiv5 {display: none;}
+  #extraDiv6 {display: none;}
+  #hrefCSS {display: none;}
+  #hrefHTML {display: none;}
+  #imgCSS {display: none;}
+  #test {display: none;}
+
+  #href508 { display:inline;/*background-color: #transparent*/}
+  #hrefAAA { display:inline;/*background-color: #transparent*/}
+  #hrefAnobii { display:inline;/*background-color: #transparent*/}
+  #hrefAnyBrowser { display:inline;/*background-color: #transparent*/}
+  #hrefBruno { display:inline;/*background-color: #transparent*/}
+  #hrefCC { display:inline;/*background-color: #transparent*/}
+  #hrefDelicious { display:inline;/*background-color: #transparent*/}
+  #hrefDuca { display:inline;/*background-color: #transparent*/}
+  #hrefEmail { display:inline;/*background-color: #transparent*/}
+  #hrefGamberetta { display:inline;/*background-color: #transparent*/}
+  #hrefGood { display:inline;/*background-color: #transparent*/}
+  #hrefGoogle { display:inline;/*background-color: #transparent*/}
+  #hrefJava { display:inline;/*background-color: #transparent*/}
+  #hrefLinkedin { display:inline;/*background-color: #transparent*/}
+  #hrefMoneta { display:inline;/*background-color: #transparent*/}
+  #hrefNamyz { display:inline;/*background-color: #transparent*/}
+  #hrefOpenClipArt { display:inline;/*background-color: #transparent*/}
+  #hrefReddit { display:inline;/*background-color: #transparent*/}
+  #hrefSupport { display:inline;/*background-color: #transparent*/}
+  #hrefTwitter { display:inline;/*background-color: #transparent*/}
+  #hrefUsemlab { display:inline;/*background-color: #transparent*/}
+  #hrefViadeo { display:inline;/*background-color: #transparent*/}
+  #hrefXing { display:inline;/*background-color: #transparent*/}
+
+
+  #form404 {
+    background-attachment: local;
+    background-image: url(../../img/minimal/refrigerator-158634_640.png);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    height: 30em;
+    margin: 3em;
+    text-align: left;
+  }
+
+/******************************elementi standard html*********************************/
+p span {
+	display: block;
+  margin: 0;
+	padding: 0 4em 1em;
+}
+
+acronym {
+	border-top: .1em dashed #000;
+	border-bottom: .1em dashed #000
+}
+a {
+  font-weight: 700;
+}
+a:hover {
+	border: 1px dotted #000;
+	color: #F00;
+  font-style: oblique;
+}
+a:visited { font-style: oblique; }
+.selected {
+	background-color: #AAA;
+	text-transform: uppercase
+}
+a:active {font-style: oblique;}
+a:link {font-style: oblique;}
+.clear {clear: both}
+.important {display: inline;}
+h1 {border: 1px #49290f; }
+h2 {border: 1px #49290f; }
+h3 {border: 1px #49290f; }
+
+h4 {
+	 font-style:italic;
+}
+/******************************titoli*************************************/
+
+
+#pageHeader h2 {/*empty*/}
+
+#contact h3 {
+  background-color: #c5af62;
+  border-top: .2% solid #49290f;
+  color: #49290f;
+  font-style: oblique;
+  text-align: center;
 	font-weight: 700;
+  font-size: 100%;
 }
-
-#presentationResources {
-	display: none;
+#copyright h3 {
+  background-color: #c5af62;
+  border-top: .2% solid #49290f;
+  color: #49290f;
+  font-size: 100%;
+  font-style: oblique;
+	font-weight: 700;
+	text-align: center;
 }
-
-
-#job{
-	display:block;
-	voice-family: male;
-	text-align: justify;
-	background-color: SECOND;
-	border-right: 2px solid #999;
-	font-family: Verdana, Arial, sans-serif ;
+#economics h3 {
+  background-color: #b18322;
+  color: #49290f;
+  font-weight: 700;
+  text-align: center;
 }
-
+#photography h3 {
+  background-color: #b18322;
+  color: #49290f;
+  font-weight: 700;
+  text-align: center;
+}
 #job h3 {
-	background: THIRD;
-	color: SECOND;
+  background-color: #b18322;
+  color: #49290f;
+  font-weight: 700;
+  text-align: center;
+}
+#languages h3 {
+display:none;
+	/*	border-top: .2em solid #49290f;
 	font-weight: 700;
+	text-align: center;
+*/}
+#literature h3 {
+  background-color: #b18322;
+  color: #49290f;
+  font-weight: 700;
+  text-align: center;
+}
+#numismatics h3 {
+  background-color: #b18322;
+  color: #49290f;
+  font-weight: 700;
+  text-align: center;
+}
+#portfolio h3 {
+	/*text-indent: 2em;*/
+  border-top: .2em solid #49290f;
+  font-weight: 700;
+  text-align: center;
+}
+#presentation h3 {
+  background-color: #b18322;
+  color: #49290f;
+  font-weight: 700;
+  text-align: center;
+}
+#validator h3 {
+  border-top: .2% solid #49290f;
+	font-weight: 700;
+	text-align: center;
+  font-size: 100%;
+  font-style: oblique;
+  background-color: #c5af62;
+  color: #49290f;
+}
+
+
+
+
+/****************************elenchi********************************/
+#contact ul {
+	list-style: none
+}
+#contact li {
+	float: left;
+  padding-left: 5%;
+  text-align: center;
+  display: inline;
+  list-style: none;
+  font-size: 100%;
+}
+#portfolio ul {
+  	list-style: none
+}
+#portfolio li{
+  list-style-type: none;
 }
 
 #job ul {
-	list-style-type:square;
-	left:20em;
-	padding-left: 6em;
+	list-style-type: square;
+  padding-left: 15%;
+}
+#languages li {
+	display:none;
+	/*list-style-type: none;
+  padding-right: 5%;*/
 }
 
-#job li {
-	padding-left: 0.5em;
-}
-
-#jobResources {
-	display:block; 
-	background-color:  SECOND;
-}
-
-#jobResources p  {
-	background: #000;
-}
-
-#jobResources li {
-	list-style: square; text-align:left;
-}               
-
-#literature{
-	display:block;
-	background-color: SECOND;
-	voice-family: male;
-	text-align: justify;
-	border-right: 2px solid #999;
-	font-family: Verdana,Arial,sans-serif ;
-}
-
-#literature  h3 {
-	background: THIRD;color: SECOND;
-	font-weight: 700;
-}
-
-#literatureResources    {
-	display:block;
-	background-color:  SECOND;
-} 
-#literatureResources p  {/*display:block;*/display:inline; }
-#literatureResources li	{list-style: square; text-align:left; }               
-
-#portfolio{
-	/*display:block;*/display:block;
-	background: SECOND;
-	/*width: 20em;*/
-	text-align: left;
-	font-family: Verdana,Arial,sans-serif ;
-}
-
-#portfolio h3{
-	color:THIRD;
-	font-weight: 700;
-	text-align:left;
-	/*width: 20em;*/
-	font-family: Verdana,Arial,sans-serif ;
-	text-indent: 2em;
-
-}
-
-#cookie {
-	display: block;
-	
-	background: SECOND;
-
-	text-align:justify;
-	font-family: Verdana,Arial,sans-serif ;
-}
-#cookie li{
-	list-style-type:square;	
-}
-#cookie h3{
-	background: THIRD;color: SECOND;
-	font-weight: 700;
-	text-align:left;
-	
-	font-family: Verdana,Arial,sans-serif ;
-	text-indent: 2em;
-	
-}
-#languages {
-	/*display:block;*/display:block;
-	background-color: SECOND;
-	/*width: 20em;*/
-	bottom: 5em;
-	text-align:left;
-	font-family: Verdana,Arial,sans-serif ;
-}
-#languages li{
-	list-style-type:square;	
-}
-#languages h3{
-	border-top: 0.2em solid #555;
-	background: THIRD;color: SECOND;
-	font-weight: 700;
-	text-align:left;
-	/*width: 20em;*/
-	font-family: Verdana,Arial,sans-serif ;
-	text-indent: 2em;
-}
-#hcard-Alessandro-Puzielli{
-	color:#000;
-	/*display:block;*/display:inline;
-	position: relative;
-	text-align: justify;
-	top: -3em; 
-	/*width: 20em;*/
-}
-#twitter{
-	display:inline;
-	float: right;
-	
-	right: 3em;	
-	
-	z-index: 100;
-}
-
-#stack{
-	border-top: 0.2em solid #555;
-	}
-
-#fra {/*display:block;*/display:inline;}
-
-#extraDiv1{display: none;}
-#extraDiv2{display: none;}
-#extraDiv3{display: none;}
-#extraDiv4{display: none;}
-#extraDiv5{display: none;}
-#extraDiv6{display: none;}
-
-#href508{display:none;} 
-#hrefAAA{display:none;}
-#hrefAnobii{display:none;}
-#hrefAnyBrowser{display:none;} 
-#hrefBlog{display:none;}
-#hrefBruno{display:none;}
-#hrefCSS{display:none;}
-#hrefCC{display:none;}
-#hrefDelicious{display:none;}
-#hrefDuca{display:none;}
-#hrefEmail{display:none;}
-#hrefGamberetta{display:none;}
-#hrefGood{display:none;}
-#hrefGoogle{display:none;}
-#hrefHTML{display:none;} 
-#hrefJava{display:none;}
-#hrefLinkedin{display:none;}
-#hrefMoneta{display:none;}
-#hrefOpenClipArt{display:none;}
-#hrefReddit{display:none;}
-#hrefSlide{display:none;}
-#hrefSupport{display:none;}
-#hrefTwitter{display:none;}
-#hrefNamyz{display:none;}
-#hrefXing{display:none;}
-#hrefUsemlab{display:none;}
-#hrefViadeo{display:none;}
-#design{
-	display: none;
-}
-
-#contact{
-	background-color: SECOND;
-	/*display:block;*/display:block; background-color: SECOND;
-	/*float: left;*/
-	font-size: 100%;
-	
-	/*padding-right:0em;*/
-	text-align: justify;
-	/*width: 22em;*/
-}
-#contact h3 {
-	background: THIRD;color: SECOND;
-	font-weight: 700;
-	font-size: 150%;
-	font-style: oblique;
-	text-align: center;
-
-}
-#contact ul {
-	list-style:none;
-}
-#contact li {
-	list-style:none;
-	/*float:left;*/
-	text-align: justify;
-	/*padding-left: 0.5em;*/
-}
-
-#contact li:before {content:url(../img/minimal/Bullet.gif); }
-
-
-#validator{
-	/*display:block;*/display:block; background-color: SECOND;
-	font-size: 100%;
-	text-align: justify;
-}
-#validator h3 {
-	text-align: center; 
-	border-top: 0.2em solid #555;
-	background: THIRD;
-	color: SECOND;
-	font-weight: 700;
-	
-	font-size: 150%;
-	font-style: oblique;
-	background-image: url(../img/minimal/validator.png);
-	background-repeat: no-repeat;
-}
-
-#validator ul{
-	display: inline;
-	/*list-style:none;*/
+#validator ul {
+  list-style: none;
 }
 #validator li {
-	font-size: 100%; 
-	display: inline;
-	
+  display: inline;
+  float: left;
+  font-size: 100%;
+  padding-left: 5%;
+  text-align: center;
+
 }
 
-#validator li:before {content:url(../img/minimal/Bullet.gif); }
+
+/***********************elementi tipografia*************************/
 
 
-/**copyright**/
-#copyright{
-	/*display:block;*/display:block; background-color: SECOND;
+#pageHeader p { /*empty*/ }
+
+#quickSummary .p1 span {	display: none; }
+#quickSummary .p2 span {	display: inline; }
+#quickSummary p span { display: block; }
+
+#quickSummary blockquote {
+	text-align: center;
 	font-size: 100%;
-
-}
-#copyright h3 {
-	background: THIRD;color: SECOND;
-	font-weight: 700;
-	text-align: center; 
-	
-	font-size: 150%;
 	font-style: oblique;
-	background-image: url(../img/minimal/copyright.png);
-	background-repeat: no-repeat;
+  /**mettere stile corsivo*/
 }
-#copyright ul {
-	list-style-type: square;
-}
-#copyright li {
-	font-size: 100%; 
-}
-
-#msgError{
-	background: THIRD;color: SECOND;
-	font-weight: 700;
-	/*width: 20em;	*/
-	text-align: center; 
-	color: #000;
-	font-size: 150%;
-	font-style: oblique;
-	/*margin-top:2em;*/
-
-}
-
-#img404{
-	/*display:block;*/display:inline;
-	background-color: SECOND;
-}
-
-#imgCSS{display:none;}
