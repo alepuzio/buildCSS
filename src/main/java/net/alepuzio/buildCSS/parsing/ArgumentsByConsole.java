@@ -51,7 +51,7 @@ public class ArgumentsByConsole {
 				}
 			}
 		} else {
-			showException = EnumMessages.NULL_INSTANCE;
+			showException = EnumMessages.NULL_INSTANCE; //TODO use a class, not an enum
 		}
 		if (null != showException) {
 			throw new CmdLineException(buildMsg(showException, configurationFile));

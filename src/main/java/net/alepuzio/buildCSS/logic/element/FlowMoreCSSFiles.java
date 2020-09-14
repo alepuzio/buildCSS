@@ -107,8 +107,8 @@ public class FlowMoreCSSFiles {
 	private List<RowCodeCSS> useTemplateOverModelCSS() throws IOException {
 		this.useDevelopmentUtil("useTemplateOverModelCSS();").printMsgDebug();
 		List<RowCodeCSS> row = new ArrayList<RowCodeCSS>();
-    	BufferedReader templateCSSToRead = null;
-    	try {
+ 	   	BufferedReader templateCSSToRead = null;
+    		try {
 			templateCSSToRead = new BufferedReader(new FileReader(this.pathModelCSS().getAbsoluteFile()));
 			String currentLine = null;
 			while (null != ( currentLine = templateCSSToRead.readLine())) {
