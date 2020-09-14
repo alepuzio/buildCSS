@@ -4,7 +4,7 @@ colori:
  #FIRST; 10.2% red, 9.4% green and 9.4% blue.
  #SECOND; 28.6% red, 16.1% green and 5.9% blue.
  #THIRD; 77.3% red, 68.6% green and 38.4% blue
- #FOUR;69.4% red, 51.4% green and 13.3% blue.
+ #FOURTH;69.4% red, 51.4% green and 13.3% blue.
 
  Web Safe Colors are an informal standard of 216 colors that are generally considered web safe.
 
@@ -55,7 +55,7 @@ body {
 }
 
 #navigation {
-  background-color: #FOUR;/*barra di navigazione*/
+  background-color: #FOURTH;/*barra di navigazione*/
   display: block;
   position: relative;
 }
@@ -108,7 +108,7 @@ body {
   position: relative;
 }
 #footer {
-  background-color: #FOUR;
+  background-color: #FOURTH;
   display: block;
   position:relative;
   font-size: 100%;
@@ -245,19 +245,19 @@ h4 {
 	text-align: center;
 }
 #economics h3 {
-  background-color: #FOUR;
+  background-color: #FOURTH;
   color: #SECOND;
   font-weight: 700;
   text-align: center;
 }
 #photography h3 {
-  background-color: #FOUR;
+  background-color: #FOURTH;
   color: #SECOND;
   font-weight: 700;
   text-align: center;
 }
 #job h3 {
-  background-color: #FOUR;
+  background-color: #FOURTH;
   color: #SECOND;
   font-weight: 700;
   text-align: center;
@@ -269,13 +269,13 @@ display:none;
 	text-align: center;
 */}
 #literature h3 {
-  background-color: #FOUR;
+  background-color: #FOURTH;
   color: #SECOND;
   font-weight: 700;
   text-align: center;
 }
 #numismatics h3 {
-  background-color: #FOUR;
+  background-color: #FOURTH;
   color: #SECOND;
   font-weight: 700;
   text-align: center;
@@ -287,7 +287,7 @@ display:none;
   text-align: center;
 }
 #presentation h3 {
-  background-color: #FOUR;
+  background-color: #FOURTH;
   color: #SECOND;
   font-weight: 700;
   text-align: center;

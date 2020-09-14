@@ -43,7 +43,7 @@ public class ArgumentsByConsole {
 					showException = EnumMessages.FORBITTEN_FILE;
 				}
 			} else {
-				showException = EnumMessages.WRONG_ARGUMENTS;
+				showException = "Absent configuration file.";
 				File f = new File(".");
 				List<String> lista = Arrays.asList(f.list());
 				for(String tmp: lista) {
