@@ -2,7 +2,10 @@ package net.alepuzio.physical;
 
 import java.util.Properties;
 
-public interface HardDisk{
+/**
+ * @overview: interface where the data of the context
+ * */
+public interface HardDisk {
 	public Properties propertiesEnvironment();
 
 }

@@ -76,13 +76,10 @@ public class ArgumentsByConsole {
 	 * 
 	 * */
 	public void createsCSSThemesFromDirectory() {
-			IDIrectoryOutput css = new IDIrectoryOutput(this.getConfigurationFile()).factory();
+			FlowMoreCSSFiles css = new FlowMoreCSSFiles(this.configurationFile);
 			css.createsCSSThemesFromDirectory();
 		
 	}
 
-	public File getConfigurationFile() {
-		return this.configurationFile;
-	}
 
 }
