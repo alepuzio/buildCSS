@@ -36,12 +36,12 @@ public class FlowMoreCSSFiles /*implemements*/{
 	}
 	
 	/**
-	 * @effects: Write the physical CSS files after substitution
+	 * @effects: create the  final CSS files substituting the platenames
 	 * */
 	public void createsCSSThemesFromDirectory() throws IOException {
 		new DevelopmentUtilActive("createsCSSThemesFromDirectory").printMsgDebug();
-		DirectoryOutput output = new DirectoryOutput(null);
-		for(File singleTemplate : templates){
+		List<TemplateCSS> templates = templateCSS();
+		for(TemplateCSS singleTemplate : templates){
 			new DevelopmentUtilActive("loadSingleTemplate(" + singleTemplate + ");").printMsgDebug();
 			new NameTemplate(singleTemplate).load();
 			List<RowCodeCSS> cssCode = new PathDesktopModelCSS(null).useTemplateOverModelCSS();

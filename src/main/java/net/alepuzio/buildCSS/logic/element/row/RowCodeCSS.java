@@ -1,16 +1,18 @@
-package net.alepuzio.buildCSS.logic.element;
+package net.alepuzio.buildCSS.logic.element.row;
 
 import java.util.Properties;
 import java.util.Set;
 
-import net.alepuzio.buildCSS.enumeration.EnumCSSKey;
+import net.alepuzio.buildCSS.logic.element.EnumKey;
+import net.alepuzio.buildCSS.logic.element.MappingNameplate;
+
+
 /**
  * @overview: This class represents a single CSS instruction or a single row into CSS files
  * */
 public class RowCodeCSS {
 	
 	public final String value;
-	public final Mapping mappingNameplate;
 	/**
 	 * @return a new RowCodeCSS , after substitute the constant FIRST, SECOND, etc
 	 * */
@@ -18,26 +20,38 @@ public class RowCodeCSS {
 		String newValue = this.value;
 		Set<Object> keys = newProperties.keySet();
 		for  (Object singleKey: keys){
-			newValue = this.mappingNameplate.value((String)singleKey);
+			newValue = new MappingNameplate(newProperties).value((String)singleKey);
 		}
-		return newValue;
+		return new RowCodeCSS(newValue);
 	}
 	
 	/**
 	 * @return true if currentLine has at least one key in properties file
 	 * @param currentLine: read line 
 	 * */
-	public boolean currentLineHasAtLeastOneKeyword() {
+	public boolean hasOnePlatename() {
 		return value.contains(EnumKey.FIRST.name())
 				|| value.contains(EnumKey.SECOND.name())
 				|| value.contains(EnumKey.THIRD.name()) 
 				|| value.contains(EnumKey.FOURTH.name());
 	}
 	
-	protected RowCodeCSS(String newValue, Properties currentProperties){
+	public RowCodeCSS(String newValue){
 		this.value  = newValue;
-		this.mappingNameplate = new MappingNameplate(currentProperties);
 	}
 
 	
+}
+
+/**
+ * @overview: Enumeration used into program TODO move logical
+ * */
+ enum EnumKey {
+	FIRST,
+	SECOND,
+	THIRD,
+	FOURTH
+	
+	;
+
 }

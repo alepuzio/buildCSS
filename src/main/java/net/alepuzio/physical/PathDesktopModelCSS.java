@@ -28,12 +28,12 @@ public class PathDesktopModelCSS {
 		new DevelopmentUtilActive("useTemplateOverModelCSS();").printMsgDebug();
 		List<RowCodeCSS> row = new ArrayList<RowCodeCSS>();
  	   	BufferedReader templateCSSToRead = null;
-    		try {
+    	try {
 			templateCSSToRead = new BufferedReader(new FileReader(this.pathModelCSS.getAbsoluteFile()));
 			String currentLine = null;
 			while (null != ( currentLine = templateCSSToRead.readLine())) {
 				RowCodeCSS codeCSS = new FactoryRowCSS(currentLine).instance();
-				if (codeCSS.currentLineHasAtLeastOneKeyword()) {
+				if (codeCSS.hasOnePlatename()) {
 					RowCodeCSS codeCSSSostituito = codeCSS.substitutes(templateCSSProperties());
 					row.add(codeCSSSostituito);
 				} else {
