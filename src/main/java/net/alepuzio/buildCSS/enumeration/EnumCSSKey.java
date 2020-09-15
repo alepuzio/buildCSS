@@ -1,6 +1,6 @@
 package net.alepuzio.buildCSS.enumeration;
 
-public enum EnumCSSKey {
+public enum EnumCSSKey {//TODO keep in mind advantages
 
 	SHARP("#")
 	;

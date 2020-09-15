@@ -16,7 +16,24 @@ public class FactoryRowCSS {
 	
 	//TODO read yegor
 	public  RowCodeCSS instanceEmpty() {
+		return new RowCodeCSS("");
+	}
+	
+}
+
+class EndCssInstruction{
+	public final RowCodeCSS row ;
+	
+	public EndCssInstruction(RowCodeCSS newRow) {
+		this.row = newRow;
+	}
+	
+	public RowCodeCSS empty(){
 		return new RowCodeCSS("\n") ;
 	}
-
+	
+	public RowCodeCSS row(){
+		return new RowCodeCSS(this.row.value + "\n") ;
+	}
+	
 }

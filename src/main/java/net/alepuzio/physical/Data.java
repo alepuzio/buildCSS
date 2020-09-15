@@ -3,8 +3,6 @@ package net.alepuzio.physical;
 import java.io.File;
 import java.util.Properties;
 
-import net.alepuzio.buildCSS.enumeration.EnumFileSystem;
-
 public class Data {
 	 
 	 public final HardDisk source ;

@@ -11,12 +11,13 @@ import org.kohsuke.args4j.Option;
 import org.kohsuke.args4j.ParserProperties;
 
 import net.alepuzio.buildCSS.enumeration.EnumMessages;
-import net.alepuzio.buildCSS.enumeration.Forbitten;
-import net.alepuzio.buildCSS.enumeration.Message;
-import net.alepuzio.buildCSS.enumeration.NoConfig;
-import net.alepuzio.buildCSS.enumeration.NoFile;
+import net.alepuzio.buildCSS.logging.message.Forbitten;
+import net.alepuzio.buildCSS.logging.message.Message;
+import net.alepuzio.buildCSS.logging.message.NoConfig;
+import net.alepuzio.buildCSS.logging.message.NoFile;
 import net.alepuzio.buildCSS.logic.element.FlowMoreCSSFiles;
 import net.alepuzio.physical.FactoryFlowMoreCSS;
+import net.alepuzio.physical.IDIrectoryOutput;
 
 public class ArgumentsByConsole {
 
@@ -75,7 +76,7 @@ public class ArgumentsByConsole {
 	 * 
 	 * */
 	public void createsCSSThemesFromDirectory() {
-			FlowMoreCSSFiles css = new FactoryFlowMoreCSS(this.getConfigurationFile()).factory();
+			IDIrectoryOutput css = new IDIrectoryOutput(this.getConfigurationFile()).factory();
 			css.createsCSSThemesFromDirectory();
 		
 	}

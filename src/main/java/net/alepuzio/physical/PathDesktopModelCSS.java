@@ -8,8 +8,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.alepuzio.buildCSS.enumeration.EnumKey;
 import net.alepuzio.buildCSS.logging.DevelopmentUtilActive;
+import net.alepuzio.buildCSS.logic.element.EnumKey;
 import net.alepuzio.buildCSS.logic.element.FactoryRowCSS;
 import net.alepuzio.buildCSS.logic.element.RowCodeCSS;
 

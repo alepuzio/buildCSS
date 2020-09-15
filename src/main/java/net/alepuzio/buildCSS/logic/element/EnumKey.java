@@ -1,4 +1,4 @@
-package net.alepuzio.buildCSS.enumeration;
+package net.alepuzio.buildCSS.logic.element;
 /**
  * @overview: Enumeration used into program TODO move logical
  * */

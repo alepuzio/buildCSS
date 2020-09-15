@@ -1,4 +1,4 @@
-package net.alepuzio.buildCSS.enumeration;
+package net.alepuzio.buildCSS.logging.message;
 
 
 public interface Message{

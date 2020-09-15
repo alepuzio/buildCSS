@@ -10,7 +10,7 @@ import java.util.List;
 import net.alepuzio.buildCSS.logging.DevelopmentUtilActive;
 import net.alepuzio.buildCSS.logic.element.RowCodeCSS;
 
-public class DirectoryOutput implements Directory {
+public class DirectoryOutput implements IDIrectoryOutput {
 	
 	public final File value;
 	
@@ -24,6 +24,22 @@ public class DirectoryOutput implements Directory {
 	public StringBuilder createFileCSS() {
 		return new StringBuilder(value.getAbsolutePath()).append(
 				"\\").append(nameTemplate()).append(".css");
+	}
+	
+	/**
+	 * @effects: Build physical CSS files
+	 * */
+	public void createsCSSThemesFromDirectory() throws IOException {
+		File[] templates = new DirectoryInput(null).loadAllTemplates();
+		DirectoryOutput output = new DirectoryOutput(null);
+		new DevelopmentUtilActive("createsCSSThemesFromDirectory").printMsgDebug();
+		for(File singleTemplate : templates){
+			new DevelopmentUtilActive("loadSingleTemplate(" + singleTemplate + ");").printMsgDebug();
+			new NameTemplate(singleTemplate).load();
+			List<RowCodeCSS> cssCode = new PathDesktopModelCSS(null).useTemplateOverModelCSS();
+			output.writeSingleCSSTheme(cssCode);
+		}
+		
 	}
 	
 	/**

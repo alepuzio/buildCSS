@@ -1,4 +1,4 @@
-package net.alepuzio.buildCSS.enumeration;
+package net.alepuzio.buildCSS.logging.message;
 
 public class NoConfig implements Message{
 	public String getValue() {
