@@ -3,7 +3,6 @@ package net.alepuzio.buildCSS.logic.element.row;
 import java.util.Properties;
 import java.util.Set;
 
-import net.alepuzio.buildCSS.logic.element.EnumKey;
 import net.alepuzio.buildCSS.logic.element.MappingNameplate;
 
 
@@ -16,7 +15,7 @@ public class RowCodeCSS {
 	/**
 	 * @return a new RowCodeCSS , after substitute the constant FIRST, SECOND, etc
 	 * */
-	public RowCodeCSS substitutes(Properties newProperties) {
+	public RowCodeCSS finalCSS(Properties newProperties) {
 		String newValue = this.value;
 		Set<Object> keys = newProperties.keySet();
 		for  (Object singleKey: keys){
@@ -34,9 +33,10 @@ public class RowCodeCSS {
 				|| value.contains(EnumKey.SECOND.name())
 				|| value.contains(EnumKey.THIRD.name()) 
 				|| value.contains(EnumKey.FOURTH.name());
+		//new 	ArrayList<EnumKey>(EnumKey.values()).contains(value); TODO is it possible?
 	}
 	
-	public RowCodeCSS(String newValue){
+	RowCodeCSS(String newValue){
 		this.value  = newValue;
 	}
 
@@ -44,7 +44,7 @@ public class RowCodeCSS {
 }
 
 /**
- * @overview: Enumeration used into program TODO move logical
+ * @overview: Enumeration of the CSS nameplates
  * */
  enum EnumKey {
 	FIRST,

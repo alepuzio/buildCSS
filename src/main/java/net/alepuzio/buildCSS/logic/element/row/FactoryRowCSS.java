@@ -1,6 +1,6 @@
 package net.alepuzio.buildCSS.logic.element.row;
 
-import net.alepuzio.buildCSS.logic.element.RowCodeCSS;
+
 
 /**
  * @overview class that manage a single row as CSS instruction
@@ -13,11 +13,11 @@ public class FactoryRowCSS {
 		this.currentLine = current;
 	}
 	
-	public RowCodeCSS instance(){
+	public RowCodeCSS instance(String currentLine){
 		return new RowCodeCSS(this.currentLine);
 	}
 	
-	public RowCodeCSS finalCSS(){
+	public RowCodeCSS finalCSS(String currentLine){
 		return new RowCodeCSS(this.currentLine);
 	}
 	

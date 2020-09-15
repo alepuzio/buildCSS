@@ -44,8 +44,8 @@ public class TestRowCodeCSS {
 		Assert.assertNotNull(this.rowCodeCSS);
 		Assert.assertNotNull(this.rowCodeCSS.getValue());
 		
-		System.out.println(this.rowCodeCSS.substitutes(properties).getValue());
-		Assert.assertEquals("#1#2#3#4", this.rowCodeCSS.substitutes(properties).getValue());
+		System.out.println(this.rowCodeCSS.finalCSS(properties).getValue());
+		Assert.assertEquals("#1#2#3#4", this.rowCodeCSS.finalCSS(properties).getValue());
 	}
 
 	@Test
@@ -57,6 +57,6 @@ public class TestRowCodeCSS {
 		this.rowCodeCSS  = new FactoryRowCSS(valore).instance();
 		Assert.assertNotNull(this.rowCodeCSS);
 		Assert.assertNotNull(this.rowCodeCSS.getValue());
-		Assert.assertEquals("background: #1;", this.rowCodeCSS.substitutes(properties).getValue());
+		Assert.assertEquals("background: #1;", this.rowCodeCSS.finalCSS(properties).getValue());
 	}
 }

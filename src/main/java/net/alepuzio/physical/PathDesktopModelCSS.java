@@ -34,7 +34,7 @@ public class PathDesktopModelCSS {
 			while (null != ( currentLine = templateCSSToRead.readLine())) {
 				RowCodeCSS codeCSS = new FactoryRowCSS(currentLine).instance();
 				if (codeCSS.hasOnePlatename()) {
-					RowCodeCSS codeCSSSostituito = codeCSS.substitutes(templateCSSProperties());
+					RowCodeCSS codeCSSSostituito = codeCSS.finalCSS(templateCSSProperties());
 					row.add(codeCSSSostituito);
 				} else {
 					row.add(codeCSS);

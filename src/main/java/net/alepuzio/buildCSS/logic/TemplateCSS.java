@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.alepuzio.buildCSS.logging.DevelopmentUtilActive;
-import net.alepuzio.buildCSS.logic.element.RowCodeCSS;
 import net.alepuzio.buildCSS.logic.element.row.FactoryRowCSS;
+import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
 
 /**
@@ -34,17 +34,20 @@ public class TemplateCSS{
 		new DevelopmentUtilActive("useTemplateOverModelCSS();").printMsgDebug();
 		List<RowCodeCSS> finalCSS = new ArrayList<RowCodeCSS>();
  	   	BufferedReader templateCSSToRead = this.initialCodeCSS();
+ 	   	FactoryRowCSS factroy = new FactoryRowCSS(templateCSSProperties());
     	try {
 			String currentLine = null;
 			while (null != ( currentLine = templateCSSToRead.readLine())) {
-				RowCodeCSS codeCSS = new FactoryRowCSS(currentLine).instance();
+				
+				RowCodeCSS codeCSS = factroy.instance(currentLine);//TODO move in a class
 				if (codeCSS.hasOnePlatename()) {//TODO using yegor decorator
-					RowCodeCSS codeCSSSostituito = codeCSS.substitutes(templateCSSProperties());
+					RowCodeCSS codeCSSSostituito = codeCSS.finalCSS(templateCSSProperties());
 					finalCSS.add(codeCSSSostituito);
 				} else {
 					finalCSS.add(codeCSS);
 				}
 			}
+			
 		} catch (FileNotFoundException e) {
 			throw new FileNotFoundException("Undefined CSS model:" + e.getMessage());
 		} catch (IOException e) {
