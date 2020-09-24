@@ -1,4 +1,4 @@
-package net.alepuzio.buildCSS.logic;
+package net.alepuzio.buildCSS.file.type;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.alepuzio.buildCSS.file.Template;
 import net.alepuzio.buildCSS.logging.DevelopmentUtilActive;
 import net.alepuzio.buildCSS.logic.element.row.FactoryRowCSS;
 import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
@@ -16,24 +17,20 @@ import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 /**
  * @overview: file CSS
  * */
-public class TemplateCSS{
+public class TemplateProperties implements Template {
 	
 	public final File file;
 	
-	public TemplateCSS(File newFile){
+	public TemplateProperties(File newFile){
 		this.file = newFile;
 	}	
-
-	public BufferedReader initialCodeCSS() throws FileNotFoundException{
-		return new BufferedReader(new FileReader(this.file.getAbsoluteFile()));
-	}
 	/**
 	 * @return CSS code modified
 	 * */
 	public List<RowCodeCSS> useTemplateOverModelCSS() throws IOException {
 		new DevelopmentUtilActive("useTemplateOverModelCSS();").printMsgDebug();
 		List<RowCodeCSS> finalCSS = new ArrayList<RowCodeCSS>();
- 	   	BufferedReader templateCSSToRead = this.initialCodeCSS();
+ 	   	BufferedReader templateCSSToRead = new BufferedReader(new FileReader(this.file.getAbsoluteFile()));
  	   	FactoryRowCSS factroy = new FactoryRowCSS(templateCSSProperties());
     	try {
 			String currentLine = null;

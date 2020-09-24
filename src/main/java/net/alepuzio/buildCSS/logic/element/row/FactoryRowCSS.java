@@ -13,7 +13,7 @@ public class FactoryRowCSS {
 		this.currentLine = current;
 	}
 	
-	public RowCodeCSS instance(String currentLine){
+	public RowCodeCSS instance(){
 		return new RowCodeCSS(this.currentLine);
 	}
 	

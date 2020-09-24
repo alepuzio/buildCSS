@@ -1,10 +1,6 @@
 package net.alepuzio.buildCSS.logic.element.row;
 
-import java.util.Properties;
-import java.util.Set;
-
-import net.alepuzio.buildCSS.logic.element.MappingNameplate;
-
+import net.alepuzio.buildCSS.file.Template;
 
 /**
  * @overview: This class represents a single CSS instruction or a single row into CSS files
@@ -15,43 +11,122 @@ public class RowCodeCSS {
 	/**
 	 * @return a new RowCodeCSS , after substitute the constant FIRST, SECOND, etc
 	 * */
-	public RowCodeCSS finalCSS(Properties newProperties) {
-		String newValue = this.value;
-		Set<Object> keys = newProperties.keySet();
-		for  (Object singleKey: keys){
-			newValue = new MappingNameplate(newProperties).value((String)singleKey);
-		}
-		return new RowCodeCSS(newValue);
-	}
-	
-	/**
-	 * @return true if currentLine has at least one key in properties file
-	 * @param currentLine: read line 
-	 * */
-	public boolean hasOnePlatename() {
-		return value.contains(EnumKey.FIRST.name())
-				|| value.contains(EnumKey.SECOND.name())
-				|| value.contains(EnumKey.THIRD.name()) 
-				|| value.contains(EnumKey.FOURTH.name());
-		//new 	ArrayList<EnumKey>(EnumKey.values()).contains(value); TODO is it possible?
+	public RowCodeCSS finalCSS(Template templateProperties) {	
+		return new First(new Basic(templateProperties, value)).finalCSS();
 	}
 	
 	RowCodeCSS(String newValue){
 		this.value  = newValue;
 	}
 
+}
+
+
+interface Key {
+	 RowCodeCSS finalCSS() ;
+	 String value() ;
+}
+
+class Basic implements Key {
+	final String value;
+	final Template templateProperties;
+	
+	Basic(Template newTemplateProperties, String newValue){
+		this.value = newValue;
+		this.templateProperties = newTemplateProperties;
+	}
+
+	 public RowCodeCSS finalCSS() {
+		return new RowCodeCSS(this.value);
+	}
+
+	 public String value() {
+		return this.value;
+	}
+	
 	
 }
 
-/**
- * @overview: Enumeration of the CSS nameplates
- * */
- enum EnumKey {
-	FIRST,
-	SECOND,
-	THIRD,
-	FOURTH
-	
-	;
+class First implements Key{
 
+	final Key origin;
+
+	First(Key newValue){
+		this.origin  = newValue;
+	}
+
+	 public RowCodeCSS finalCSS() {
+		 RowCodeCSS res = null;
+		 if( this.value().contains("FIRST") ) {
+			 res = new RowCodeCSS( change(this.value()));
+		 }else{
+			 res = this.origin.finalCSS();
+		 }
+		 return res;
+	 }
+	 
+	 public String change(String value){
+		 return this.value().replaceAll("FIRST", value);
+	 } 
+	 
+	public String value() {
+		return this.origin.value();
+	}
+	 
 }
+
+//class Second implements Key {
+//
+//	Key origin;
+//	
+//	Second(Key newValue){
+//		this.origin  = newValue;
+//	}
+//
+//	 RowCodeCSS finalCSS() {
+//		 if(value.contains("SECOND") ) {
+//			 return origin.change();
+//		 }else{
+//			 return origin.change();
+//		 }
+//		 
+//	 }
+//}
+//
+//class Third implements Key {
+//
+//	Key origin;
+//
+//	Third(Key newValue){
+//		this.value  = newValue;
+//	}
+//
+//	 RowCodeCSS finalCSS() {
+//		 if(value.contains("THIRD")){
+//			 return origin.change();
+//		 }else{
+//			 return origin.change();
+//		 }
+//		 
+//	 }
+//}
+//
+//
+//class Fourth implements Key {
+//
+//	Key origin;
+//	String value;
+//
+//	Fourth(Key newValue){
+//		this.value  = newValue;
+//	}
+//
+//	 RowCodeCSS finalCSS() {
+//		 if(value.contains("FOURTH")) {
+//			 return origin.change();
+//		 }else{
+//			 return origin.change();
+//		 }
+//		 
+//	 }
+//}
