@@ -6,13 +6,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.alepuzio.buildCSS.logic.TemplateCSS;
+import net.alepuzio.buildCSS.file.type.TemplateCSS;
 
-public class DirectoryInput implements Directory{
+
+public class DirectoryInput_da_buttare implements Directory{
 
 	public final File directory;
 	
-	public DirectoryInput(File newDirectory){
+	public DirectoryInput_da_buttare(File newDirectory){
 		this.directory = newDirectory;
 	}
 	

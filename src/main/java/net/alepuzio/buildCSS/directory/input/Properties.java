@@ -8,7 +8,9 @@ import net.alepuzio.buildCSS.directory.Physical_to_move;
 import net.alepuzio.buildCSS.file.Template;
 import net.alepuzio.buildCSS.file.type.TemplateProperties;
 
-
+/**
+ * @overview : it manage the operations on the directory with properties files
+ * */
 public class Properties {
 
 	public final Physical_to_move origin;

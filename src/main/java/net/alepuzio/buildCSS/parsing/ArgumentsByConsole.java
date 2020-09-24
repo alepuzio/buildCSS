@@ -58,13 +58,6 @@ public class ArgumentsByConsole {
 		}
 	}
 
-	private String buildMsg(Message message, File configurationFile) {
-		String msg = message.getValue();
-		if(message.notNull()) {
-			msg = msg + ": " + configurationFile.getName();
-		}
-		return msg;
-	}
 
 	/**
 	 * 

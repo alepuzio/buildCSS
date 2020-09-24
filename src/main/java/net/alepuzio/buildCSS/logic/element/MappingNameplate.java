@@ -2,8 +2,10 @@ package net.alepuzio.buildCSS.logic.element;
 
 import java.util.Properties;
 
-
-public class MappingNameplate implements Mapping {
+/**
+* @overview : it manage the operations on the properties
+*/
+public class MappingNameplate implements Mapping_to_trash {
 
 	
 	public final Properties currentProperties;

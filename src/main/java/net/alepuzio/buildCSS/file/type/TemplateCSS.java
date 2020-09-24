@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Properties;
 
 import net.alepuzio.buildCSS.file.Template;
 import net.alepuzio.buildCSS.logging.DevelopmentUtilActive;
@@ -29,7 +30,7 @@ public class TemplateCSS implements Template {
 	 * @return CSS code modified
 	 * */
 	public List<RowCodeCSS> code() throws IOException {
-		new DevelopmentUtilActive("useTemplateOverModelCSS();").printMsgDebug();
+		new DevelopmentUtilActive("code();").printMsgDebug();
 		List<RowCodeCSS> finalCSS = new ArrayList<RowCodeCSS>();
 		Read fileCSS = null;
     	try {
@@ -47,6 +48,11 @@ public class TemplateCSS implements Template {
 			fileCSS.close();
 		}
 		return finalCSS;
+	}
+
+	public Properties data() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
 
@@ -72,12 +78,12 @@ class Read{
 	}
 }
 
-class Final implements Template {
+class FinalCSS implements Template {
 	
 	public final Template initialCSS;
-	public final Template templateProperties;
+	public final TemplateProperties templateProperties;
 	
-	Final(Template newInitialCSS,Template newTemplateProperties){
+	FinalCSS(Template newInitialCSS,TemplateProperties newTemplateProperties){
 		this.initialCSS = newInitialCSS;
 		this.templateProperties = newTemplateProperties;
 			
@@ -92,6 +98,11 @@ class Final implements Template {
 			finalCSS.add(finalRow);
 		}
 		return finalCSS;
+	}
+
+	public Properties data() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

@@ -10,7 +10,7 @@ import net.alepuzio.buildCSS.file.Template;
 import net.alepuzio.buildCSS.file.type.TemplateCSS;
 
 /**
- * @overview: it manage the operations over a Directory with CSS
+ * @overview : it manage the operations on the directory with CSS files
  * */
 public class CSS implements Directory {
 

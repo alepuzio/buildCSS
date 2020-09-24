@@ -1,6 +1,7 @@
 package net.alepuzio.buildCSS.logic.element.row;
 
 import net.alepuzio.buildCSS.file.Template;
+import net.alepuzio.buildCSS.file.type.TemplateProperties;
 
 /**
  * @overview: This class represents a single CSS instruction or a single row into CSS files
@@ -11,7 +12,7 @@ public class RowCodeCSS {
 	/**
 	 * @return a new RowCodeCSS , after substitute the constant FIRST, SECOND, etc
 	 * */
-	public RowCodeCSS finalCSS(Template templateProperties) {	
+	public RowCodeCSS finalCSS(TemplateProperties templateProperties) {	
 		return new First(new Basic(templateProperties, value)).finalCSS();
 	}
 	
@@ -25,13 +26,16 @@ public class RowCodeCSS {
 interface Key {
 	 RowCodeCSS finalCSS() ;
 	 String value() ;
+	 public String change(String nameplate, String newValue);
+	 
 }
 
 class Basic implements Key {
-	final String value;
-	final Template templateProperties;
 	
-	Basic(Template newTemplateProperties, String newValue){
+	final String value;
+	final TemplateProperties templateProperties;
+	
+	Basic(TemplateProperties newTemplateProperties, String newValue){
 		this.value = newValue;
 		this.templateProperties = newTemplateProperties;
 	}
@@ -43,30 +47,35 @@ class Basic implements Key {
 	 public String value() {
 		return this.value;
 	}
-	
-	
+
+	 public String change(String nameplate, String newValue){
+		 return this.value().replaceAll(nameplate, this.templateProperties.data().getProperty(nameplate));
+	 } 
+
+
 }
 
-class First implements Key{
+class First implements Key { 
 
 	final Key origin;
-
+	final String nameplate = "FIRST";
+	
 	First(Key newValue){
 		this.origin  = newValue;
 	}
 
 	 public RowCodeCSS finalCSS() {
 		 RowCodeCSS res = null;
-		 if( this.value().contains("FIRST") ) {
-			 res = new RowCodeCSS( change(this.value()));
+		 if( this.value().contains(nameplate) ) {
+			 res = new RowCodeCSS( this.origin.change(nameplate, this.value()));
 		 }else{
 			 res = this.origin.finalCSS();
 		 }
 		 return res;
 	 }
 	 
-	 public String change(String value){
-		 return this.value().replaceAll("FIRST", value);
+	 public String change(String nameplate, String newValue){
+		 return this.origin.change(nameplate, newValue);
 	 } 
 	 
 	public String value() {

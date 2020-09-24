@@ -1,21 +1,19 @@
 package net.alepuzio.buildCSS.file.type;
 
-import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
+
 import java.util.List;
+import java.util.Properties;
 
 import net.alepuzio.buildCSS.file.Template;
-import net.alepuzio.buildCSS.logging.DevelopmentUtilActive;
-import net.alepuzio.buildCSS.logic.element.row.FactoryRowCSS;
 import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
 
 /**
- * @overview: file CSS
+ * @overview: file Proeprties
  * */
 public class TemplateProperties implements Template {
 	
@@ -26,36 +24,28 @@ public class TemplateProperties implements Template {
 	}	
 	/**
 	 * @return CSS code modified
+	 * @throws IOException 
+	 * @throws FileNotFoundException 
 	 * */
-	public List<RowCodeCSS> useTemplateOverModelCSS() throws IOException {
-		new DevelopmentUtilActive("useTemplateOverModelCSS();").printMsgDebug();
-		List<RowCodeCSS> finalCSS = new ArrayList<RowCodeCSS>();
- 	   	BufferedReader templateCSSToRead = new BufferedReader(new FileReader(this.file.getAbsoluteFile()));
- 	   	FactoryRowCSS factroy = new FactoryRowCSS(templateCSSProperties());
-    	try {
-			String currentLine = null;
-			while (null != ( currentLine = templateCSSToRead.readLine())) {
-				
-				RowCodeCSS codeCSS = factroy.instance(currentLine);//TODO move in a class
-				if (codeCSS.hasOnePlatename()) {//TODO using yegor decorator
-					RowCodeCSS codeCSSSostituito = codeCSS.finalCSS(templateCSSProperties());
-					finalCSS.add(codeCSSSostituito);
-				} else {
-					finalCSS.add(codeCSS);
-				}
-			}
-			
+	public Properties data()  {
+		Properties loader = new Properties();
+		try {
+			loader.load(new FileInputStream(this.file.getAbsoluteFile()));
 		} catch (FileNotFoundException e) {
-			throw new FileNotFoundException("Undefined CSS model:" + e.getMessage());
-		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
-			if (null != templateCSSToRead) {
-				templateCSSToRead.close();
-			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		return finalCSS;
+		return loader;
 	}
 
+	public List<RowCodeCSS> code() throws IOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
+
+//TODO create cache class as yegor indicates in the book

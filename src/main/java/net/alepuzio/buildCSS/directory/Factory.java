@@ -3,10 +3,13 @@ package net.alepuzio.buildCSS.directory;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.alepuzio.buildCSS.directory.input.CSS;
 import net.alepuzio.buildCSS.file.Template;
-import net.alepuzio.buildCSS.file.CSS;
+import net.alepuzio.buildCSS.file.type.TemplateCSS;
 
-
+/**
+ * @overview: it create the correct template, a tempalte is a List of rows
+ * */
 public class Factory {
 	public Directory file(String param){
 		Directory result = new Fake(param);
