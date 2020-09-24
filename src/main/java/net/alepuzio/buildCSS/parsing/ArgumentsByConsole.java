@@ -10,12 +10,6 @@ import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.Option;
 import org.kohsuke.args4j.ParserProperties;
 
-import net.alepuzio.buildCSS.enumeration.EnumMessages;
-import net.alepuzio.buildCSS.logging.message.Forbitten;
-import net.alepuzio.buildCSS.logging.message.Message;
-import net.alepuzio.buildCSS.logging.message.NoConfig;
-import net.alepuzio.buildCSS.logging.message.NoFile;
-import net.alepuzio.buildCSS.logic.element.FlowMoreCSSFiles;
 import net.alepuzio.physical.FactoryFlowMoreCSS;
 import net.alepuzio.physical.IDIrectoryOutput;
 
@@ -60,7 +54,7 @@ public class ArgumentsByConsole {
 			showException = new NoFile();
 		}
 		if (null != showException) {
-			throw new CmdLineException(buildMsg(showException, configurationFile));
+			throw new CmdLineException(new FactoryMessage(showException, configurationFile).message());
 		}
 	}
 
@@ -82,4 +76,65 @@ public class ArgumentsByConsole {
 	}
 
 
+}
+
+class Forbitten implements Message {
+
+	public String getValue() {
+		return "Yout don\'t have the read permission";
+	}
+
+	public boolean notNull() {
+		return true;
+	}
+}
+
+class NoConfig implements Message{
+	public String getValue() {
+		return "Absent configuration file.";
+	}
+
+	public boolean notNull() {
+		return true;
+	}
+
+}
+class NoFile implements Message{
+
+	public String getValue() {
+		return "Null instance of configuration file";
+	}
+
+	public boolean notNull() {
+		return false;
+	}	
+	
+}
+
+interface Message{
+	
+	public String getValue();
+	public boolean notNull();
+}
+
+class FactoryMessage {
+	
+	private Message message;
+	private File configurationFile;
+
+	FactoryMessage(Message message, File configurationFile) {
+		super();
+		this.message = message;
+		this.configurationFile = configurationFile;
+	}
+
+	String message() {
+		String msg = message.getValue();
+		if(message.notNull()) {//TODO decorator
+			msg = msg + ": " + configurationFile.getName();
+		}
+		return msg;
+	}
+
+	
 }

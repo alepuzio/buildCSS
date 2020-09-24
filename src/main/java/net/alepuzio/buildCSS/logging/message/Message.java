@@ -7,3 +7,4 @@ public interface Message{
 	public boolean notNull();
 }
 
+aa
