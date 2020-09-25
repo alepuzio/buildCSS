@@ -6,13 +6,13 @@
   left: 45em;
   bottom: 5em;
   width: 24em;
-  border-left: 1em ##57652A solid;
+  border-left: 1em #57652A solid;
 }
 
 /*************cookie***********/
 #cookie { text-align: left; display: block; text-indent: 1em;}
 #cookie h3{
-	border-top: .2em solid ##57652A;
+	border-top: .2em solid #57652A;
 	font-weight: 700;
   text-align: left;
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@
 #portfolio { text-align: left; display:inline;}
 #portfolio h3 {
   text-indent: 2em;
-  border-top: .2em solid ##57652A;
+  border-top: .2em solid #57652A;
   font-weight: 700;
   text-align: left;
   background-repeat: no-repeat;

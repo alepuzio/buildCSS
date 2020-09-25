@@ -1,8 +1,8 @@
 /**
 from https://colorpalettes.net/category/pastel-color/page/2/
 colori:
- ##F7EF6A; 10.2% red, 9.4% green and 9.4% blue.
- ##93C178; 28.6% red, 16.1% green and 5.9% blue.
+ #F7EF6A; 10.2% red, 9.4% green and 9.4% blue.
+ #93C178; 28.6% red, 16.1% green and 5.9% blue.
  THIRD; 77.3% red, 68.6% green and 38.4% blue
  FOURTH;69.4% red, 51.4% green and 13.3% blue.
 
@@ -11,14 +11,14 @@ colori:
 */
 body {
   color: #000;
-  background: ##F7EF6A;/*body*/
+  background: #F7EF6A;/*body*/
   text-align: justify;
   font-size: 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 #containerBig {
-  background-color: ##93C178;/*containerBig*/
+  background-color: #93C178;/*containerBig*/
   display: block;
   margin: 0 auto;
 	text-align: center;
@@ -50,7 +50,7 @@ body {
 #quickSummary {
   display: block;
   position: relative;
-  background-color: ##93C178;
+  background-color: #93C178;
   color: THIRD;
 }
 
@@ -214,9 +214,9 @@ a:active {font-style: oblique;}
 a:link {font-style: oblique;}
 .clear {clear: both}
 .important {display: inline;}
-h1 {border: 1px ##93C178; }
-h2 {border: 1px ##93C178; }
-h3 {border: 1px ##93C178; }
+h1 {border: 1px #93C178; }
+h2 {border: 1px #93C178; }
+h3 {border: 1px #93C178; }
 
 h4 {
 	 font-style:italic;
@@ -228,8 +228,8 @@ h4 {
 
 #contact h3 {
   background-color: THIRD;
-  border-top: .2% solid ##93C178;
-  color: ##93C178;
+  border-top: .2% solid #93C178;
+  color: #93C178;
   font-style: oblique;
   text-align: center;
 	font-weight: 700;
@@ -237,8 +237,8 @@ h4 {
 }
 #copyright h3 {
   background-color: THIRD;
-  border-top: .2% solid ##93C178;
-  color: ##93C178;
+  border-top: .2% solid #93C178;
+  color: #93C178;
   font-size: 100%;
   font-style: oblique;
 	font-weight: 700;
@@ -246,60 +246,60 @@ h4 {
 }
 #economics h3 {
   background-color: FOURTH;
-  color: ##93C178;
+  color: #93C178;
   font-weight: 700;
   text-align: center;
 }
 #photography h3 {
   background-color: FOURTH;
-  color: ##93C178;
+  color: #93C178;
   font-weight: 700;
   text-align: center;
 }
 #job h3 {
   background-color: FOURTH;
-  color: ##93C178;
+  color: #93C178;
   font-weight: 700;
   text-align: center;
 }
 #languages h3 {
 display:none;
-	/*	border-top: .2em solid ##93C178;
+	/*	border-top: .2em solid #93C178;
 	font-weight: 700;
 	text-align: center;
 */}
 #literature h3 {
   background-color: FOURTH;
-  color: ##93C178;
+  color: #93C178;
   font-weight: 700;
   text-align: center;
 }
 #numismatics h3 {
   background-color: FOURTH;
-  color: ##93C178;
+  color: #93C178;
   font-weight: 700;
   text-align: center;
 }
 #portfolio h3 {
 	/*text-indent: 2em;*/
-  border-top: .2em solid ##93C178;
+  border-top: .2em solid #93C178;
   font-weight: 700;
   text-align: center;
 }
 #presentation h3 {
   background-color: FOURTH;
-  color: ##93C178;
+  color: #93C178;
   font-weight: 700;
   text-align: center;
 }
 #validator h3 {
-  border-top: .2% solid ##93C178;
+  border-top: .2% solid #93C178;
 	font-weight: 700;
 	text-align: center;
   font-size: 100%;
   font-style: oblique;
   background-color: THIRD;
-  color: ##93C178;
+  color: #93C178;
 }
 
 

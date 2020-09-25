@@ -12,14 +12,14 @@ colori:
 /*************body***********/
 body {
   color: #000;
-  background: ##94618E;/*body*/
+  background: #94618E;/*body*/
   text-align: justify;
   font-size: 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
 /***********containerbig***************/
 #containerBig {
-  background-color: ##49274A;/*containerBig*/
+  background-color: #49274A;/*containerBig*/
   display: block;
   margin: 0 auto;
 	text-align: left;
@@ -31,13 +31,13 @@ body {
 /**********presentation****************/
 #presentation { display: block;}
 #presentation h3 {
-  border-top: .2em solid ##49274A;
+  border-top: .2em solid #49274A;
   color: #000;
   font-weight: 700;
   text-indent: 2em;
   background-repeat: no-repeat;
   background-color: FOURTH;
-  color: ##49274A;
+  color: #49274A;
 }
 
 /***************job**********/
@@ -47,12 +47,12 @@ body {
 }
 #job h3 {
 	text-indent: 2em;
-  border-top: .2em solid ##49274A;
+  border-top: .2em solid #49274A;
   color: #000;
   font-weight: 700;
   background-repeat: no-repeat;
   background-color: FOURTH;
-  color: ##49274A;
+  color: #49274A;
 }
 
 #job ul {
@@ -71,12 +71,12 @@ body {
 }
 #literature h3 {
 	text-indent: 2em;
-  border-top: .2em solid ##49274A;
+  border-top: .2em solid #49274A;
   color: #000;
   font-weight: 700;
   background-repeat: no-repeat;
   background-color: FOURTH;
-  color: ##49274A;
+  color: #49274A;
 }
 
 /*****************economics***************/
@@ -86,11 +86,11 @@ body {
 }
 #economics h3 {
 	text-indent: 2em;
-  border-top: .2em solid ##49274A;
+  border-top: .2em solid #49274A;
   font-weight: 700;
   background-repeat: no-repeat;
   background-color: FOURTH;
-  color: ##49274A;
+  color: #49274A;
 }
 
 /***************numismatics***************/
@@ -101,12 +101,12 @@ body {
 }
 #numismatics h3 {
 	text-indent: 2em;
-  border-top: .2em solid ##49274A;
+  border-top: .2em solid #49274A;
   color: #000;
   font-weight: 700;
   background-repeat: no-repeat;
   background-color: FOURTH;
-  color: ##49274A;
+  color: #49274A;
 }
 
 /***************photography***************/
@@ -116,11 +116,11 @@ body {
 }
 #photography h3 {
 	text-indent: 2em;
-  border-top: .2em solid ##49274A;
+  border-top: .2em solid #49274A;
   font-weight: 700;
   background-repeat: no-repeat;
   background-color: FOURTH;
-  color: ##49274A;
+  color: #49274A;
 }
 /*********************************/
 
@@ -205,12 +205,12 @@ a:active {font-style: oblique;}
 a:link {font-style: oblique;}
 .clear {clear: both}
 .important {display: inline;}
-h1 {border: 1px ##49274A; }
-h2 {border: 1px ##49274A; }
-h3 {border: 1px ##49274A; }
+h1 {border: 1px #49274A; }
+h2 {border: 1px #49274A; }
+h3 {border: 1px #49274A; }
 
 h4 {
-	border-top: double 1px ##49274A;
+	border-top: double 1px #49274A;
 	color: #000;
 	width: 16em;
 }

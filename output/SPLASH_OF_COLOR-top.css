@@ -46,7 +46,7 @@
   position: relative;
   width: 25em;
   /*z-index: 1;*/
-  background-color: ##D9D9D9;
+  background-color: #D9D9D9;
   color: THIRD;
 }
 #quickSummary .p1 span {	display: none; }

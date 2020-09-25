@@ -19,14 +19,14 @@
   width: 70em;
 }
 #contact h3 {
-	border-top: .2em solid ##FCC41A;
+	border-top: .2em solid #FCC41A;
 	font-weight: 700;
 	text-align: center;
   font-size: 150%;
   background-repeat: no-repeat;
   font-style: oblique;
   background-color: THIRD;
-  color: ##FCC41A;
+  color: #FCC41A;
 
 }
 #contact ul {
@@ -57,13 +57,13 @@
   width: 70em;
 }
 #validator h3 {
-  border-top: .2em solid ##FCC41A;
+  border-top: .2em solid #FCC41A;
   font-weight: 700;
   text-align: center;
   font-size: 150%;
   font-style: oblique;
   background-color: THIRD;
-  color: ##FCC41A;
+  color: #FCC41A;
 
 }
 #validator ul {
@@ -96,8 +96,8 @@
 #copyright h3 {
   background-color: THIRD;
   background-repeat: no-repeat;
-  border-top: .2em solid ##FCC41A;
-  color: ##FCC41A;
+  border-top: .2em solid #FCC41A;
+  color: #FCC41A;
   font-size: 150%;
   font-style: oblique;
   font-weight: 700;
