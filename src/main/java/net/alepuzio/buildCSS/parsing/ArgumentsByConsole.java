@@ -43,7 +43,7 @@ public class ArgumentsByConsole {
 			File f = new File(".");
 			List<String> lista = Arrays.asList(f.list());
 			for(String tmp: lista) {
-				System.out.println(tmp	);
+				System.out.println("Present file:" + tmp);
 			}
 		}
 		if (null != showException) {

@@ -60,7 +60,7 @@ class Output {
 		if (dir.isDirectory()) {//TODO use decorator
 			if (dir.exists()) {
 				if (dir.canWrite()) {
-					System.out.println("The directory {0} is available".format("%s", this.directory));
+					System.out.println(String.format("The directory %s is available", this.directory));
 				}else{
 					System.err.println("You are not allowed to write the directory {0}".format("%s", this.directory));
 				}
