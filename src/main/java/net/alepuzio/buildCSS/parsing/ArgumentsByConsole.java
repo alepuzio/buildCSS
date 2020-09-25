@@ -2,30 +2,28 @@ package net.alepuzio.buildCSS.parsing;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.NoSuchFileException;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.Option;
 import org.kohsuke.args4j.ParserProperties;
 
-import net.alepuzio.physical.FactoryFlowMoreCSS;
-import net.alepuzio.physical.IDIrectoryOutput;
+import net.alepuzio.buildCSS.directory.input.Properties;
+import net.alepuzio.buildCSS.directory.Directory;
+import net.alepuzio.buildCSS.directory.Physical_to_move;
+import net.alepuzio.buildCSS.directory.input.CSS;
+import net.alepuzio.buildCSS.file.InputFile;
+import net.alepuzio.buildCSS.file.type.FinalCSS;
+import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
 public class ArgumentsByConsole {
 
 	final int WITDH_OF_CONSOLE = 80;
 
-	@Option(name = "-config", usage = "name of configuration file", metaVar = "PROPERTIES")
-	private File configurationFile = null;
-
-	@Option(name = "-message", usage = "true if it's showing the messages, false otherside", metaVar = "SHOWMESSAGE")
-	private boolean showMessage = true;
-
-	public void setShowMessage(boolean activeMessage) {
-		this.showMessage = activeMessage;
-	}
+	@Option(name = "-input", usage = "name of input directory", metaVar = "directory path")
+	private String inputDirectory;
 
 	public void run() throws CmdLineException {
 		ParserProperties parserProperties = ParserProperties.defaults();
@@ -35,38 +33,52 @@ public class ArgumentsByConsole {
 
 	@SuppressWarnings("deprecation")
 	private void validate() throws CmdLineException {//TODO decorator
-		File configurationFile = this.getConfigurationFile();
 		Message showException = null;
-		if (null != configurationFile) {
-			if (configurationFile.exists()) {
-				if (!configurationFile.canRead()) {
-					showException = new Forbitten();
-				}
-			} else {
-				showException = new NoConfig();
-				File f = new File(".");
-				List<String> lista = Arrays.asList(f.list());
-				for(String tmp: lista) {
-					System.out.println(tmp	);
-				}
+		File directory = new File(this.inputDirectory);
+		if (directory.exists()) {
+			if (!directory.canRead()) {
+				showException = new Forbitten();
 			}
 		} else {
 			showException = new NoFile();
+			File f = new File(".");
+			List<String> lista = Arrays.asList(f.list());
+			for(String tmp: lista) {
+				System.out.println(tmp	);
+			}
 		}
 		if (null != showException) {
-			throw new CmdLineException(new FactoryMessage(showException, configurationFile).message());
+			throw new CmdLineException(new FactoryMessage(showException, directory).message());
 		}
 	}
 
 
 	/**
+	 * @throws IOException 
 	 * 
 	 * */
-	public void createsCSSThemesFromDirectory() {
-			FlowMoreCSSFiles css = new FlowMoreCSSFiles(this.configurationFile);
-			css.createsCSSThemesFromDirectory();
+	public void createsCSSThemesFromDirectory() throws IOException {
+		Directory directoryProperties = new Properties(
+				new Physical_to_move(this.inputDirectory, "properties"));
+		List<InputFile> inputProperties = directoryProperties.files("properties");
+
+		Directory directoryCSS = new CSS(
+				new Physical_to_move(this.inputDirectory, "css"));
+		List<InputFile> inputCSS = directoryCSS.files("CSS");
 		
+		Iterator<InputFile> iteraCSS = inputCSS.iterator();
+		while ( iteraCSS.hasNext() ) {
+			InputFile tmpCSS = iteraCSS.next();
+			
+			Iterator<InputFile> iteraProperties = inputProperties.iterator();
+			while ( iteraProperties.hasNext() ) {
+				InputFile tmpProperties = iteraProperties.next();
+				List<RowCodeCSS> listFinalCSS= new FinalCSS(tmpCSS, tmpProperties.data()).code();
+				System.out.println(listFinalCSS);
+			}
+		}
 	}
+	
 
 
 }
@@ -82,20 +94,11 @@ class Forbitten implements Message {
 	}
 }
 
-class NoConfig implements Message{
-	public String getValue() {
-		return "Absent configuration file.";
-	}
 
-	public boolean notNull() {
-		return true;
-	}
-
-}
-class NoFile implements Message{
+class NoFile implements Message {
 
 	public String getValue() {
-		return "Null instance of configuration file";
+		return "Null instance of the path";
 	}
 
 	public boolean notNull() {
@@ -104,8 +107,7 @@ class NoFile implements Message{
 	
 }
 
-interface Message{
-	
+interface Message {
 	public String getValue();
 	public boolean notNull();
 }
@@ -129,5 +131,4 @@ class FactoryMessage {
 		return msg;
 	}
 
-	
 }

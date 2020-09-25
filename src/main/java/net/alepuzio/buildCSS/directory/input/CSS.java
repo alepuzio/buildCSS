@@ -6,7 +6,7 @@ import java.util.List;
 
 import net.alepuzio.buildCSS.directory.Directory;
 import net.alepuzio.buildCSS.directory.Physical_to_move;
-import net.alepuzio.buildCSS.file.Template;
+import net.alepuzio.buildCSS.file.InputFile;
 import net.alepuzio.buildCSS.file.type.TemplateCSS;
 
 /**
@@ -16,15 +16,15 @@ public class CSS implements Directory {
 
 	public final Physical_to_move origin;
 	
-	CSS(Physical_to_move newOrigin){
+	public CSS(Physical_to_move newOrigin){
 		this.origin = newOrigin;
 	}
 	
-	public List<Template> files(final String extension) {
-		File[] templates = this.origin.files(extension);
-		List<Template> result = new ArrayList<Template>();
+	public List<InputFile> files(final String extension) {
+		File[] templates = this.origin.files("CSS");
+		List<InputFile> result = new ArrayList<InputFile>();
 		for (File tmp : templates){
-			Template css = new TemplateCSS(tmp);
+			InputFile css = new TemplateCSS(tmp);
 			result.add(css);
 		}
 		return result ;

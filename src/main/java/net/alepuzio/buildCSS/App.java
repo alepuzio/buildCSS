@@ -8,7 +8,7 @@ import net.alepuzio.buildCSS.parsing.ArgumentsByConsole;
 public class App {
 
 	/**
-	 * @effects: it launchs program
+	 * @effects: it runs program
 	 * @param args:
 	 *            parameters from terminal
 	 */
@@ -24,7 +24,5 @@ public class App {
 			parser.printUsage(System.err);
 		}
 	}
-
-
 
 }

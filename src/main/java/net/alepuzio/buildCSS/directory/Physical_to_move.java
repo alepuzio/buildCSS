@@ -7,11 +7,12 @@ public class Physical_to_move  {
 
 	public final File root;
 	
-	Physical_to_move(String newRoot){
-		this.root = new File(newRoot);
+	public Physical_to_move(String newRoot, String directory){
+		this.root = new File(newRoot.concat("\\").concat(directory));
 	}
 	
 	public File[] files(final String extension) {
+		System.out.println(this.root.getAbsolutePath());//TODO delete
 		File[] templates = this.root.listFiles(new FileFilter() {
 			public boolean accept(File pathname) {
 				return pathname.getName().endsWith(extension);

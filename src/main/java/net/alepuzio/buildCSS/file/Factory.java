@@ -9,14 +9,14 @@ import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
 public class Factory {
 
-	public Template file(String param){
-		Template result = null;
+	public InputFile file(String param){
+		InputFile result = null;
 		result = new Fake();
 		return result;
 	}
 }
 
-class Fake implements Template {
+class Fake implements InputFile {
 
 	public List<RowCodeCSS> code() throws IOException {
 		return null;

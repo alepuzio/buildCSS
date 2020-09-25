@@ -6,11 +6,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
-import net.alepuzio.buildCSS.file.Template;
+import net.alepuzio.buildCSS.file.InputFile;
 import net.alepuzio.buildCSS.logging.DevelopmentUtilActive;
 import net.alepuzio.buildCSS.logic.element.row.FactoryRowCSS;
 import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
@@ -19,7 +18,7 @@ import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 /**
  * @overview: file CSS on memory
  * */
-public class TemplateCSS implements Template {
+public class TemplateCSS implements InputFile {
 	
 	public final File file;
 	
@@ -59,7 +58,7 @@ public class TemplateCSS implements Template {
 /**
  * @overview: it read a file line by line
  * */
-class Read{
+class Read {
 	final BufferedReader templateCSSToRead;
     
 	Read(File newFileReader  ) throws FileNotFoundException{
@@ -78,31 +77,3 @@ class Read{
 	}
 }
 
-class FinalCSS implements Template {
-	
-	public final Template initialCSS;
-	public final TemplateProperties templateProperties;
-	
-	FinalCSS(Template newInitialCSS,TemplateProperties newTemplateProperties){
-		this.initialCSS = newInitialCSS;
-		this.templateProperties = newTemplateProperties;
-			
-	}
-	
-	public List<RowCodeCSS> code()  throws IOException {
-		List<RowCodeCSS> finalCSS = new ArrayList<RowCodeCSS>();
- 	   	List<RowCodeCSS> initialCode = this.initialCSS.code();
-		Iterator<RowCodeCSS> iteraRows = initialCode.iterator();
-		while(iteraRows.hasNext()){
-			RowCodeCSS finalRow = iteraRows.next().finalCSS(this.templateProperties);
-			finalCSS.add(finalRow);
-		}
-		return finalCSS;
-	}
-
-	public Properties data() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-}

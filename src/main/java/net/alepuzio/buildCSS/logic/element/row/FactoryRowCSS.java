@@ -17,5 +17,8 @@ public class FactoryRowCSS {
 		return new RowCodeCSS(this.currentLine);
 	}
 	
+	public RowCodeCSS instanceEmpty(){
+		return new RowCodeCSS("");
+	}
 	
 }

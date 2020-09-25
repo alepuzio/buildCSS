@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import junit.framework.Assert;
 import net.alepuzio.buildCSS.logging.DevelopmentUtilActive;
-import net.alepuzio.buildCSS.logic.element.FactoryRowCSS;
 
 /**
  * @author Alessandro
@@ -22,7 +21,7 @@ public class TestDevelopmentUtilActive  {
 	public void testGetValue() {
 		String valoreAtteso = "valoreatteso";
 		this.instance = new DevelopmentUtilActive(valoreAtteso);
-		String valoreOttenuto = this.instance.getMessage();
+		String valoreOttenuto = this.instance.message;
 		Assert.assertNotNull(valoreOttenuto);
 		Assert.assertEquals(valoreOttenuto, valoreAtteso);
 	}

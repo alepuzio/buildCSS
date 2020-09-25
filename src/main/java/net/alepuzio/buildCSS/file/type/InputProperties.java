@@ -8,18 +8,18 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
-import net.alepuzio.buildCSS.file.Template;
+import net.alepuzio.buildCSS.file.InputFile;
 import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
 
 /**
  * @overview: file Proeprties
  * */
-public class TemplateProperties implements Template {
+public class InputProperties implements InputFile {
 	
 	public final File file;
 	
-	public TemplateProperties(File newFile){
+	public InputProperties(File newFile){
 		this.file = newFile;
 	}	
 	/**

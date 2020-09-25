@@ -1,7 +1,7 @@
 package net.alepuzio.buildCSS.logic.element.row;
 
-import net.alepuzio.buildCSS.file.Template;
-import net.alepuzio.buildCSS.file.type.TemplateProperties;
+import java.util.Properties;
+
 
 /**
  * @overview: This class represents a single CSS instruction or a single row into CSS files
@@ -12,7 +12,7 @@ public class RowCodeCSS {
 	/**
 	 * @return a new RowCodeCSS , after substitute the constant FIRST, SECOND, etc
 	 * */
-	public RowCodeCSS finalCSS(TemplateProperties templateProperties) {	
+	public RowCodeCSS finalCSS(/*Input*/Properties templateProperties) {	
 		return new First(new Basic(templateProperties, value)).finalCSS();
 	}
 	
@@ -26,16 +26,16 @@ public class RowCodeCSS {
 interface Key {
 	 RowCodeCSS finalCSS() ;
 	 String value() ;
-	 public String change(String nameplate, String newValue);
+	 public String change(String nameplate);
 	 
 }
 
 class Basic implements Key {
 	
 	final String value;
-	final TemplateProperties templateProperties;
+	final /*Input*/Properties templateProperties;
 	
-	Basic(TemplateProperties newTemplateProperties, String newValue){
+	Basic(/*Input*/Properties newTemplateProperties, String newValue){
 		this.value = newValue;
 		this.templateProperties = newTemplateProperties;
 	}
@@ -48,8 +48,8 @@ class Basic implements Key {
 		return this.value;
 	}
 
-	 public String change(String nameplate, String newValue){
-		 return this.value().replaceAll(nameplate, this.templateProperties.data().getProperty(nameplate));
+	 public String change(String nameplate){
+		 return this.value().replaceAll(nameplate, "#".concat(this.templateProperties.getProperty(nameplate)));
 	 } 
 
 
@@ -67,15 +67,15 @@ class First implements Key {
 	 public RowCodeCSS finalCSS() {
 		 RowCodeCSS res = null;
 		 if( this.value().contains(nameplate) ) {
-			 res = new RowCodeCSS( this.origin.change(nameplate, this.value()));
-		 }else{
+			 res = new RowCodeCSS( this.change(nameplate));
+		 } else {
 			 res = this.origin.finalCSS();
 		 }
 		 return res;
 	 }
 	 
-	 public String change(String nameplate, String newValue){
-		 return this.origin.change(nameplate, newValue);
+	 public String change(String nameplate){
+		 return this.origin.change(nameplate);
 	 } 
 	 
 	public String value() {
