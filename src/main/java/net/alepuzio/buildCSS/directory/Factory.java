@@ -3,7 +3,7 @@ package net.alepuzio.buildCSS.directory;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.alepuzio.buildCSS.file.InputFile;
+import net.alepuzio.buildCSS.file.Code;
 import net.alepuzio.buildCSS.file.type.TemplateCSS;
 
 /**
@@ -23,8 +23,8 @@ class Fake implements Directory {
 		this.root = newRoot;
 	}
 
-	public List<InputFile> files(String extension) {
-		List<InputFile> result = new ArrayList<InputFile>();
+	public List<Code> files(String extension) {
+		List<Code> result = new ArrayList<Code>();
 		result.add(new TemplateCSS(null));
 		return result;
 	}

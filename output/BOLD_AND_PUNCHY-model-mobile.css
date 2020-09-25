@@ -1,0 +1,364 @@
+/**
+from https://colorpalettes.net/category/pastel-color/page/2/
+colori:
+ ##E24E42; 10.2% red, 9.4% green and 9.4% blue.
+ ##E98000; 28.6% red, 16.1% green and 5.9% blue.
+ THIRD; 77.3% red, 68.6% green and 38.4% blue
+ FOURTH;69.4% red, 51.4% green and 13.3% blue.
+
+ Web Safe Colors are an informal standard of 216 colors that are generally considered web safe.
+
+*/
+body {
+  color: #000;
+  background: ##E24E42;/*body*/
+  text-align: justify;
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#containerBig {
+  background-color: ##E98000;/*containerBig*/
+  display: block;
+  margin: 0 auto;
+	text-align: center;
+  width: 75%;
+}
+
+#intro { /*empty*/ }
+/*****************pageHeader**********************/
+#pageHeader {
+  background-color: THIRD;/*header*/
+  display: block;
+  height: 21em;
+  left: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+}
+
+#pageHeader h1 {
+  background-image: url(../img/titolo.png);
+  background-position: left;
+  background-repeat: no-repeat;
+  display: block;
+  height: 100%;
+/*  text-indent: -500%;*/
+}
+
+/**************quicksummary************/
+#quickSummary {
+  display: block;
+  position: relative;
+  background-color: ##E98000;
+  color: THIRD;
+}
+
+#navigation {
+  background-color: FOURTH;/*barra di navigazione*/
+  display: block;
+  position: relative;
+}
+
+/********************cookie**************/
+#cookie { text-align: center;}
+
+
+#cookie h3{
+  font-weight: 700;
+  text-align: center;
+  text-indent: 2em;
+}
+
+/******************languages*************/
+
+#languages { display:none;}
+#portfolio { text-align: center;}
+
+#supportingText {
+	background: THIRD;/*articolo*/
+  display: block;
+  color: #000;
+  voice-family: male;
+  text-align: justify;
+}
+
+#presentation {
+  display: block;
+  position: relative;
+}
+#job {
+  display: block;
+  position: relative;
+}
+#literature{
+  display: block;
+  position: relative;
+}
+#economics {
+  display: block;
+  position: relative;
+}
+#numismatics {
+  display: block;
+  position: relative;
+}
+#photography{
+  display: block;
+  position: relative;
+}
+#footer {
+  background-color: FOURTH;
+  display: block;
+  position:relative;
+  font-size: 100%;
+  text-align: center;
+	overflow: hidden;
+}
+#contact {
+  display: block;
+  position: relative;
+  float: left;
+  text-align: center;
+}
+#validator {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+#copyright{
+  display: block;
+  position: relative;
+  float: left;
+  text-align: center;
+}
+
+#twitter {display: inline;}
+
+#stack { border-top: .2em solid #555}
+
+
+  #design {display: none;}
+  #extraDiv1 {display: none;}
+  #extraDiv2 {display: none;}
+  #extraDiv3 {display: none;}
+  #extraDiv4 {display: none;}
+  #extraDiv5 {display: none;}
+  #extraDiv6 {display: none;}
+  #hrefCSS {display: none;}
+  #hrefHTML {display: none;}
+  #imgCSS {display: none;}
+  #test {display: none;}
+
+  #href508 { display:inline;/*background-color: #transparent*/}
+  #hrefAAA { display:inline;/*background-color: #transparent*/}
+  #hrefAnobii { display:inline;/*background-color: #transparent*/}
+  #hrefAnyBrowser { display:inline;/*background-color: #transparent*/}
+  #hrefBruno { display:inline;/*background-color: #transparent*/}
+  #hrefCC { display:inline;/*background-color: #transparent*/}
+  #hrefDelicious { display:inline;/*background-color: #transparent*/}
+  #hrefDuca { display:inline;/*background-color: #transparent*/}
+  #hrefEmail { display:inline;/*background-color: #transparent*/}
+  #hrefGamberetta { display:inline;/*background-color: #transparent*/}
+  #hrefGood { display:inline;/*background-color: #transparent*/}
+  #hrefGoogle { display:inline;/*background-color: #transparent*/}
+  #hrefJava { display:inline;/*background-color: #transparent*/}
+  #hrefLinkedin { display:inline;/*background-color: #transparent*/}
+  #hrefMoneta { display:inline;/*background-color: #transparent*/}
+  #hrefNamyz { display:inline;/*background-color: #transparent*/}
+  #hrefOpenClipArt { display:inline;/*background-color: #transparent*/}
+  #hrefReddit { display:inline;/*background-color: #transparent*/}
+  #hrefSupport { display:inline;/*background-color: #transparent*/}
+  #hrefTwitter { display:inline;/*background-color: #transparent*/}
+  #hrefUsemlab { display:inline;/*background-color: #transparent*/}
+  #hrefViadeo { display:inline;/*background-color: #transparent*/}
+  #hrefXing { display:inline;/*background-color: #transparent*/}
+
+
+  #form404 {
+    background-attachment: local;
+    background-image: url(../../img/minimal/refrigerator-158634_640.png);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    height: 30em;
+    margin: 3em;
+    text-align: left;
+  }
+
+/******************************elementi standard html*********************************/
+p span {
+	display: block;
+  margin: 0;
+	padding: 0 4em 1em;
+}
+
+acronym {
+	border-top: .1em dashed #000;
+	border-bottom: .1em dashed #000
+}
+a {
+  font-weight: 700;
+}
+a:hover {
+	border: 1px dotted #000;
+	color: #F00;
+  font-style: oblique;
+}
+a:visited { font-style: oblique; }
+.selected {
+	background-color: #AAA;
+	text-transform: uppercase
+}
+a:active {font-style: oblique;}
+a:link {font-style: oblique;}
+.clear {clear: both}
+.important {display: inline;}
+h1 {border: 1px ##E98000; }
+h2 {border: 1px ##E98000; }
+h3 {border: 1px ##E98000; }
+
+h4 {
+	 font-style:italic;
+}
+/******************************titoli*************************************/
+
+
+#pageHeader h2 {/*empty*/}
+
+#contact h3 {
+  background-color: THIRD;
+  border-top: .2% solid ##E98000;
+  color: ##E98000;
+  font-style: oblique;
+  text-align: center;
+	font-weight: 700;
+  font-size: 100%;
+}
+#copyright h3 {
+  background-color: THIRD;
+  border-top: .2% solid ##E98000;
+  color: ##E98000;
+  font-size: 100%;
+  font-style: oblique;
+	font-weight: 700;
+	text-align: center;
+}
+#economics h3 {
+  background-color: FOURTH;
+  color: ##E98000;
+  font-weight: 700;
+  text-align: center;
+}
+#photography h3 {
+  background-color: FOURTH;
+  color: ##E98000;
+  font-weight: 700;
+  text-align: center;
+}
+#job h3 {
+  background-color: FOURTH;
+  color: ##E98000;
+  font-weight: 700;
+  text-align: center;
+}
+#languages h3 {
+display:none;
+	/*	border-top: .2em solid ##E98000;
+	font-weight: 700;
+	text-align: center;
+*/}
+#literature h3 {
+  background-color: FOURTH;
+  color: ##E98000;
+  font-weight: 700;
+  text-align: center;
+}
+#numismatics h3 {
+  background-color: FOURTH;
+  color: ##E98000;
+  font-weight: 700;
+  text-align: center;
+}
+#portfolio h3 {
+	/*text-indent: 2em;*/
+  border-top: .2em solid ##E98000;
+  font-weight: 700;
+  text-align: center;
+}
+#presentation h3 {
+  background-color: FOURTH;
+  color: ##E98000;
+  font-weight: 700;
+  text-align: center;
+}
+#validator h3 {
+  border-top: .2% solid ##E98000;
+	font-weight: 700;
+	text-align: center;
+  font-size: 100%;
+  font-style: oblique;
+  background-color: THIRD;
+  color: ##E98000;
+}
+
+
+
+
+/****************************elenchi********************************/
+#contact ul {
+	list-style: none
+}
+#contact li {
+	float: left;
+  padding-left: 5%;
+  text-align: center;
+  display: inline;
+  list-style: none;
+  font-size: 100%;
+}
+#portfolio ul {
+  	list-style: none
+}
+#portfolio li{
+  list-style-type: none;
+}
+
+#job ul {
+	list-style-type: square;
+  padding-left: 15%;
+}
+#languages li {
+	display:none;
+	/*list-style-type: none;
+  padding-right: 5%;*/
+}
+
+#validator ul {
+  list-style: none;
+}
+#validator li {
+  display: inline;
+  float: left;
+  font-size: 100%;
+  padding-left: 5%;
+  text-align: center;
+
+}
+
+
+/***********************elementi tipografia*************************/
+
+
+#pageHeader p { /*empty*/ }
+
+#quickSummary .p1 span {	display: none; }
+#quickSummary .p2 span {	display: inline; }
+#quickSummary p span { display: block; }
+
+#quickSummary blockquote {
+	text-align: center;
+	font-size: 100%;
+	font-style: oblique;
+  /**mettere stile corsivo*/
+}

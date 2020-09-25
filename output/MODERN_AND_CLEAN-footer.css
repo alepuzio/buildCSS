@@ -1,0 +1,149 @@
+/***************footer***************/
+#footer {
+  background-color: FOURTH;/*footer*/
+  display: block;
+  position:relative;
+  font-size: 100%;
+  text-align: justify;
+	overflow: hidden;
+  width: 70em;
+}
+
+/***************contact**************/
+#contact {
+  bottom: 15em;
+  display: block;
+  float: left;
+  padding-right: 0;
+  text-align: center;
+  width: 70em;
+}
+#contact h3 {
+	border-top: .2em solid ##07889B;
+	font-weight: 700;
+	text-align: center;
+  font-size: 150%;
+  background-repeat: no-repeat;
+  font-style: oblique;
+  background-color: THIRD;
+  color: ##07889B;
+
+}
+#contact ul {
+	list-style: none
+}
+#contact li {
+	float: left;
+	text-align: justify;
+  bottom: 15em;
+  padding-left: 1em;
+  display: inline;
+  list-style: none;
+  font-size: 100%;
+}
+
+
+#contact li:before{
+}
+
+
+/**********validator*********/
+#validator {
+  bottom: 15em;
+  display: block;
+  float: left;
+  padding-right: 0;
+  text-align: center;
+  width: 70em;
+}
+#validator h3 {
+  border-top: .2em solid ##07889B;
+  font-weight: 700;
+  text-align: center;
+  font-size: 150%;
+  font-style: oblique;
+  background-color: THIRD;
+  color: ##07889B;
+
+}
+#validator ul {
+	list-style: none;
+}
+
+#validator li {
+	float: left;
+	text-align: justify;
+	bottom: 15em;
+	padding-left: 1em;
+	display: inline;
+	list-style: none;
+	font-size: 100%;
+}
+
+#validator li:before {
+}
+
+
+/***************copyright***********/
+#copyright {
+  bottom: 15em;
+  display: block;
+  float: left;
+  padding-right: 0;
+  text-align: center;
+  width: 70em;
+}
+#copyright h3 {
+  background-color: THIRD;
+  background-repeat: no-repeat;
+  border-top: .2em solid ##07889B;
+  color: ##07889B;
+  font-size: 150%;
+  font-style: oblique;
+  font-weight: 700;
+  text-align: center;
+}
+/*********************************/
+
+
+
+#twitter {display: inline;}
+
+#stack { border-top: .2em solid #555}
+
+
+  #design {display: none;}
+  #extraDiv1 {display: none;}
+  #extraDiv2 {display: none;}
+  #extraDiv3 {display: none;}
+  #extraDiv4 {display: none;}
+  #extraDiv5 {display: none;}
+  #extraDiv6 {display: none;}
+  #hrefCSS {display: none;}
+  #hrefHTML {display: none;}
+  #imgCSS {display: none;}
+  #test {display: none;}
+
+  #href508 { display:inline;/*background-color: #transparent*/}
+  #hrefAAA { display:inline;/*background-color: #transparent*/}
+  #hrefAnobii { display:inline;/*background-color: #transparent*/}
+  #hrefAnyBrowser { display:inline;/*background-color: #transparent*/}
+  #hrefBruno { display:inline;/*background-color: #transparent*/}
+  #hrefCC { display:inline;/*background-color: #transparent*/}
+  #hrefDelicious { display:inline;/*background-color: #transparent*/}
+  #hrefDuca { display:inline;/*background-color: #transparent*/}
+  #hrefEmail { display:inline;/*background-color: #transparent*/}
+  #hrefGamberetta { display:inline;/*background-color: #transparent*/}
+  #hrefGood { display:inline;/*background-color: #transparent*/}
+  #hrefGoogle { display:inline;/*background-color: #transparent*/}
+  #hrefJava { display:inline;/*background-color: #transparent*/}
+  #hrefLinkedin { display:inline;/*background-color: #transparent*/}
+  #hrefMoneta { display:inline;/*background-color: #transparent*/}
+  #hrefNamyz { display:inline;/*background-color: #transparent*/}
+  #hrefOpenClipArt { display:inline;/*background-color: #transparent*/}
+  #hrefReddit { display:inline;/*background-color: #transparent*/}
+  #hrefSupport { display:inline;/*background-color: #transparent*/}
+  #hrefTwitter { display:inline;/*background-color: #transparent*/}
+  #hrefUsemlab { display:inline;/*background-color: #transparent*/}
+  #hrefViadeo { display:inline;/*background-color: #transparent*/}
+  #hrefXing { display:inline;/*background-color: #transparent*/}

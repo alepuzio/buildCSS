@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import net.alepuzio.buildCSS.file.InputFile;
+import net.alepuzio.buildCSS.file.Code;
 import net.alepuzio.buildCSS.logging.DevelopmentUtilActive;
 import net.alepuzio.buildCSS.logic.element.row.FactoryRowCSS;
 import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
@@ -18,7 +18,7 @@ import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 /**
  * @overview: file CSS on memory
  * */
-public class TemplateCSS implements InputFile {
+public class TemplateCSS implements Code {
 	
 	public final File file;
 	
@@ -28,7 +28,7 @@ public class TemplateCSS implements InputFile {
 	/**
 	 * @return CSS code modified
 	 * */
-	public List<RowCodeCSS> code() throws IOException {
+	public List<RowCodeCSS> css() throws IOException {
 		//new DevelopmentUtilActive("code();").printMsgDebug();
 		List<RowCodeCSS> finalCSS = new ArrayList<RowCodeCSS>();
 		Read fileCSS = null;
@@ -49,7 +49,7 @@ public class TemplateCSS implements InputFile {
 		return finalCSS;
 	}
 
-	public Properties data() {
+	public Properties properties() {
 		// TODO Auto-generated method stub
 		return null;
 	}

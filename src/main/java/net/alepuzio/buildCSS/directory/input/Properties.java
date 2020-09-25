@@ -6,7 +6,7 @@ import java.util.List;
 
 import net.alepuzio.buildCSS.directory.Directory;
 import net.alepuzio.buildCSS.directory.Physical_to_move;
-import net.alepuzio.buildCSS.file.InputFile;
+import net.alepuzio.buildCSS.file.Code;
 import net.alepuzio.buildCSS.file.type.InputProperties;
 
 /**
@@ -20,11 +20,11 @@ public class Properties implements Directory {
 		this.origin = newOrigin;
 	}
 	
-	public List<InputFile> files(final String extension) {
+	public List<Code> files() {
 		File[] templates = this.origin.files("properties");
-		List<InputFile> result = new ArrayList<InputFile>();
+		List<Code> result = new ArrayList<Code>();
 		for (File tmp : templates){
-			InputFile properties = new InputProperties(tmp);
+			Code properties = new InputProperties(tmp);
 			result.add(properties);
 		}
 		return result ;

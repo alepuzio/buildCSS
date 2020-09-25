@@ -16,9 +16,10 @@ public class App {
 		ArgumentsByConsole bean = new ArgumentsByConsole();
 		CmdLineParser parser = new CmdLineParser(bean);
 		try {
+			System.out.println("Started elaboration");//TODO timestmap?
 			parser.parseArgument(args);
 			bean.run();
-			bean.createsCSSThemesFromDirectory();
+			bean.themes();
 			System.out.println("Finished elaboration");
 		} catch (CmdLineException e) {
 			System.err.println(e.getMessage());

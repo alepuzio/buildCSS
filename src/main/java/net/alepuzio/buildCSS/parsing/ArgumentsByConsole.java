@@ -12,10 +12,9 @@ import org.kohsuke.args4j.ParserProperties;
 
 import net.alepuzio.buildCSS.directory.input.Properties;
 import net.alepuzio.buildCSS.directory.output.CSSWriter;
-import net.alepuzio.buildCSS.directory.Directory;
 import net.alepuzio.buildCSS.directory.Physical_to_move;
 import net.alepuzio.buildCSS.directory.input.CSS;
-import net.alepuzio.buildCSS.file.InputFile;
+import net.alepuzio.buildCSS.file.Code;
 import net.alepuzio.buildCSS.file.type.FinalCSS;
 
 public class ArgumentsByConsole {
@@ -57,24 +56,20 @@ public class ArgumentsByConsole {
 	 * @throws IOException 
 	 * 
 	 * */
-	public void createsCSSThemesFromDirectory() throws IOException {
-		Directory directoryProperties = new Properties(
-				new Physical_to_move(this.inputDirectory, "properties"));
-		List<InputFile> inputProperties = directoryProperties.files("properties");
-
-		Directory directoryCSS = new CSS(
-				new Physical_to_move(this.inputDirectory, "css"));
-		List<InputFile> inputCSS = directoryCSS.files("css");
-		
-		Iterator<InputFile> iteraCSS = inputCSS.iterator();
+	public void themes() throws IOException {
+		List<Code> inputProperties = new Properties(
+				new Physical_to_move(this.inputDirectory, "pattern")
+				).files();
+		Iterator<Code> iteraCSS = new CSS(
+				new Physical_to_move(this.inputDirectory, "stylesheet")
+				).files().iterator();
 		while ( iteraCSS.hasNext() ) {
-			InputFile tmpCSS = iteraCSS.next();
-			//System.out.println("ttile:"+tmpCSS.title());
-			Iterator<InputFile> iteraProperties = inputProperties.iterator();
+			Code tmpCSS = iteraCSS.next();
+			Iterator<Code> iteraProperties = inputProperties.iterator();
 			while ( iteraProperties.hasNext() ) {
-				InputFile tmpProperties = iteraProperties.next();
-				CSSWriter cssWriter = new CSSWriter(new FinalCSS(tmpCSS, tmpProperties));
-				cssWriter.writeSingleCSSTheme();
+				new CSSWriter(
+						new FinalCSS(tmpCSS, iteraProperties.next())
+						).singleCSSTheme();
 			}
 		}
 	}

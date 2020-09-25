@@ -2,12 +2,12 @@ package net.alepuzio.buildCSS.directory;
 
 import java.util.List;
 
-import net.alepuzio.buildCSS.file.InputFile;
+import net.alepuzio.buildCSS.file.Code;
 
 public interface Directory {
 	
 	/**
-	 * @return list of file 
+	 * @return list of code in the read files 
 	 * */
-	public List<InputFile> files(final String extension) ;
+	public List<Code> files() ;
 }

@@ -13,7 +13,13 @@ public class RowCodeCSS {
 	 * @return a new RowCodeCSS , after substitute the constant FIRST, SECOND, etc
 	 * */
 	public RowCodeCSS finalCSS(/*Input*/Properties templateProperties) {	
-		return new First(new Basic(templateProperties, value)).finalCSS();
+		return new CRLine(
+				new Second(
+					new First(
+							new Basic(templateProperties, value)
+							)
+					)
+				).finalCSS();
 	}
 	
 	RowCodeCSS(String newValue){
@@ -32,7 +38,6 @@ interface Key {
 	 RowCodeCSS finalCSS() ;
 	 String value() ;
 	 public String change(String nameplate);
-	 
 }
 
 class Basic implements Key {
@@ -71,6 +76,28 @@ class Basic implements Key {
 
 }
 
+class CRLine implements Key{
+	
+	public final Key line;
+	
+	public CRLine(Key newline){
+		this.line = newline;
+	}
+
+	public RowCodeCSS finalCSS() {
+		return new RowCodeCSS(this.line.finalCSS().value.concat("\n"));
+	}
+
+	public String value() {
+		return this.line.value();
+	}
+
+	public String change(String nameplate) {
+		return this.line.change(nameplate);
+	}
+	
+	
+}
 class First implements Key { 
 
 	final Key origin;
@@ -100,24 +127,39 @@ class First implements Key {
 	 
 }
 
-//class Second implements Key {
-//
-//	Key origin;
-//	
-//	Second(Key newValue){
-//		this.origin  = newValue;
-//	}
-//
-//	 RowCodeCSS finalCSS() {
-//		 if(value.contains("SECOND") ) {
-//			 return origin.change();
-//		 }else{
-//			 return origin.change();
-//		 }
-//		 
-//	 }
-//}
-//
+
+class Second implements Key { 
+
+	final Key origin;
+	final String nameplate = "SECOND";
+	
+	Second(Key newValue){
+		this.origin  = newValue;
+	}
+
+	 public RowCodeCSS finalCSS() {
+		 RowCodeCSS res = null;
+		 if( this.value().contains(nameplate) ) {
+			 res = new RowCodeCSS( this.change(nameplate));
+		 } else {
+			 res = this.origin.finalCSS();
+		 }
+		 return res;
+	 }
+	 
+	 public String change(String nameplate){
+		 return this.origin.change(nameplate);
+	 } 
+	 
+	public String value() {
+		return this.origin.value();
+	}
+	 
+}
+
+
+
+
 //class Third implements Key {
 //
 //	Key origin;

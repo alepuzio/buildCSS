@@ -8,14 +8,14 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
-import net.alepuzio.buildCSS.file.InputFile;
+import net.alepuzio.buildCSS.file.Code;
 import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
 
 /**
  * @overview: file Proeprties
  * */
-public class InputProperties implements InputFile {
+public class InputProperties implements Code {
 	
 	public final File file;
 	
@@ -27,7 +27,7 @@ public class InputProperties implements InputFile {
 	 * @throws IOException 
 	 * @throws FileNotFoundException 
 	 * */
-	public Properties data()  {
+	public Properties properties()  {
 		Properties loader = new Properties();
 		try {
 			loader.load(new FileInputStream(this.file.getAbsoluteFile()));
@@ -41,7 +41,7 @@ public class InputProperties implements InputFile {
 		return loader;
 	}
 
-	public List<RowCodeCSS> code() throws IOException {
+	public List<RowCodeCSS> css() throws IOException {
 		// TODO Auto-generated method stub
 		return null;
 	}

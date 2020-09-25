@@ -1,0 +1,35 @@
+/*************navigation****************/
+#navigation {
+  background-color: FOURTH;/*barra di navigazione*/
+  display: block;
+  position: relative;
+  left: 45em;
+  bottom: 5em;
+  width: 24em;
+  border-left: 1em ##E9C904 solid;
+}
+
+/*************cookie***********/
+#cookie { text-align: left; display: block; text-indent: 1em;}
+#cookie h3{
+	border-top: .2em solid ##E9C904;
+	font-weight: 700;
+  text-align: left;
+  background-repeat: no-repeat;
+  text-indent: 2em;
+}
+
+/************languages*************/
+#languages { /*text-align: right;*/ display:none; }
+#languages li {display:none;}
+#languages h3 {	display: none;}
+
+/*********portfolio*****************/
+#portfolio { text-align: left; display:inline;}
+#portfolio h3 {
+  text-indent: 2em;
+  border-top: .2em solid ##E9C904;
+  font-weight: 700;
+  text-align: left;
+  background-repeat: no-repeat;
+}

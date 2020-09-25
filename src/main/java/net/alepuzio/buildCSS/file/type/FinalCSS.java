@@ -6,41 +6,36 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
-import net.alepuzio.buildCSS.file.InputFile;
+import net.alepuzio.buildCSS.file.Code;
 import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
-public class FinalCSS implements InputFile {
+public class FinalCSS implements Code {
 	
-	public final InputFile initialCSS;
-	public final InputFile/*Properties*/ templateProperties;
+	public final Code initialCSS;
+	public final Code templateProperties;
 	
 	
-	public FinalCSS(InputFile newInitialCSS, InputFile/*Properties*/ newTemplateProperties){
+	public FinalCSS(Code newInitialCSS, Code newTemplateProperties){
 		this.initialCSS = newInitialCSS;
 		this.templateProperties = newTemplateProperties;
 			
 	}
 	
-	public List<RowCodeCSS> code()  throws IOException {
+	public List<RowCodeCSS> css()  throws IOException {
 		List<RowCodeCSS> finalCSS = new ArrayList<RowCodeCSS>();
- 	   	List<RowCodeCSS> initialCode = this.initialCSS.code();
-		Iterator<RowCodeCSS> iteraRows = initialCode.iterator();
+		Iterator<RowCodeCSS> iteraRows = this.initialCSS.css().iterator();
 		while(iteraRows.hasNext()){
-			RowCodeCSS finalRow = iteraRows.next().finalCSS(this.templateProperties.data());
-			finalCSS.add(finalRow);
+			finalCSS.add(iteraRows.next().finalCSS(this.templateProperties.properties()));
 		}
 		return finalCSS;
 	}
 
-	public Properties data() {
-		// TODO Auto-generated method stub
+	public Properties properties() {
 		return null;
 	}
 	
 	public String title(){
-		String titleInitialCSS = this.initialCSS.title();
-		String titleProperties = this.templateProperties.title();
-		return titleInitialCSS.concat("-").concat(titleProperties);
+		return this.templateProperties.title().concat("-").concat(this.initialCSS.title());
 	}
 
 }

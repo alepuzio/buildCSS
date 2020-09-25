@@ -1,0 +1,72 @@
+/***********intro**************/
+#intro { height: 22em;}
+/***********pageheader**************/
+#pageHeader {
+  background-color: THIRD;/*header*/
+  display: block;
+  height: 21em;
+  left: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+}
+#pageHeader h1 {
+  background-image: url(../../img/titolo.png);
+  background-position: left;
+  background-repeat: no-repeat;
+  display: block;
+  height: 10em;
+  left: 1em;
+  position: relative;
+  text-align: left;
+  text-indent: -20em;
+  top: 1em;
+}
+
+#pageHeader h2 {
+   background-image: url(../../img/sottotitolo.png);
+   background-position: left;
+   background-repeat: no-repeat;
+   display: block;
+   height: 5em;
+   text-indent: -40em;
+   text-align: left;
+   position: relative;
+   bottom:10em;
+   left: 10em;
+}
+
+
+/********quicksummary************/
+#quickSummary {
+  /*FOURTH;citazione*/
+  bottom: 20em;
+  display: block;
+  left: 43em;
+  position: relative;
+  width: 25em;
+  /*z-index: 1;*/
+  background-color: ##99CED4;
+  color: THIRD;
+}
+#quickSummary .p1 span {	display: none; }
+#quickSummary .p2 span {	display: inline; }
+#quickSummary p span { display: block; }
+
+
+#quickSummary blockquote {
+	text-align: justify;
+	font-size: 100%;
+	font-style: oblique;
+  /**mettere stile corsivo*/
+}
+
+/*********supportingText**********/
+#supportingText {
+  background: THIRD;/*articolo*/
+  display: block;
+  width: 45em;
+  color: #000;
+  voice-family: male;
+  text-align: justify;
+}

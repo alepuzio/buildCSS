@@ -9,20 +9,20 @@ import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
 public class Factory {
 
-	public InputFile file(String param){
-		InputFile result = null;
+	public Code file(String param){
+		Code result = null;
 		result = new Fake();
 		return result;
 	}
 }
 
-class Fake implements InputFile {
+class Fake implements Code {
 
-	public List<RowCodeCSS> code() throws IOException {
+	public List<RowCodeCSS> css() throws IOException {
 		return null;
 	}
 
-	public Properties data() {
+	public Properties properties() {
 	// TODO Auto-generated method stub
 		return null;
 	}
