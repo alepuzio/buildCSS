@@ -62,15 +62,15 @@ class Output {
 				if (dir.canWrite()) {
 					System.out.println(String.format("The directory %s is available", this.directory));
 				}else{
-					System.err.println("You are not allowed to write the directory {0}".format("%s", this.directory));
+					System.err.println(String.format("You are not allowed to write the directory %s", this.directory));
 				}
 			}else{
 				dir.mkdirs();
-				System.out.println("The directory {0} is built".format("%s", this.directory));
+				System.out.println(String.format("The directory %s is built", this.directory));
 			}
 		} else{
 			//error not directory
-			System.err.println("The file {0} is not a directory".format("%s", this.directory));
+			System.err.println(String.format("The file %s is not a directory", this.directory));
 		}
 		return this;
 	}	
