@@ -19,6 +19,7 @@ public class App {
 			parser.parseArgument(args);
 			bean.run();
 			bean.createsCSSThemesFromDirectory();
+			System.out.println("Finished elaboration");
 		} catch (CmdLineException e) {
 			System.err.println(e.getMessage());
 			parser.printUsage(System.err);

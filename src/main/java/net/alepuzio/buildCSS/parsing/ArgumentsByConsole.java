@@ -11,12 +11,12 @@ import org.kohsuke.args4j.Option;
 import org.kohsuke.args4j.ParserProperties;
 
 import net.alepuzio.buildCSS.directory.input.Properties;
+import net.alepuzio.buildCSS.directory.output.CSSWriter;
 import net.alepuzio.buildCSS.directory.Directory;
 import net.alepuzio.buildCSS.directory.Physical_to_move;
 import net.alepuzio.buildCSS.directory.input.CSS;
 import net.alepuzio.buildCSS.file.InputFile;
 import net.alepuzio.buildCSS.file.type.FinalCSS;
-import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
 public class ArgumentsByConsole {
 
@@ -73,9 +73,8 @@ public class ArgumentsByConsole {
 			Iterator<InputFile> iteraProperties = inputProperties.iterator();
 			while ( iteraProperties.hasNext() ) {
 				InputFile tmpProperties = iteraProperties.next();
-				//System.out.println(tmpProperties);
-				List<RowCodeCSS> listFinalCSS = new FinalCSS(tmpCSS, tmpProperties).code();
-				System.out.println(listFinalCSS);
+				CSSWriter cssWriter = new CSSWriter(new FinalCSS(tmpCSS, tmpProperties));
+				cssWriter.writeSingleCSSTheme();
 			}
 		}
 	}

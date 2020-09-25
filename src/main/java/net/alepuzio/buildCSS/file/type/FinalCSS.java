@@ -36,6 +36,7 @@ public class FinalCSS implements InputFile {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 	public String title(){
 		String titleInitialCSS = this.initialCSS.title();
 		String titleProperties = this.templateProperties.title();
