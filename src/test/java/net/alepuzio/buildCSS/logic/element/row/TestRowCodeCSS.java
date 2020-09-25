@@ -1,6 +1,5 @@
 package net.alepuzio.buildCSS.logic.element.row;
 
-
 import java.util.Properties;
 
 import org.junit.Test;
