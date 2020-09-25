@@ -27,4 +27,8 @@ class Fake implements InputFile {
 		return null;
 	}
 
+	public String title() {
+		return null;
+	}
+
 }

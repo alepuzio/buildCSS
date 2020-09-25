@@ -20,6 +20,11 @@ public class RowCodeCSS {
 		this.value  = newValue;
 	}
 
+	@Override
+	public String toString() {
+		return new StringBuilder("RowCodeCSS [value=").append(value ).append("]").toString();
+	}
+
 }
 
 
@@ -50,7 +55,18 @@ class Basic implements Key {
 
 	 public String change(String nameplate){
 		 return this.value().replaceAll(nameplate, "#".concat(this.templateProperties.getProperty(nameplate)));
-	 } 
+	 }
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Basic [value=");
+		builder.append(value);
+		builder.append(", templateProperties=");
+		builder.append(templateProperties);
+		builder.append("]");
+		return builder.toString();
+	} 
 
 
 }

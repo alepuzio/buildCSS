@@ -21,7 +21,7 @@ public class Properties implements Directory {
 	}
 	
 	public List<InputFile> files(final String extension) {
-		File[] templates = this.origin.files(extension);
+		File[] templates = this.origin.files("properties");
 		List<InputFile> result = new ArrayList<InputFile>();
 		for (File tmp : templates){
 			InputFile properties = new InputProperties(tmp);

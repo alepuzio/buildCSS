@@ -46,6 +46,10 @@ public class InputProperties implements InputFile {
 		return null;
 	}
 	
+	public String title(){
+		int index = this.file.getName().indexOf(".properties");
+		return this.file.getName().substring(0, index);
+	}
 }
 
 //TODO create cache class as yegor indicates in the book

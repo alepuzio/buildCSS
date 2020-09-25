@@ -64,16 +64,17 @@ public class ArgumentsByConsole {
 
 		Directory directoryCSS = new CSS(
 				new Physical_to_move(this.inputDirectory, "css"));
-		List<InputFile> inputCSS = directoryCSS.files("CSS");
+		List<InputFile> inputCSS = directoryCSS.files("css");
 		
 		Iterator<InputFile> iteraCSS = inputCSS.iterator();
 		while ( iteraCSS.hasNext() ) {
 			InputFile tmpCSS = iteraCSS.next();
-			
+			//System.out.println("ttile:"+tmpCSS.title());
 			Iterator<InputFile> iteraProperties = inputProperties.iterator();
 			while ( iteraProperties.hasNext() ) {
 				InputFile tmpProperties = iteraProperties.next();
-				List<RowCodeCSS> listFinalCSS= new FinalCSS(tmpCSS, tmpProperties.data()).code();
+				//System.out.println(tmpProperties);
+				List<RowCodeCSS> listFinalCSS = new FinalCSS(tmpCSS, tmpProperties).code();
 				System.out.println(listFinalCSS);
 			}
 		}

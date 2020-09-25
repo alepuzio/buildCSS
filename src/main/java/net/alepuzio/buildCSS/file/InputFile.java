@@ -13,5 +13,10 @@ public interface InputFile {
 
 	public List<RowCodeCSS> code() throws IOException;
 	public Properties data() ;
+	/**
+	 * @return title of the file
+	 * */
+	public String title();
+
 
 }

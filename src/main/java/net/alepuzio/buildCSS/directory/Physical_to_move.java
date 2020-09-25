@@ -12,7 +12,6 @@ public class Physical_to_move  {
 	}
 	
 	public File[] files(final String extension) {
-		System.out.println(this.root.getAbsolutePath());//TODO delete
 		File[] templates = this.root.listFiles(new FileFilter() {
 			public boolean accept(File pathname) {
 				return pathname.getName().endsWith(extension);

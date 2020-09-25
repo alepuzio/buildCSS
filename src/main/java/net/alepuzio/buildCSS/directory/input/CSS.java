@@ -21,7 +21,7 @@ public class CSS implements Directory {
 	}
 	
 	public List<InputFile> files(final String extension) {
-		File[] templates = this.origin.files("CSS");
+		File[] templates = this.origin.files("css");
 		List<InputFile> result = new ArrayList<InputFile>();
 		for (File tmp : templates){
 			InputFile css = new TemplateCSS(tmp);

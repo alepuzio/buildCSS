@@ -29,7 +29,7 @@ public class TemplateCSS implements InputFile {
 	 * @return CSS code modified
 	 * */
 	public List<RowCodeCSS> code() throws IOException {
-		new DevelopmentUtilActive("code();").printMsgDebug();
+		//new DevelopmentUtilActive("code();").printMsgDebug();
 		List<RowCodeCSS> finalCSS = new ArrayList<RowCodeCSS>();
 		Read fileCSS = null;
     	try {
@@ -53,6 +53,12 @@ public class TemplateCSS implements InputFile {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public String title(){
+		int index = this.file.getName().indexOf(".css");
+		return this.file.getName().substring(0, index);
+	}
+
 }
 
 /**
