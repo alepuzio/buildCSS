@@ -24,11 +24,18 @@
 		</fileSet>
 		<!-- import configuration -->
 		<fileSet>
-			<directory>${project.basedir}/src/main/resources/conf</directory>
+			<directory>${project.basedir}/src/main/resources/input/css</directory>
 			<outputDirectory>/conf</outputDirectory>
 			<includes>
 				<include>*.properties</include>
-				<include>model.css</include>				
+				<include>*.css</include>				
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${project.basedir}/src/main/resources/input/properties</directory>
+			<outputDirectory>/conf</outputDirectory>
+			<includes>
+				<include>*.properties</include>
 			</includes>
 		</fileSet>
 		<!-- import .sh e.bat del batch -->
