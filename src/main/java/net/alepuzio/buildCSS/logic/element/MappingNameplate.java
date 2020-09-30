@@ -5,7 +5,7 @@ import java.util.Properties;
 /**
 * @overview : it manage the operations on the properties
 */
-public class MappingNameplate implements Mapping_to_trash {
+public class MappingNameplate implements DecodedCSSInstruction {
 
 	
 	public final Properties currentProperties;

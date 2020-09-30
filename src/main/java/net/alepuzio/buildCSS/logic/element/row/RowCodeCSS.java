@@ -1,6 +1,6 @@
 package net.alepuzio.buildCSS.logic.element.row;
 
-import net.alepuzio.buildCSS.logic.element.Mapping_to_trash;
+import net.alepuzio.buildCSS.logic.element.DecodedCSSInstruction;
 
 
 /**
@@ -12,7 +12,7 @@ public class RowCodeCSS {
 	/**
 	 * @return a new RowCodeCSS , after substitute the constant FIRST, SECOND, etc
 	 * */
-	public RowCodeCSS finalCSS(Mapping_to_trash templateProperties) {	
+	public RowCodeCSS finalCSS(DecodedCSSInstruction templateProperties) {	
 		return new CRLine(
 				new Four(
 						new Third(
@@ -47,9 +47,9 @@ interface Key {
 class Basic implements Key {
 	
 	final String value;
-	final Mapping_to_trash templateProperties;
+	final DecodedCSSInstruction templateProperties;
 	
-	Basic(Mapping_to_trash newTemplateProperties, String newValue){
+	Basic(DecodedCSSInstruction newTemplateProperties, String newValue){
 		this.value = newValue;
 		this.templateProperties = newTemplateProperties;
 	}

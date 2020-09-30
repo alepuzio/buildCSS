@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Properties;
 
 import net.alepuzio.buildCSS.file.Code;
-import net.alepuzio.buildCSS.logic.element.Mapping_to_trash;
+import net.alepuzio.buildCSS.logic.element.DecodedCSSInstruction;
 import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
 public class FinalCSS implements Code {
@@ -34,7 +34,7 @@ public class FinalCSS implements Code {
 	/**
 	 * @TODO refactoring
 	 * */
-	public Mapping_to_trash properties() {
+	public DecodedCSSInstruction properties() {
 		throw new UnsupportedOperationException(
 				String.format(
 						"The {0} doesn't support this method",
