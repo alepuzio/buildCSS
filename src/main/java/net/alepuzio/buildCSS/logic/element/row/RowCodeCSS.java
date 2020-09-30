@@ -1,6 +1,6 @@
 package net.alepuzio.buildCSS.logic.element.row;
 
-import java.util.Properties;
+import net.alepuzio.buildCSS.logic.element.Mapping_to_trash;
 
 
 /**
@@ -12,13 +12,17 @@ public class RowCodeCSS {
 	/**
 	 * @return a new RowCodeCSS , after substitute the constant FIRST, SECOND, etc
 	 * */
-	public RowCodeCSS finalCSS(/*Input*/Properties templateProperties) {	
+	public RowCodeCSS finalCSS(Mapping_to_trash templateProperties) {	
 		return new CRLine(
-				new Second(
-					new First(
-							new Basic(templateProperties, value)
-							)
-					)
+				new Four(
+						new Third(
+								new Second(
+										new First(
+												new Basic(templateProperties, value)
+												)
+										)
+								)
+						)
 				).finalCSS();
 	}
 	
@@ -43,9 +47,9 @@ interface Key {
 class Basic implements Key {
 	
 	final String value;
-	final /*Input*/Properties templateProperties;
+	final Mapping_to_trash templateProperties;
 	
-	Basic(/*Input*/Properties newTemplateProperties, String newValue){
+	Basic(Mapping_to_trash newTemplateProperties, String newValue){
 		this.value = newValue;
 		this.templateProperties = newTemplateProperties;
 	}
@@ -59,7 +63,7 @@ class Basic implements Key {
 	}
 
 	 public String change(String nameplate){
-		 return this.value().replaceAll(nameplate, "#".concat(this.templateProperties.getProperty(nameplate)));
+		 return this.value().replaceAll(nameplate, "#".concat(this.templateProperties.value(nameplate)));
 	 }
 
 	@Override
@@ -76,7 +80,7 @@ class Basic implements Key {
 
 }
 
-class CRLine implements Key{
+class CRLine implements Key {
 	
 	public final Key line;
 	
@@ -157,8 +161,64 @@ class Second implements Key {
 	 
 }
 
+class Third implements Key { 
+
+	final Key origin;
+	final String nameplate = "THIRD";
+	
+	Third(Key newValue){
+		this.origin  = newValue;
+	}
+
+	 public RowCodeCSS finalCSS() {
+		 RowCodeCSS res = null;
+		 if( this.value().contains(nameplate) ) {
+			 res = new RowCodeCSS( this.change(nameplate));
+		 } else {
+			 res = this.origin.finalCSS();
+		 }
+		 return res;
+	 }
+	 
+	 public String change(String nameplate){
+		 return this.origin.change(nameplate);
+	 } 
+	 
+	public String value() {
+		return this.origin.value();
+	}
+	 
+}
 
 
+class Four implements Key { 
+
+	final Key origin;
+	final String nameplate = "FOUR";
+	
+	Four(Key newValue){
+		this.origin  = newValue;
+	}
+
+	 public RowCodeCSS finalCSS() {
+		 RowCodeCSS res = null;
+		 if( this.value().contains(nameplate) ) {
+			 res = new RowCodeCSS( this.change(nameplate));
+		 } else {
+			 res = this.origin.finalCSS();
+		 }
+		 return res;
+	 }
+	 
+	 public String change(String nameplate){
+		 return this.origin.change(nameplate);
+	 } 
+	 
+	public String value() {
+		return this.origin.value();
+	}
+	 
+}
 
 //class Third implements Key {
 //

@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Properties;
 
 import net.alepuzio.buildCSS.file.Code;
+import net.alepuzio.buildCSS.logic.element.MappingNameplate;
 import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
 
@@ -27,23 +28,25 @@ public class InputProperties implements Code {
 	 * @throws IOException 
 	 * @throws FileNotFoundException 
 	 * */
-	public Properties properties()  {
+	public MappingNameplate properties()  {
 		Properties loader = new Properties();
 		try {
 			loader.load(new FileInputStream(this.file.getAbsoluteFile()));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return loader;
+		return new MappingNameplate(loader);
 	}
 
 	public List<RowCodeCSS> css() throws IOException {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException(
+				String.format(
+						"The {0} doesn't support this method",
+						this.getClass().getName() 
+						)
+				); 
 	}
 	
 	public String title(){

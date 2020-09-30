@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Properties;
 
 import net.alepuzio.buildCSS.file.Code;
+import net.alepuzio.buildCSS.logic.element.Mapping_to_trash;
 import net.alepuzio.buildCSS.logic.element.row.FactoryRowCSS;
 import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
@@ -51,7 +52,7 @@ public class TemplateCSS implements Code {
 	/**
 	 * TODO refactoring
 	 * */
-	public Properties properties() {
+	public Mapping_to_trash properties() {
 		throw new UnsupportedOperationException(
 				String.format("The {0} doesn't support this method", this.getClass().getName()));
 	}
@@ -69,15 +70,15 @@ public class TemplateCSS implements Code {
 class Read {
 	final BufferedReader templateCSSToRead;
     
-	Read(File newFileReader  ) throws FileNotFoundException{
+	Read(File newFileReader  ) throws FileNotFoundException {
 		this.templateCSSToRead = new BufferedReader(new FileReader(newFileReader.getAbsoluteFile()));
 	}
 	
-	String readLine() throws IOException{
+	String readLine() throws IOException {
 		return this.templateCSSToRead.readLine();
 	}
 	
-	void close() throws IOException{
+	void close() throws IOException {
 		if (null != templateCSSToRead) {
 			templateCSSToRead.close();
 		}

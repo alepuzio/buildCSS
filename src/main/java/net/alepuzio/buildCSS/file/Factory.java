@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
+import net.alepuzio.buildCSS.logic.element.Mapping_to_trash;
 import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
 public class Factory {
@@ -22,8 +23,7 @@ class Fake implements Code {
 		return null;
 	}
 
-	public Properties properties() {
-	// TODO Auto-generated method stub
+	public Mapping_to_trash properties() {
 		return null;
 	}
 
