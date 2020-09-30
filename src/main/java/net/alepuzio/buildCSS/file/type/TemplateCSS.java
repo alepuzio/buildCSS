@@ -49,8 +49,8 @@ public class TemplateCSS implements Code {
 	}
 
 	public Properties properties() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException(
+				String.format("The {0} doesn't support this method", this.getClass().getName()));
 	}
 	
 	public String title(){
