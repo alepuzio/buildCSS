@@ -5,6 +5,8 @@ import java.util.Properties;
 import org.junit.Test;
 
 import junit.framework.Assert;
+import net.alepuzio.buildCSS.logic.element.DecodedCSSInstruction;
+import net.alepuzio.buildCSS.logic.element.MappingNameplate;
 
 public class TestRowCodeCSS {
 	
@@ -31,14 +33,14 @@ public class TestRowCodeCSS {
 
 	@Test
 	public void testSubstitutesCSS() {
-		String valore = "background: FIRST;";
+		String value = "background: FIRST;";
 		Properties properties = new Properties();
-		
 		properties.put("FIRST","1");
-		this.rowCodeCSS  = new FactoryRowCSS(valore).instance();
+		DecodedCSSInstruction decodedCSSInstruction = new MappingNameplate(properties);
+		this.rowCodeCSS  = new FactoryRowCSS(value).instance();
 		Assert.assertNotNull(this.rowCodeCSS);
 		Assert.assertNotNull(this.rowCodeCSS.value);
-		String res = this.rowCodeCSS.finalCSS(properties).value;
+		String res = this.rowCodeCSS.finalCSS(decodedCSSInstruction).value;
 		Assert.assertEquals("background: #1;", res);
 	}
 }
