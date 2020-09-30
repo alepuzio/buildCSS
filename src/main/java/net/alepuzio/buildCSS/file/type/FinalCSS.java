@@ -30,8 +30,16 @@ public class FinalCSS implements Code {
 		return finalCSS;
 	}
 
+	/**
+	 * @TODO refactoring
+	 * */
 	public Properties properties() {
-		return null;
+		throw new UnsupportedOperationException(
+				String.format(
+						"The {0} doesn't support this method",
+						this.getClass().getName() 
+						)
+				); 
 	}
 	
 	public String title(){
