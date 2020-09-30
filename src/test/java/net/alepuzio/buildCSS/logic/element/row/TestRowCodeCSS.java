@@ -1,12 +1,9 @@
 package net.alepuzio.buildCSS.logic.element.row;
 
-import java.util.Properties;
-
 import org.junit.Test;
 
 import junit.framework.Assert;
-import net.alepuzio.buildCSS.logic.element.DecodedCSSInstruction;
-import net.alepuzio.buildCSS.logic.element.MappingNameplate;
+import net.alepuzio.buildCSS.file.Factory;
 
 public class TestRowCodeCSS {
 	
@@ -14,17 +11,16 @@ public class TestRowCodeCSS {
 	
 	@Test
 	public void testGetValue() {
-		String valore = "testGetValue";
-		this.rowCodeCSS  = new FactoryRowCSS(valore).instance();
+		final String value = "testGetValue";
+		this.rowCodeCSS  = new FactoryRowCSS(value).instance();
 		Assert.assertNotNull(this.rowCodeCSS);
 		Assert.assertNotNull(this.rowCodeCSS.value);
-		Assert.assertEquals(valore, this.rowCodeCSS.value);
+		Assert.assertEquals(value, this.rowCodeCSS.value);
 	}
 
 	@Test
 	public void testInstanceEmpty() {
-		String valore = "testInstanceEmpty";
-		this.rowCodeCSS  = new FactoryRowCSS(valore).instanceEmpty();
+		this.rowCodeCSS  = new FactoryRowCSS("testInstanceEmpty").instanceEmpty();
 		Assert.assertNotNull(this.rowCodeCSS);
 		Assert.assertNotNull(this.rowCodeCSS.value);
 		Assert.assertEquals(this.rowCodeCSS.value,"");
@@ -33,14 +29,17 @@ public class TestRowCodeCSS {
 
 	@Test
 	public void testSubstitutesCSS() {
-		String value = "background: FIRST;";
-		Properties properties = new Properties();
-		properties.put("FIRST","1");
-		DecodedCSSInstruction decodedCSSInstruction = new MappingNameplate(properties);
-		this.rowCodeCSS  = new FactoryRowCSS(value).instance();
+		this.rowCodeCSS  = new FactoryRowCSS("background: FIRST;").instance();
 		Assert.assertNotNull(this.rowCodeCSS);
 		Assert.assertNotNull(this.rowCodeCSS.value);
-		String res = this.rowCodeCSS.finalCSS(decodedCSSInstruction).value;
-		Assert.assertEquals("background: #1;", res);
+		try {
+			String res = this.rowCodeCSS.finalCSS(
+					new Factory("fake").file().properties()
+					).value;
+			Assert.assertEquals("background: #1;\n", res);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.assertTrue(false);		
+		}
 	}
 }

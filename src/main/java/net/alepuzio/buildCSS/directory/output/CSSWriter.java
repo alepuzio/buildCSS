@@ -9,6 +9,9 @@ import java.util.Iterator;
 import net.alepuzio.buildCSS.file.Code;
 import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
+/**
+ * @overview it writes the physical file in the harddisk
+ * */
 public class CSSWriter {
 		
 	public final  Code origin;
@@ -18,9 +21,9 @@ public class CSSWriter {
 	}
 	
 	/**
-	 * @effects print the data in physical file
+	 * @effects it prints the data in physical file
 	 * */
-	public void singleCSSTheme() throws IOException {
+	public void singleCSSTheme() throws Exception {
 		BufferedWriter newThemeCSSToWrite = null;
 		String path = this.path();
 		try {
@@ -32,7 +35,7 @@ public class CSSWriter {
 				newThemeCSSToWrite.write(toWrite.next().value);
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new Exception("Error in writing file",e);
 		} finally {
 			if (null != newThemeCSSToWrite) {
 				newThemeCSSToWrite.flush();
@@ -47,6 +50,9 @@ public class CSSWriter {
 
 }
 
+/**
+ * @overview it verify the writing in the harddisk of the output directory
+ * */
 class Output {
 	
 	public final String directory;

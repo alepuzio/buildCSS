@@ -1,6 +1,5 @@
 package net.alepuzio.buildCSS;
 
-import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 
 import net.alepuzio.buildCSS.parsing.ArgumentsByConsole;
@@ -21,9 +20,11 @@ public class App {
 			bean.run();
 			bean.themes();
 			System.out.println("Finished elaboration");
-		} catch (CmdLineException e) {
+		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			parser.printUsage(System.err);
+		} finally {
+			System.out.println("Released resources");
 		}
 	}
 

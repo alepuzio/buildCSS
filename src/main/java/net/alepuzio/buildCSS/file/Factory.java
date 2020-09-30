@@ -1,34 +1,41 @@
 package net.alepuzio.buildCSS.file;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.List;
 import java.util.Properties;
 
 import net.alepuzio.buildCSS.logic.element.DecodedCSSInstruction;
-import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
+import net.alepuzio.buildCSS.logic.element.MappingNameplate;
 
 public class Factory {
+	public final String param;
+	
+	public Factory(String newParam){
+		this.param = newParam;
+	}
 
-	public Code file(String param){
-		Code result = null;
-		result = new Fake();
+	public Nameplate file(){
+		Nameplate result = null;
+		if ("fake".equals(this.param)){//TODO decorator
+			result = new Fake();
+		} else{
+			new IllegalArgumentException(
+					String.format("The value -{0}- is not expected", this.param)
+					);
+		}
 		return result;
 	}
 }
 
-class Fake implements Code {
+class Fake implements Nameplate {
 
-	public List<RowCodeCSS> css() throws IOException {
-		return null;
-	}
 
 	public DecodedCSSInstruction properties() {
-		return null;
+		Properties properties = new Properties();
+		properties.put("FIRST","1");
+		return  new MappingNameplate(properties);
 	}
 
 	public String title() {
-		return null;
+		return "title_fake";
 	}
 
 }

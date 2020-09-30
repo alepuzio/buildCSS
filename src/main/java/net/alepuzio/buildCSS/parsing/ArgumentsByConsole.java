@@ -15,6 +15,7 @@ import net.alepuzio.buildCSS.directory.output.CSSWriter;
 import net.alepuzio.buildCSS.directory.Physical_to_move;
 import net.alepuzio.buildCSS.directory.input.CSS;
 import net.alepuzio.buildCSS.file.Code;
+import net.alepuzio.buildCSS.file.Nameplate;
 import net.alepuzio.buildCSS.file.type.FinalCSS;
 
 public class ArgumentsByConsole {
@@ -56,8 +57,8 @@ public class ArgumentsByConsole {
 	 * @throws IOException 
 	 * 
 	 * */
-	public void themes() throws IOException {
-		List<Code> inputProperties = new Properties(
+	public void themes() throws Exception {
+		List<Nameplate> inputProperties = new Properties(
 				new Physical_to_move(this.inputDirectory, "pattern")
 				).files();
 		Iterator<Code> iteraCSS = new CSS(
@@ -65,7 +66,7 @@ public class ArgumentsByConsole {
 				).files().iterator();
 		while ( iteraCSS.hasNext() ) {
 			Code tmpCSS = iteraCSS.next();
-			Iterator<Code> iteraProperties = inputProperties.iterator();
+			Iterator<Nameplate> iteraProperties = inputProperties.iterator();
 			while ( iteraProperties.hasNext() ) {
 				new CSSWriter(
 						new FinalCSS(tmpCSS, iteraProperties.next())

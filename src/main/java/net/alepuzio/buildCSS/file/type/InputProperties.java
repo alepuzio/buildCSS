@@ -4,19 +4,17 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import java.util.List;
 import java.util.Properties;
 
-import net.alepuzio.buildCSS.file.Code;
+import net.alepuzio.buildCSS.file.Nameplate;
+import net.alepuzio.buildCSS.logic.element.DecodedCSSInstruction;
 import net.alepuzio.buildCSS.logic.element.MappingNameplate;
-import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
 
 /**
- * @overview: file Proeprties
+ * @overview: file Properties
  * */
-public class InputProperties implements Code {
+public class InputProperties implements Nameplate {
 	
 	public final File file;
 	
@@ -28,27 +26,19 @@ public class InputProperties implements Code {
 	 * @throws IOException 
 	 * @throws FileNotFoundException 
 	 * */
-	public MappingNameplate properties()  {
+	public DecodedCSSInstruction properties() throws Exception {
 		Properties loader = new Properties();
 		try {
 			loader.load(new FileInputStream(this.file.getAbsoluteFile()));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			throw new Exception(
+					String.format("Error in reading file -{0]-",
+							this.file.getAbsoluteFile().getAbsolutePath()
+							),e);
 		}
 		return new MappingNameplate(loader);
 	}
 
-	public List<RowCodeCSS> css() throws IOException {
-		throw new UnsupportedOperationException(
-				String.format(
-						"The {0} doesn't support this method",
-						this.getClass().getName() 
-						)
-				); 
-	}
-	
 	public String title(){
 		int index = this.file.getName().indexOf(".properties");
 		return this.file.getName().substring(0, index);

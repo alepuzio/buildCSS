@@ -7,10 +7,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 import net.alepuzio.buildCSS.file.Code;
-import net.alepuzio.buildCSS.logic.element.DecodedCSSInstruction;
 import net.alepuzio.buildCSS.logic.element.row.FactoryRowCSS;
 import net.alepuzio.buildCSS.logic.element.row.RowCodeCSS;
 
@@ -28,8 +26,7 @@ public class TemplateCSS implements Code {
 	/**
 	 * @return CSS code modified
 	 * */
-	public List<RowCodeCSS> css() throws IOException {
-		//new DevelopmentUtilActive("code();").printMsgDebug();
+	public List<RowCodeCSS> css() throws Exception {
 		List<RowCodeCSS> finalCSS = new ArrayList<RowCodeCSS>();
 		Read fileCSS = null;
     	try {
@@ -39,23 +36,14 @@ public class TemplateCSS implements Code {
 				RowCodeCSS codeCSS = new FactoryRowCSS(currentLine).instance();//TODO move in a class?
 				finalCSS.add(codeCSS);
 			}
-		} catch (FileNotFoundException e) {
-			throw new FileNotFoundException("Undefined CSS model:" + e.getMessage());
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			throw new Exception("Undefined CSS model:" + e.getMessage());
 		} finally {
 			fileCSS.close();
 		}
 		return finalCSS;
 	}
 
-	/**
-	 * TODO refactoring
-	 * */
-	public DecodedCSSInstruction properties() {
-		throw new UnsupportedOperationException(
-				String.format("The {0} doesn't support this method", this.getClass().getName()));
-	}
 	
 	public String title(){
 		int index = this.file.getName().indexOf(".css");
