@@ -18,9 +18,14 @@
 ## RULES TO WRITE CODE
 
  - Follow the philosophy of [Elegant Object](https://www.elegantobjects.org/);
- - The assignment operatori _=_ and the end of instruction _;_ must have one empty space before and one empty space after (no value or variabile concateined).
+ - The assignment operator _=_ and the end of instruction _;_ must have one empty space before and one empty space after (no value or variabile concateined).
   For example: _a = 10_ , _; b < 123;_ are allowed, but _a= 10_ and _;b <123;_ are not;
  - Follow the TDD approach: before the tests, after the code;
  - Use composition over inheritance;
+
+
+format https://github.com/atom/atom/blob/master/CONTRIBUTING.md
+
+format https://github.com/rails/rails/blob/master/CONTRIBUTING.md
 
 
